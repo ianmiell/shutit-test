@@ -1,4 +1,4 @@
 #!/bin/bash
 
 pushd ..
-../../shutit build -m ../2 "$@"
+shutit build -m ../2 "$@"

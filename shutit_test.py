@@ -16,7 +16,7 @@ class shutit_test(ShutItModule):
 
 		shutit.install('git docker.io python-pip')
 		shutit.send('git clone https://github.com/ianmiell/shutit && cd shutit')
-		shutit.send('pip install -r requirements.txt')
+		shutit.send('pip install .')
 		shutit.send('cd ..')
 		shutit.send('git clone https://github.com/ianmiell/shutit-test')
 		shutit.send('cd shutit-test/test')

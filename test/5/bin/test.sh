@@ -1,5 +1,5 @@
 #!/bin/bash
 
 pushd ..
-../../shutit build "$@"
+shutit build "$@"
 
