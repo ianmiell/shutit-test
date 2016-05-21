@@ -77,27 +77,18 @@ do
 				echo "================================================================================"
 				echo "SHUTIT MODULE TEST $d: In directory: `pwd` BEGIN"
 				echo "================================================================================"
-				if [ x$SHUTIT_PARALLEL_BUILD = 'x' ]
+				./test.sh --interactive 0 -l debug
+				RES=$?
+				if [[ "x$RES" != "x0" ]]
 				then
-					./test.sh --interactive 0
-					RES=$?
-					if [[ "x$RES" != "x0" ]]
-					then
-						echo "FAILURE |$RES| in: $(pwd) running test.sh"
-						cleanup hard
-						exit 1
-					fi
+					echo "FAILURE |$RES| in: $(pwd) running test.sh"
 					cleanup hard
-					echo "================================================================================"
-					echo "SHUTIT MODULE TEST $d: In directory: `pwd` END"
-					echo "================================================================================"
-				else
-					# TODO
-					#http://stackoverflow.com/questions/356100/how-to-wait-in-bash-for-several-subprocesses-to-finish-and-return-exit-code-0
-					./test.sh --interactive 0
-					JOB=$!
-					PIDS[$JOB]="$JOB: $dist $d"
+					exit 1
 				fi
+				cleanup hard
+				echo "================================================================================"
+				echo "SHUTIT MODULE TEST $d: In directory: `pwd` END"
+				echo "================================================================================"
 				set_shutit_options
 			fi
 		fi
@@ -170,7 +161,10 @@ fi
 
 DESC="Testing skeleton build with Dockerfile"
 echo $DESC
-shutit skeleton --dockerfile test/dockerfile/Dockerfile --module_directory ${NEWDIR} --module_name testing --domain shutit.tk --depends shutit.tk.setup --base_image ubuntu:14.04 --delivery docker --template_branch docker
+shutit skeleton --dockerfile test/dockerfile/Dockerfile --module_directory \
+	${NEWDIR} --module_name testing --domain shutit.tk \
+	--depends shutit.tk.setup --base_image ubuntu:14.04 --delivery docker \
+	--template_branch docker
 pushd ${NEWDIR}/bin
 ./test.sh --interactive 0
 if [[ "x$?" != "x0" ]]
@@ -185,7 +179,11 @@ popd > /dev/null 2>&1
 
 DESC="Testing skeleton build with two ShutItFiles"
 echo $DESC
-shutit skeleton --dockerfiles test/dockerfile/Dockerfile test/shutitfile/ShutItFile --module_directory ${NEWDIR} --module_name testing --domain shutit.tk --depends shutit.tk.setup --base_image ubuntu:14.04 --delivery docker --template_branch docker
+shutit skeleton
+	--dockerfiles test/dockerfile/Dockerfile test/shutitfile/ShutItFile \
+	--module_directory ${NEWDIR} --module_name testing --domain shutit.tk \
+	--depends shutit.tk.setup --base_image ubuntu:14.04 --delivery docker \
+	--template_branch docker
 pushd ${NEWDIR}/bin
 ./test.sh --interactive 0
 if [[ "x$?" != "x0" ]]
@@ -200,7 +198,9 @@ popd > /dev/null 2>&1
 
 DESC="Testing skeleton build basic bare"
 echo $DESC
-shutit skeleton --module_directory ${NEWDIR} --module_name testing --domain shutit.tk --depends shutit.tk.setup --base_image ubuntu:14.04 --delivery docker --template_branch docker
+shutit skeleton --module_directory ${NEWDIR} --module_name testing \
+	--domain shutit.tk --depends shutit.tk.setup --base_image ubuntu:14.04 \
+	--delivery docker --template_branch docker
 pushd ${NEWDIR}/bin
 ./test.sh --interactive 0
 if [[ "x$?" != "x0" ]]
@@ -216,7 +216,10 @@ popd > /dev/null 2>&1
 
 DESC="Testing skeleton build basic with example script"
 echo $DESC
-shutit skeleton --module_directory ${NEWDIR} --module_name testing --domain shutit.tk --depends shutit.tk.setup --base_image ubuntu:14.04 --script ${SHUTIT_DIR}/test/assets/example.sh --delivery docker --template_branch docker
+shutit skeleton --module_directory ${NEWDIR} --module_name testing \
+	--domain shutit.tk --depends shutit.tk.setup --base_image ubuntu:14.04 \
+	--script ${SHUTIT_DIR}/test/assets/example.sh --delivery docker \
+	--template_branch docker
 
 pushd ${NEWDIR}/bin
 ./test.sh --interactive 0
@@ -246,21 +249,6 @@ do
 	fi
 done
 popd
-
-if [ x$SHUTIT_PARALLEL_BUILD != 'x' ]
-then
-	for P in ${!PIDS[*]}; do
-		echo "WAITING FOR $P"
-		wait $P 
-		if [[ $? != 0 ]]
-		then
-			cleanup hard
-			exit 1
-		fi
-		report
-		cleanup nothard
-	done
-fi
 
 report
 cleanup hard
