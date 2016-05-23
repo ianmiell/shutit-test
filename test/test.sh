@@ -159,9 +159,9 @@ then
 	popd > /dev/null 2>&1
 fi
 
-DESC="Testing skeleton build with Dockerfile"
+DESC="Testing skeleton build with Shutitfile"
 echo $DESC
-shutit skeleton --dockerfile test/dockerfile/Dockerfile --module_directory \
+shutit skeleton --shutitfile test/shutitfile/ShutItFile --module_directory \
 	${NEWDIR} --module_name testing --domain shutit.tk \
 	--depends shutit.tk.setup --base_image ubuntu:14.04 --delivery docker \
 	--template_branch docker
@@ -180,7 +180,7 @@ popd > /dev/null 2>&1
 DESC="Testing skeleton build with two ShutItFiles"
 echo $DESC
 shutit skeleton
-	--dockerfiles test/dockerfile/Dockerfile test/shutitfile/ShutItFile \
+	--shutitfiles test/shutitfile/ShutItFile test/shutitfile/ShutItFile2 \
 	--module_directory ${NEWDIR} --module_name testing --domain shutit.tk \
 	--depends shutit.tk.setup --base_image ubuntu:14.04 --delivery docker \
 	--template_branch docker
