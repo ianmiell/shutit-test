@@ -53,51 +53,6 @@ find ${SHUTIT_DIR} -name '*.cnf' | grep '/configs/[^/]*.cnf' | xargs chmod 600
 cleanup hard
 
 
-# General tests
-mkdir -p /tmp/shutit_logs/$$
-declare -A PIDS
-PIDS=()
-DISTROS=${SHUTITTEST_DISTROS:-ubuntu:14.04}
-for dist in $DISTROS
-do
-	for d in $(ls -d test/[0-9]* | sort -n)
-	do
-		[ -d ${SHUTIT_DIR}/$d ] || continue
-		pushd ${SHUTIT_DIR}/$d/bin
-		if [[ -a STOPTEST ]]
-		then
-			echo "STOPTEST file found in $(pwd)"
-		else 
-			if [[ -a /tmp/SHUTITSTOPTEST ]]
-			then
-				echo "/tmp/SHUTITSTOPTEST file found in /tmp"
-			else
-				# Must be done on each iteration as we need a fresh cid per test run
-				set_shutit_options "--image_tag $dist --interactive 0 --imageerrorok"
-				echo "================================================================================"
-				echo "SHUTIT MODULE TEST $d: In directory: `pwd` BEGIN"
-				echo "================================================================================"
-				./test.sh --interactive 0 -l debug
-				RES=$?
-				if [[ "x$RES" != "x0" ]]
-				then
-					echo "FAILURE |$RES| in: $(pwd) running test.sh"
-					cleanup hard
-					exit 1
-				fi
-				cleanup hard
-				echo "================================================================================"
-				echo "SHUTIT MODULE TEST $d: In directory: `pwd` END"
-				echo "================================================================================"
-				set_shutit_options
-			fi
-		fi
-		report
-		popd
-	done
-done
-
-
 if [[ $(which vagrant) != '' ]]
 then
 	DESC="Testing vagrant build basic bare"
@@ -268,6 +223,51 @@ do
 	fi
 done
 popd
+
+
+# General docker build tests
+mkdir -p /tmp/shutit_logs/$$
+declare -A PIDS
+PIDS=()
+DISTROS=${SHUTITTEST_DISTROS:-ubuntu:14.04}
+for dist in $DISTROS
+do
+	for d in $(ls -d test/[0-9]* | sort -n)
+	do
+		[ -d ${SHUTIT_DIR}/$d ] || continue
+		pushd ${SHUTIT_DIR}/$d/bin
+		if [[ -a STOPTEST ]]
+		then
+			echo "STOPTEST file found in $(pwd)"
+		else 
+			if [[ -a /tmp/SHUTITSTOPTEST ]]
+			then
+				echo "/tmp/SHUTITSTOPTEST file found in /tmp"
+			else
+				# Must be done on each iteration as we need a fresh cid per test run
+				set_shutit_options "--image_tag $dist --interactive 0 --imageerrorok"
+				echo "================================================================================"
+				echo "SHUTIT MODULE TEST $d: In directory: `pwd` BEGIN"
+				echo "================================================================================"
+				./test.sh --interactive 0 -l debug
+				RES=$?
+				if [[ "x$RES" != "x0" ]]
+				then
+					echo "FAILURE |$RES| in: $(pwd) running test.sh"
+					cleanup hard
+					exit 1
+				fi
+				cleanup hard
+				echo "================================================================================"
+				echo "SHUTIT MODULE TEST $d: In directory: `pwd` END"
+				echo "================================================================================"
+				set_shutit_options
+			fi
+		fi
+		report
+		popd
+	done
+done
 
 report
 cleanup hard
