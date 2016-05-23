@@ -1,0 +1,4 @@
+# Example Dockerfile for test purposes
+
+MODULE tk.shutit.complex_shutitfile_test2
+DEPENDS tk.shutit.complex_shutitfile_test

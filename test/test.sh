@@ -196,6 +196,25 @@ cleanup hard
 rm -rf ${NEWDIR}
 popd > /dev/null 2>&1
 
+DESC="Testing skeleton build with two complex ShutItFiles"
+echo $DESC
+shutit skeleton
+	--shutitfiles \
+		test/shutitfile_complex/ShutItFile test/shutitfile_complex/ShutItFile2 \
+	--module_directory ${NEWDIR} --module_name testing --domain shutit.tk \
+	--delivery bash --template_branch bash
+pushd ${NEWDIR}/bin
+./test.sh --interactive 0
+if [[ "x$?" != "x0" ]]
+then
+	echo "FAILED ON $DESC: $?"
+	cleanup hard
+	exit 1
+fi
+cleanup hard
+rm -rf ${NEWDIR}
+popd > /dev/null 2>&1
+
 DESC="Testing skeleton build basic bare"
 echo $DESC
 shutit skeleton --module_directory ${NEWDIR} --module_name testing \

@@ -1,0 +1,26 @@
+MODULE_ID tk.shutit.complex_shutitfile_test
+
+RUN touch /tmp/shutitfile
+
+START_BEGIN
+RUN touch /tmp/start_section
+START_END
+
+CONFIG_BEGIN
+RUN touch /tmp/config_section
+CONFIG_END
+
+STOP_BEGIN
+RUN touch /tmp/stop_section
+STOP_END
+
+TEST_BEGIN
+RUN /bin/bash -c '-a /tmp/start_section'
+RUN /bin/bash -c '-a /tmp/stop_section'
+RUN /bin/bash -c '-a /tmp/build_section'
+RUN /bin/bash -c '-a /tmp/config_section'
+TEST_END
+
+BUILD_BEGIN
+RUN touch /tmp/build_section
+BUILD_END
