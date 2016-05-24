@@ -5,8 +5,9 @@ import string
 class shutit_test(ShutItModule):
 
 	def build(self, shutit):
-		vagrant_image = shutit.cfg[self.module_id]['vagrant_image']
+		vagrant_image    = shutit.cfg[self.module_id]['vagrant_image']
 		vagrant_provider = shutit.cfg[self.module_id]['vagrant_provider']
+		shutit_branch    = shutit.cfg[self.module_id]['shutit_branch']
 		module_name = 'shutit_test_' + ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(6))
 		shutit.send('rm -rf /tmp/' + module_name + ' && mkdir -p /tmp/' + module_name + ' && cd /tmp/' + module_name)
 		shutit.send('vagrant init ' + vagrant_image)
@@ -15,7 +16,7 @@ class shutit_test(ShutItModule):
 		shutit.login(command='sudo su -',password='vagrant')
 
 		shutit.install('git docker.io python-pip')
-		shutit.send('git clone --depth=1 https://github.com/ianmiell/shutit && cd shutit')
+		shutit.send('git clone --depth=1 -b ' + shutit_branch + ' https://github.com/ianmiell/shutit && cd shutit')
 		shutit.send('pip install .')
 		shutit.send('cd ..')
 		shutit.send('git clone https://github.com/ianmiell/shutit-test')
@@ -27,15 +28,9 @@ class shutit_test(ShutItModule):
 		return True
 
 	def get_config(self, shutit):
-		# CONFIGURATION
-		# shutit.get_config(module_id,option,default=None,boolean=False)
-		#                                    - Get configuration value, boolean indicates whether the item is
-		#                                      a boolean type, eg get the config with:
-		# shutit.get_config(self.module_id, 'myconfig', default='a value')
-		#                                      and reference in your code with:
-		# shutit.cfg[self.module_id]['myconfig']
 		shutit.get_config(self.module_id,'vagrant_image',default='ubuntu/trusty64')
 		shutit.get_config(self.module_id,'vagrant_provider',default='virtualbox')
+		shutit.get_config(self.module_id,'shutit_branch',default='test')
 		return True
 
 def module():
