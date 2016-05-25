@@ -71,8 +71,8 @@ then
 		exit 1
 	fi
 	cleanup hard
+	popd
 	rm -rf ${NEWDIR}
-	popd > /dev/null 2>&1
 	
 	
 	DESC="Testing vagrant_multinode build basic bare"
@@ -91,8 +91,8 @@ then
 		exit 1
 	fi
 	cleanup hard
+	popd
 	rm -rf ${NEWDIR}
-	popd > /dev/null 2>&1
 	
 	
 	DESC="Testing docker_tutorial build basic bare"
@@ -110,8 +110,8 @@ then
 		cleanup hard
 		exit 1
 	fi
+	popd
 	rm -rf ${NEWDIR}
-	popd > /dev/null 2>&1
 fi
 
 DESC="Testing skeleton build with Shutitfile"
@@ -129,8 +129,8 @@ then
 	exit 1
 fi
 cleanup hard
+popd
 rm -rf ${NEWDIR}
-popd > /dev/null 2>&1
 
 DESC="Testing skeleton build with two ShutItFiles"
 echo $DESC
@@ -148,8 +148,8 @@ then
 	exit 1
 fi
 cleanup hard
+popd
 rm -rf ${NEWDIR}
-popd > /dev/null 2>&1
 
 DESC="Testing skeleton build with two complex ShutItFiles"
 echo $DESC
@@ -167,8 +167,8 @@ then
 	exit 1
 fi
 cleanup hard
+popd
 rm -rf ${NEWDIR}
-popd > /dev/null 2>&1
 
 DESC="Testing skeleton build basic bare"
 echo $DESC
@@ -184,8 +184,8 @@ then
 	exit 1
 fi
 cleanup hard
+popd
 rm -rf ${NEWDIR}
-popd > /dev/null 2>&1
 
 
 DESC="Testing skeleton build basic with example script"
@@ -204,25 +204,9 @@ then
 	exit 1
 fi
 cleanup hard
-rm -rf ${NEWDIR}
-popd > /dev/null 2>&1
-
-
-pushd test/1
-#TODO: "list_deps"
-for arg in "list_modules" "list_configs" "list_modules --long" "list_modules --sort id"
-do
-	echo $arg
-	eval shutit $arg -l debug
-	RES=$?
-	if [[ "x$RES" != "x0" ]]
-	then
-		echo "FAILURE |$RES| in: $(pwd) running test.sh"
-		cleanup hard
-		exit 1
-	fi
-done
 popd
+rm -rf ${NEWDIR}
+
 
 
 # General docker build tests
@@ -268,6 +252,24 @@ do
 		popd
 	done
 done
+
+
+pushd test/1
+#TODO: "list_deps"
+for arg in "list_modules" "list_configs" "list_modules --long" "list_modules --sort id"
+do
+	echo $arg
+	eval shutit $arg -l debug
+	RES=$?
+	if [[ "x$RES" != "x0" ]]
+	then
+		echo "FAILURE |$RES| in: $(pwd) running test.sh"
+		cleanup hard
+		exit 1
+	fi
+done
+popd
+
 
 report
 cleanup hard
