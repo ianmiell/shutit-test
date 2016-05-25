@@ -158,8 +158,8 @@ shutit skeleton \
 		test/shutitfile_complex/ShutItFile test/shutitfile_complex/ShutItFile2 \
 	--module_directory ${NEWDIR} --module_name testing --domain shutit.tk \
 	--delivery bash --template_branch bash
-pushd ${NEWDIR}/bin
-./test.sh --interactive 0
+pushd ${NEWDIR}
+./run.sh -l debug
 if [[ "x$?" != "x0" ]]
 then
 	echo "FAILED ON $DESC: $?"
