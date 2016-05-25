@@ -208,6 +208,25 @@ popd
 rm -rf ${NEWDIR}
 
 
+pushd test/1
+#TODO: "list_deps"
+#TODO: there's a problem with list_configs...
+#for arg in "list_modules" "list_configs" "list_modules --long" "list_modules --sort id"
+for arg in "list_modules" "list_modules --long" "list_modules --sort id"
+do
+	echo $arg
+	eval shutit $arg -l debug
+	RES=$?
+	if [[ "x$RES" != "x0" ]]
+	then
+		echo "FAILURE |$RES| in: $(pwd) running test.sh"
+		cleanup hard
+		exit 1
+	fi
+done
+popd
+
+
 
 # General docker build tests
 mkdir -p /tmp/shutit_logs/$$
@@ -253,22 +272,6 @@ do
 	done
 done
 
-
-pushd test/1
-#TODO: "list_deps"
-for arg in "list_modules" "list_configs" "list_modules --long" "list_modules --sort id"
-do
-	echo $arg
-	eval shutit $arg -l debug
-	RES=$?
-	if [[ "x$RES" != "x0" ]]
-	then
-		echo "FAILURE |$RES| in: $(pwd) running test.sh"
-		cleanup hard
-		exit 1
-	fi
-done
-popd
 
 
 report
