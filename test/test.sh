@@ -159,7 +159,7 @@ shutit skeleton \
 	--module_directory ${NEWDIR} --module_name testing --domain shutit.tk \
 	--delivery bash --template_branch bash
 pushd ${NEWDIR}
-./run.sh -l debug
+./run.sh
 if [[ "x$?" != "x0" ]]
 then
 	echo "FAILED ON $DESC: $?"
