@@ -10,5 +10,8 @@ shutit skeleton \
 	--module_name testing \
 	--domain shutit.tk \
 	--delivery bash \
-	--template_branch bash   
+	--template_branch bash
+pushd /tmp/asd
+./run.sh
+popd
 popd
