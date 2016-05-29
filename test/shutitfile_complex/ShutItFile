@@ -1,5 +1,7 @@
 MODULE_ID tk.shutit.complex_shutitfile_test
 
+DELIVERY bash
+
 RUN touch /tmp/shutitfile
 
 START_BEGIN
