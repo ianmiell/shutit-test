@@ -1,5 +1,7 @@
 # Example ShutItFile for test purposes
 
+#DELIVERY docker
+
 RUN touch /tmp/shutitfile
 
 START_BEGIN

@@ -1,4 +1,6 @@
 # Example Dockerfile for test purposes
 
 MODULE tk.shutit.complex_shutitfile_test2
+RUN touch ianhere
 DEPENDS tk.shutit.complex_shutitfile_test
+
