@@ -2,12 +2,16 @@ MODULE_ID tk.shutit.complex_shutitfile_test
 
 DELIVERY bash
 
+# Build is assumed by default, so this will end up in the build section
 RUN touch shutitfile
 
 SEND whoami
 ASSERT_OUTPUT imiell
 #SEND whoami
 #ASSERT_OUTPUT root
+
+LOGIN imiell
+GET_PASSWORD Input imiell's password
 
 COMMENT building stuff
 
