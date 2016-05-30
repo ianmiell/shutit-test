@@ -30,7 +30,7 @@ class shutit_test(ShutItModule):
 	def get_config(self, shutit):
 		shutit.get_config(self.module_id,'vagrant_image',default='ubuntu/trusty64')
 		shutit.get_config(self.module_id,'vagrant_provider',default='virtualbox')
-		shutit.get_config(self.module_id,'shutit_branch',default='test')
+		shutit.get_config(self.module_id,'shutit_branch')
 		return True
 
 def module():
