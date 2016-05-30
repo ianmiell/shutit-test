@@ -4,6 +4,11 @@ DELIVERY bash
 
 RUN touch shutitfile
 
+SEND whoami
+ASSERT_OUTPUT imiell
+#SEND whoami
+#ASSERT_OUTPUT root
+
 COMMENT building stuff
 
 ENV A=1
@@ -32,6 +37,12 @@ TEST_END
 
 BUILD_BEGIN
 #USER imiell
+
+# Testing send and expect
+RUN echo "asd
+EXPECT >
+RUN "
+
 WORKDIR /tmp
 RUN touch build_section
 BUILD_END
