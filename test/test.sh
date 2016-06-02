@@ -62,7 +62,6 @@ then
 		--delivery bash --template_branch vagrant 
 	pushd ${NEWDIR}
 	chmod +x destroy_vms.sh
-	ls -l
 	./run.sh --interactive 0
 	if [[ "x$?" != "x0" ]]
 	then
@@ -82,7 +81,6 @@ then
 		--delivery bash --template_branch vagrant_multinode
 	pushd ${NEWDIR}
 	chmod +x destroy_vms.sh
-	ls -l
 	./run.sh --interactive 0
 	if [[ "x$?" != "x0" ]]
 	then
@@ -102,7 +100,6 @@ then
 		--delivery docker --template_branch docker_tutorial
 	pushd ${NEWDIR}
 	chmod +x destroy_vms.sh
-	ls -l
 	./run.sh --interactive 0
 	if [[ "x$?" != "x0" ]]
 	then
