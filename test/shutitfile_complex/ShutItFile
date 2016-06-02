@@ -2,6 +2,17 @@ MODULE_ID tk.shutit.complex_shutitfile_test
 
 DELIVERY bash
 
+IF NOT FILE_EXISTS /home/imiell/.bashrc
+SEND ls
+IF FILE_EXISTS /home/imiell/asdasdasd
+SEND ls
+ELIF NOT FILE_EXISTS /home/imiell/asdasdasd
+SEND ls
+ELIF FILE_EXISTS /tmp
+SEND ls
+ENDIF
+ENDIF
+
 # Build is assumed by default, so this will end up in the build section
 RUN touch shutitfile
 
