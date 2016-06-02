@@ -148,24 +148,25 @@ cleanup hard
 popd
 rm -rf ${NEWDIR}
 
-DESC="Testing skeleton build with two complex ShutItFiles"
-echo $DESC
-shutit skeleton \
-	--shutitfiles \
-		test/shutitfile_complex/ShutItFile test/shutitfile_complex/ShutItFile2 \
-	--module_directory ${NEWDIR} --module_name testing --domain shutit.tk \
-	--delivery bash --template_branch bash
-pushd ${NEWDIR}
-./run.sh
-if [[ "x$?" != "x0" ]]
-then
-	echo "FAILED ON $DESC: $?"
-	cleanup hard
-	exit 1
-fi
-cleanup hard
-popd
-rm -rf ${NEWDIR}
+# Must be run interactively
+#DESC="Testing skeleton build with two complex ShutItFiles"
+#echo $DESC
+#shutit skeleton \
+#	--shutitfiles \
+#		test/shutitfile_complex/ShutItFile test/shutitfile_complex/ShutItFile2 \
+#	--module_directory ${NEWDIR} --module_name testing --domain shutit.tk \
+#	--delivery bash --template_branch bash
+#pushd ${NEWDIR}
+#./run.sh
+#if [[ "x$?" != "x0" ]]
+#then
+#	echo "FAILED ON $DESC: $?"
+#	cleanup hard
+#	exit 1
+#fi
+#cleanup hard
+#popd
+#rm -rf ${NEWDIR}
 
 DESC="Testing skeleton build basic bare"
 echo $DESC
