@@ -5,7 +5,7 @@ FROM ubuntu:14.04
 # WORKDIR
 WORKDIR /
 
-ENV HOME /root
+ENV HOME=/root
 
 RUN apt-get install -y iputils-ping
 RUN ping -c 1 localhost
