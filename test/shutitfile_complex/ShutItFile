@@ -60,6 +60,9 @@ RUN "
 
 WORKDIR /tmp
 RUN touch build_section
+SEND sleep 15 && touch /tmp/asdfghjkl &
+SEND ls /tmp
+UNTIL ['.*asdfghjk.*']
 BUILD_END
 
 MAINTAINER ian.miell@gmail.com

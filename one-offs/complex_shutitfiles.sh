@@ -12,6 +12,6 @@ shutit skeleton \
 	--delivery bash \
 	--template_branch bash
 pushd /tmp/asd
-./run.sh
+./run.sh -l debug
 popd
 popd
