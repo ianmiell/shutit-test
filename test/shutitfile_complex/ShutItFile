@@ -63,6 +63,10 @@ RUN touch build_section
 SEND sleep 15 && touch /tmp/asdfghjkl &
 SEND ls /tmp
 UNTIL ['.*asdfghjk.*']
+SCRIPT_BEGIN
+echo 1
+echo 2
+SCRIPT_END
 BUILD_END
 
 MAINTAINER ian.miell@gmail.com
