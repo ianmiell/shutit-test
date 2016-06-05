@@ -113,7 +113,7 @@ fi
 
 DESC="Testing skeleton build with Shutitfile"
 echo $DESC
-shutit skeleton --shutitfiles test/shutitfile/ShutItFile --module_directory \
+shutit skeleton --shutitfiles test/shutitfiles/shutitfile/ShutItFile --module_directory \
 	${NEWDIR} --module_name testing --domain shutit.tk \
 	--depends shutit.tk.setup --base_image ubuntu:14.04 --delivery docker \
 	--template_branch docker
@@ -132,7 +132,7 @@ rm -rf ${NEWDIR}
 DESC="Testing skeleton build with two ShutItFiles"
 echo $DESC
 shutit skeleton \
-	--shutitfiles test/shutitfile/ShutItFile test/shutitfile/ShutItFile2 \
+	--shutitfiles test/shutitfiles/shutitfile/ShutItFile test/shutitfiles/shutitfile/ShutItFile2 \
 	--module_directory ${NEWDIR} --module_name testing --domain shutit.tk \
 	--depends shutit.tk.setup --base_image ubuntu:14.04 --delivery docker \
 	--template_branch docker
