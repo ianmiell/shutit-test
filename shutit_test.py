@@ -21,6 +21,7 @@ class shutit_test(ShutItModule):
 		shutit.send('cd ..')
 		shutit.send('git clone https://github.com/ianmiell/shutit-test')
 		shutit.send('cd shutit-test/test')
+		# TODO: divide up tests and make optional
 		shutit.send('./test.sh')
 
 		shutit.logout()

@@ -15,3 +15,7 @@ STOP_END
 TEST_BEGIN
 RUN /bin/true
 TEST_END
+
+ADD afile /tmp/afile
+COPY afile2 /tmp/afile2
+
