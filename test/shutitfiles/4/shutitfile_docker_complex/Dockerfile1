@@ -1,0 +1,74 @@
+MODULE_ID tk.shutit.complex_shutitfile_test
+
+DELIVERY docker
+
+IF NOT FILE_EXISTS /home/imiell/.bashrc
+SEND ls
+IF FILE_EXISTS /home/imiell/asdasdasd
+SEND ls
+ELIF NOT FILE_EXISTS /home/imiell/asdasdasd
+SEND ls
+ELIF FILE_EXISTS /tmp
+SEND ls
+ENDIF
+ENDIF
+
+# Build is assumed by default, so this will end up in the build section
+RUN touch shutitfile
+
+SEND whoami
+ASSERT_OUTPUT root
+
+#LOGIN/GET_PASSWORD/LOGOUT - hashed out for automated testing purposes
+#LOGIN imiell
+#GET_PASSWORD Input imiell's password
+#LOGOUT
+
+COMMENT building stuff
+
+ENV A=1
+
+START_BEGIN
+WORKDIR /tmp
+RUN touch start_section
+START_END
+
+CONFIG_BEGIN
+WORKDIR /tmp
+RUN touch config_section
+CONFIG_END
+
+STOP_BEGIN
+WORKDIR /tmp
+RUN touch stop_section
+STOP_END
+
+TEST_BEGIN
+RUN /bin/bash -c '[[ -a /tmp/start_section ]]'
+RUN /bin/bash -c '[[ -a /tmp/stop_section ]]'
+RUN /bin/bash -c '[[ -a /tmp/build_section ]]'
+RUN /bin/bash -c '[[ -a /tmp/config_section ]]'
+TEST_END
+
+BUILD_BEGIN
+#USER imiell
+
+# Testing send and expect
+RUN echo "asd
+EXPECT >
+RUN "
+
+WORKDIR /tmp
+RUN touch build_section
+SEND sleep 15 && touch /tmp/asdfghjkl &
+SEND ls /tmp
+UNTIL ['.*asdfghjk.*']
+SCRIPT_BEGIN
+echo 1
+echo 2
+SCRIPT_END
+SEND ls
+EXPECT_MULTI ['neverseen=b','neverseen2=c']
+BUILD_END
+
+MAINTAINER ian.miell@gmail.com

@@ -3,9 +3,9 @@ set -e
 set -x
 rm -rf /tmp/asd
 pushd ..
-shutit skeleton \
-	--shutitfiles shutitfiles/shutitfile_complex/ShutItFile \
-	              shutitfiles/shutitfile_complex/ShutItFile2 \
+/space/git/shutit/shutit skeleton \
+	--shutitfiles shutitfiles/2/shutitfile_complex/ShutItFile \
+	              shutitfiles/2/shutitfile_complex/ShutItFile2 \
 	--module_directory /tmp/asd \
 	--module_name testing \
 	--domain shutit.tk \

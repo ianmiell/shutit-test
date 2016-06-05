@@ -1,0 +1,7 @@
+# Example Dockerfile for test purposes
+
+MODULE tk.shutit.complex_shutitfile_test2
+RUN touch ianhere
+INSTALL wget
+DEPENDS tk.shutit.complex_shutitfile_test
+
