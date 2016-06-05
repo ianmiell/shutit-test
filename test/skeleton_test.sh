@@ -53,64 +53,6 @@ find ${SHUTIT_DIR} -name '*.cnf' | grep '/configs/[^/]*.cnf' | xargs chmod 600
 cleanup hard
 
 
-if [[ $(which vagrant) != '' ]]
-then
-	DESC="Testing vagrant build basic bare"
-	echo $DESC
-	shutit skeleton --module_directory ${NEWDIR} --module_name testing \
-		--domain shutit.tk --depends shutit.tk.setup --base_image ubuntu:14.04 \
-		--delivery bash --template_branch vagrant 
-	pushd ${NEWDIR}
-	chmod +x destroy_vms.sh
-	./run.sh --interactive 0
-	if [[ "x$?" != "x0" ]]
-	then
-		echo "FAILED ON $DESC"
-		cleanup hard
-		exit 1
-	fi
-	cleanup hard
-	popd
-	rm -rf ${NEWDIR}
-	
-	
-	DESC="Testing vagrant_multinode build basic bare"
-	echo $DESC
-	shutit skeleton --module_directory ${NEWDIR} --module_name testing \
-		--domain shutit.tk --depends shutit.tk.setup --base_image ubuntu:14.04 \
-		--delivery bash --template_branch vagrant_multinode
-	pushd ${NEWDIR}
-	chmod +x destroy_vms.sh
-	./run.sh --interactive 0
-	if [[ "x$?" != "x0" ]]
-	then
-		echo "FAILED ON $DESC"
-		cleanup hard
-		exit 1
-	fi
-	cleanup hard
-	popd
-	rm -rf ${NEWDIR}
-	
-	
-	DESC="Testing docker_tutorial build basic bare"
-	echo $DESC
-	shutit skeleton --module_directory ${NEWDIR} --module_name testing \
-		--domain shutit.tk --depends shutit.tk.setup --base_image ubuntu:14.04 \
-		--delivery docker --template_branch docker_tutorial
-	pushd ${NEWDIR}
-	chmod +x destroy_vms.sh
-	./run.sh --interactive 0
-	if [[ "x$?" != "x0" ]]
-	then
-		echo "FAILED ON $DESC"
-		cleanup hard
-		exit 1
-	fi
-	popd
-	rm -rf ${NEWDIR}
-fi
-
 DESC="Testing skeleton build with Shutitfile"
 echo $DESC
 shutit skeleton --shutitfiles test/shutitfiles/1/shutitfile/ShutItFile --module_directory \
@@ -190,7 +132,7 @@ DESC="Testing skeleton build basic with example script"
 echo $DESC
 shutit skeleton --module_directory ${NEWDIR} --module_name testing \
 	--domain shutit.tk --depends shutit.tk.setup --base_image ubuntu:14.04 \
-	--script ${SHUTIT_DIR}/test/assets/example.sh --delivery docker \
+	--script assets/example.sh --delivery docker \
 	--template_branch docker
 
 pushd ${NEWDIR}/bin
@@ -204,76 +146,6 @@ fi
 cleanup hard
 popd
 rm -rf ${NEWDIR}
-
-
-pushd test/1
-#TODO: "list_deps"
-#TODO: there's a problem with list_configs...
-#for arg in "list_modules" "list_configs" "list_modules --long" "list_modules --sort id"
-for arg in "list_modules" "list_modules --long" "list_modules --sort id"
-do
-	echo $arg
-	eval shutit $arg -l debug
-	RES=$?
-	if [[ "x$RES" != "x0" ]]
-	then
-		echo "FAILURE |$RES| in: $(pwd) running test.sh"
-		cleanup hard
-		exit 1
-	fi
-done
-popd
-
-
-
-# General docker build tests
-mkdir -p /tmp/shutit_logs/$$
-declare -A PIDS
-PIDS=()
-DISTROS=${SHUTITTEST_DISTROS:-ubuntu:14.04}
-for dist in $DISTROS
-do
-	for d in $(ls -d test/[0-9]* | sort -n)
-	do
-		[ -d ${SHUTIT_DIR}/$d ] || continue
-		pushd ${SHUTIT_DIR}/$d/bin
-		if [[ -a STOPTEST ]]
-		then
-			echo "STOPTEST file found in $(pwd)"
-		else 
-			if [[ -a /tmp/SHUTITSTOPTEST ]]
-			then
-				echo "/tmp/SHUTITSTOPTEST file found in /tmp"
-			else
-				# Must be done on each iteration as we need a fresh cid per test run
-				set_shutit_options "--image_tag $dist --interactive 0 --imageerrorok"
-				echo "================================================================================"
-				echo "SHUTIT MODULE TEST $d: In directory: `pwd` BEGIN"
-				echo "================================================================================"
-				./test.sh --interactive 0 -l debug
-				RES=$?
-				if [[ "x$RES" != "x0" ]]
-				then
-					echo "FAILURE |$RES| in: $(pwd) running test.sh"
-					cleanup hard
-					exit 1
-				fi
-				cleanup hard
-				echo "================================================================================"
-				echo "SHUTIT MODULE TEST $d: In directory: `pwd` END"
-				echo "================================================================================"
-				set_shutit_options
-			fi
-		fi
-		report
-		popd
-	done
-done
-
-
-
-report
-cleanup hard
 
 popd > /dev/null 2>&1
 # OK
