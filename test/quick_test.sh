@@ -5,7 +5,15 @@ do
 	then
 		continue
 	fi
+	echo $d
 	pushd $d/bin
-	./test.sh
+	./test.sh "$@"
+	RES=$?
+	echo $RES
+	if [[ $RES != 0 ]]
+	then
+		echo FAILED
+		exit 1
+	fi
 	popd
 done
