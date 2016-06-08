@@ -26,7 +26,6 @@ ASSERT_OUTPUT root
 
 COMMENT building stuff
 
-ENV A=1
 
 START_BEGIN
 WORKDIR /tmp
@@ -64,11 +63,13 @@ SEND sleep 15 && touch /tmp/asdfghjkl &
 SEND ls /tmp
 UNTIL ['.*asdfghjk.*']
 SCRIPT_BEGIN
-echo 1
-echo 2
+echo 1 > /tmp/1
+echo 2 > /tmp/2
 SCRIPT_END
 SEND ls
 EXPECT_MULTI ['neverseen=b','neverseen2=c']
+ENV A=1
+echo $A > /tmp/a
 BUILD_END
 
 MAINTAINER ian.miell@gmail.com
