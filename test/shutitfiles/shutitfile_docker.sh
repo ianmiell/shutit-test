@@ -9,9 +9,8 @@ shutit skeleton \
 	--module_name testing \
 	--domain shutit.tk \
 	--delivery docker \
-	--template_branch docker
+	--template_branch docker 
 pushd /tmp/asd/bin
-#./run.sh -l debug
 ./build.sh
 popd
 popd

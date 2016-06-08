@@ -2,7 +2,6 @@
 set -e
 set -x
 rm -rf /tmp/asd
-pushd ..
 shutit skeleton \
 	--shutitfiles 4/shutitfile_docker_complex/Dockerfile1 \
 	              4/shutitfile_docker_complex/Dockerfile2 \
@@ -12,6 +11,5 @@ shutit skeleton \
 	--delivery docker \
 	--template_branch docker
 pushd /tmp/asd/bin
-./build.sh
-popd
+./build.sh -l debug
 popd

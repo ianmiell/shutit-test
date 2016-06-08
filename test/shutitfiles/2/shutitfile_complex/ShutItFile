@@ -72,3 +72,5 @@ EXPECT_MULTI ['neverseen=b','neverseen2=c']
 BUILD_END
 
 MAINTAINER ian.miell@gmail.com
+DESCRIPTION Ian Miell writ this
+COMMIT deleteme deleteme
