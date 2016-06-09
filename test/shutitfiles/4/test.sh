@@ -11,5 +11,5 @@ shutit skeleton \
 	--delivery docker \
 	--template_branch docker
 pushd /tmp/asd/bin
-./build.sh -l debug
+./build.sh "$@"
 popd
