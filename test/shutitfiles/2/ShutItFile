@@ -73,4 +73,6 @@ BUILD_END
 
 MAINTAINER ian.miell@gmail.com
 DESCRIPTION Ian Miell writ this
-COMMIT deleteme deleteme
+# Not allowed in bash!
+#COMMIT deleteme:deleteme
+#PUSH deleteme:deleteme
