@@ -2,11 +2,11 @@ MODULE_ID tk.shutit.complex_shutitfile_test
 
 DELIVERY bash
 
-IF NOT FILE_EXISTS /home/imiell/.bashrc
+IF_NOT FILE_EXISTS /home/imiell/.bashrc
 SEND ls
 IF FILE_EXISTS /home/imiell/asdasdasd
 SEND ls
-ELIF NOT FILE_EXISTS /home/imiell/asdasdasd
+ELIF_NOT FILE_EXISTS /home/imiell/asdasdasd
 SEND ls
 ELIF FILE_EXISTS /tmp
 SEND ls
@@ -64,11 +64,12 @@ SEND sleep 15 && touch /tmp/asdfghjkl &
 SEND ls /tmp
 UNTIL ['.*asdfghjk.*']
 SCRIPT_BEGIN
-echo 1
-echo 2
+echo 1 > /tmp/one
+echo 2 > /tmp/two
 SCRIPT_END
 SEND ls
 EXPECT_MULTI ['neverseen=b','neverseen2=c']
+REPLACE_LINE ['filename=/tmp/one','pattern=1','line=100']
 BUILD_END
 
 MAINTAINER ian.miell@gmail.com
