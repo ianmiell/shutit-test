@@ -41,7 +41,7 @@ if ! $DOCKER info >/dev/null 2>&1; then
 fi
 
 # This is a fallback, any tests runnable on their own should include the below
-if [[ $0 != test.sh ]] && [[ $0 != ./test.sh ]]
+if [[ $0 != skeleton_test.sh ]] && [[ $0 != ./skeleton_test.sh ]]
 then
 	echo "Must be run from dir of test.sh"
 	exit 1
@@ -60,7 +60,7 @@ shutit skeleton --shutitfiles test/shutitfiles/1/shutitfile/ShutItFile --module_
 	--depends shutit.tk.setup --base_image ubuntu:14.04 --delivery docker \
 	--template_branch docker
 pushd ${NEWDIR}/bin
-./test.sh --interactive 0
+./test.sh --interactive 0 -l debug
 if [[ "x$?" != "x0" ]]
 then
 	echo "FAILED ON $DESC: $?"
@@ -79,7 +79,7 @@ shutit skeleton \
 	--depends shutit.tk.setup --base_image ubuntu:14.04 --delivery docker \
 	--template_branch docker
 pushd ${NEWDIR}/bin
-./test.sh --interactive 0
+./test.sh --interactive 0 -l debug
 if [[ "x$?" != "x0" ]]
 then
 	echo "FAILED ON $DESC: $?"
@@ -116,7 +116,7 @@ shutit skeleton --module_directory ${NEWDIR} --module_name testing \
 	--domain shutit.tk --depends shutit.tk.setup --base_image ubuntu:14.04 \
 	--delivery docker --template_branch docker
 pushd ${NEWDIR}/bin
-./test.sh --interactive 0
+./test.sh --interactive 0 -l debug
 if [[ "x$?" != "x0" ]]
 then
 	echo "FAILED ON $DESC"
@@ -136,7 +136,7 @@ shutit skeleton --module_directory ${NEWDIR} --module_name testing \
 	--template_branch docker
 
 pushd ${NEWDIR}/bin
-./test.sh --interactive 0
+./test.sh --interactive 0 -l debug
 if [[ "x$?" != "x0" ]]
 then
 	echo "FAILED ON $DESC"
