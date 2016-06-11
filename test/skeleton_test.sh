@@ -41,7 +41,7 @@ if ! $DOCKER info >/dev/null 2>&1; then
 fi
 
 # This is a fallback, any tests runnable on their own should include the below
-if [[ $0 != test.sh ]] && [[ $0 != ./test.sh ]]
+if [[ $0 != skeleton_test.sh ]] && [[ $0 != ./skeleton_test.sh ]]
 then
 	echo "Must be run from dir of test.sh"
 	exit 1
