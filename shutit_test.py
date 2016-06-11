@@ -23,6 +23,7 @@ class shutit_test(ShutItModule):
 		shutit.send('cd shutit-test/test')
 		# TODO: divide up tests and make optional
 		shutit.send('./skeleton_test.sh')
+		shutit.send('./docker_test.sh')
 
 		shutit.logout()
 		shutit.logout()
