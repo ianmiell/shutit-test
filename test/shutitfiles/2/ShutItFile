@@ -2,6 +2,8 @@ MODULE_ID tk.shutit.complex_shutitfile_test
 
 DELIVERY bash
 
+LOG DEBUG
+
 IF_NOT FILE_EXISTS /home/imiell/.bashrc
 SEND ls
 IF FILE_EXISTS /home/imiell/asdasdasd
