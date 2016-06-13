@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-set -x
+#set -x
 rm -rf /tmp/asd
 /space/git/shutit/shutit skeleton \
 	--shutitfiles ShutItFile ShutItFile2 \

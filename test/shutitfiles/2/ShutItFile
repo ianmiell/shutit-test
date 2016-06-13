@@ -1,8 +1,7 @@
 MODULE_ID tk.shutit.complex_shutitfile_test
-
 DELIVERY bash
 
-LOG DEBUG
+LOG INFO
 
 IF_NOT FILE_EXISTS /home/imiell/.bashrc
 SEND ls
@@ -18,12 +17,12 @@ ENDIF
 # Build is assumed by default, so this will end up in the build section
 RUN touch shutitfile
 
-SEND whoami
-ASSERT_OUTPUT imiell
+#SEND whoami
+#ASSERT_OUTPUT imiell
 #SEND whoami
 #ASSERT_OUTPUT root
 
-LOGIN imiell
+USER imiell
 GET_PASSWORD Input imiell's password
 
 COMMENT building stuff
@@ -35,10 +34,22 @@ WORKDIR /tmp
 RUN touch start_section
 START_END
 
-CONFIG_BEGIN
-WORKDIR /tmp
-RUN touch config_section
-CONFIG_END
+CONFIG myconfigname myconfigval
+SEND rm -f /tmp/{{ shutit.myconfigname }}
+SEND ls /tmp/myconfigval 2> /dev/null | wc -l
+ASSERT_OUTPUT 0
+SEND touch /tmp/{{ shutit.myconfigname }}
+# Test the value got through ok.
+IF_NOT FILE_EXISTS {{ shutit.myconfigname }}
+	SEND ls /tmp/myconfigval 2> /dev/null | wc -l
+	ASSERT_OUTPUT 1
+ENDIF
+
+# test getting a config
+CONFIG anotherconfigname
+SEND ls /tmp/shutit_{{ shutit.anotherconfigname }} 2> /dev/null | wc -l
+ASSERT_OUTPUT 0
+SEND touch /tmp/shutit_{{ shutit.anotherconfigname }}
 
 STOP_BEGIN
 WORKDIR /tmp
@@ -53,7 +64,6 @@ RUN /bin/bash -c '[[ -a /tmp/config_section ]]'
 TEST_END
 
 BUILD_BEGIN
-#USER imiell
 
 # Testing send and expect
 RUN echo "asd
