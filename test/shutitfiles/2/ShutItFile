@@ -90,6 +90,8 @@ DESCRIPTION Ian Miell writ this
 SEND ping -t 1 -c 1 bbc.co.uk
 EXPECT_REACT ['.*0 packets received.*=echo error > /tmp/bbc_pingres','.*Time to live exceeded.*=echo ttl_exceed > /tmp/bbc_pingres','.*1 packets received.*=echo ok > /tmp/bbc_pingres','.*Unknown host.*=echo unknown > /tmp/bbc_pingres']
 
+WORKDIR /
+
 # Not allowed in bash!
 #COMMIT deleteme:deleteme
 #PUSH deleteme:deleteme
