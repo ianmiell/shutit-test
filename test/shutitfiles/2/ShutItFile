@@ -51,6 +51,10 @@ SEND ls /tmp/shutit_{{ shutit.anotherconfigname }} 2> /dev/null | wc -l
 ASSERT_OUTPUT 0
 SEND touch /tmp/shutit_{{ shutit.anotherconfigname }}
 
+# Secret config
+CONFIG_SECRET anotherconfigname
+
+
 STOP_BEGIN
 WORKDIR /tmp
 RUN touch stop_section
