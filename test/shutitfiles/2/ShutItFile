@@ -12,9 +12,9 @@ RUN rm -f /tmp/shutit_not_here
 RUN touch /tmp/shutit_here
 IF_NOT FILE_EXISTS /tmp/shutit_here
 	RUN touch /tmp/shutit_not_here
-	IF FILE_EXISTS /home/imiell/asdasdasd
+	IF FILE_EXISTS /home/imiell/weghuwbjnwkbn
 		RUN touch /tmp/shutit_not_here
-	ELIF_NOT FILE_EXISTS /home/imiell/asdasdasd
+	ELIF_NOT FILE_EXISTS /home/imiell/weghuwbjnwkbn
 		RUN touch /tmp/shutit_not_here
 	ELIF FILE_EXISTS /tmp
 		RUN touch /tmp/shutit_not_here
@@ -75,6 +75,9 @@ CONFIG anotherconfigname
 SEND ls /tmp/shutit_{{ shutit.anotherconfigname }} 2> /dev/null | wc -l
 ASSERT_OUTPUT 0
 SEND touch /tmp/shutit_{{ shutit.anotherconfigname }}
+SEND ls /tmp/shutit_{{ shutit.anotherconfigname }} 2> /dev/null | wc -l
+ASSERT_OUTPUT 1
+SEND rm -f /tmp/shutit_{{ shutit.anotherconfigname }}
 
 # Secret config
 CONFIG_SECRET anotherconfignamesecret
