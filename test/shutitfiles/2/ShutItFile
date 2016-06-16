@@ -3,6 +3,11 @@ DELIVERY bash
 
 LOG INFO
 
+RUN rm -f /tmp/shutit_ifruntest
+IF RUN ls
+RUN touch /tmp/shutit_ifruntest
+ENDIF
+
 IF_NOT FILE_EXISTS /home/imiell/.bashrc
 SEND ls
 IF FILE_EXISTS /home/imiell/asdasdasd
@@ -96,6 +101,3 @@ EXPECT_REACT ['.*0 packets received.*=echo error > /tmp/bbc_pingres','.*Time to 
 
 WORKDIR /
 
-# Not allowed in bash!
-#COMMIT deleteme:deleteme
-#PUSH deleteme:deleteme
