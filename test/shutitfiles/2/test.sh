@@ -2,7 +2,7 @@
 set -e
 #set -x
 rm -rf /tmp/asd
-/space/git/shutit/shutit skeleton \
+shutit skeleton \
 	--shutitfiles ShutItFile ShutItFile2 \
 	--module_directory /tmp/asd \
 	--module_name testing \
