@@ -1,6 +1,7 @@
 # Example Dockerfile for test purposes
 
 FROM ubuntu:14.04
+DELIVERY docker
 
 # WORKDIR
 WORKDIR /

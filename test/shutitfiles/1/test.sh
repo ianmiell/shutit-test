@@ -2,15 +2,13 @@
 set -e
 set -x
 rm -rf /tmp/asd
-pushd ..
-shutit skeleton \
-	--shutitfiles 3/shutitfile_docker/Dockerfile \
+/space/git/shutit/shutit skeleton \
+	--shutitfiles ShutItFile \
 	--module_directory /tmp/asd \
 	--module_name testing \
 	--domain shutit.tk \
 	--delivery docker \
-	--template_branch docker 
+	--template_branch docker
 pushd /tmp/asd/bin
-./build.sh
-popd
+./test.sh "$@"
 popd

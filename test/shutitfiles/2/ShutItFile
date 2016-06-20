@@ -1,0 +1,125 @@
+MODULE_ID tk.shutit.complex_shutitfile_test
+DELIVERY bash
+
+LOG INFO
+
+RUN rm -f /tmp/shutit_ifruntest
+IF RUN ls
+	RUN touch /tmp/shutit_ifruntest
+ENDIF
+
+RUN rm -f /tmp/shutit_not_here
+RUN touch /tmp/shutit_here
+IF_NOT FILE_EXISTS /tmp/shutit_here
+	RUN touch /tmp/shutit_not_here
+	IF FILE_EXISTS /home/imiell/weghuwbjnwkbn
+		RUN touch /tmp/shutit_not_here
+	ELIF_NOT FILE_EXISTS /home/imiell/weghuwbjnwkbn
+		RUN touch /tmp/shutit_not_here
+	ELIF FILE_EXISTS /tmp
+		RUN touch /tmp/shutit_not_here
+	ENDIF
+ELSE
+	IF FILE_EXISTS /tmp/shutit_here
+		RUN echo 1
+	ELSE
+		QUIT error 1.2
+	ENDIF
+ENDIF
+
+IF FILE_EXISTS /tmp/shutit_not_here
+	QUIT error 1.1
+ENDIF
+
+# Build is assumed by default, so this will end up in the build section
+RUN touch shutitfile
+
+#SEND whoami
+#ASSERT_OUTPUT imiell
+#SEND whoami
+#ASSERT_OUTPUT root
+
+USER imiell
+GET_PASSWORD Input imiell's password
+
+COMMENT building stuff
+
+ENV A=1
+
+START_BEGIN
+WORKDIR /tmp
+RUN touch start_section
+START_END
+
+
+STORE_RUN store_run_test echo store_run
+RUN touch /tmp/shutit_{{ shutit.store_run_test }}
+IF_NOT FILE_EXISTS /tmp/shutit_store_run
+	QUIT error 1.3
+ENDIF
+
+
+CONFIG myconfigname myconfigval
+SEND rm -f /tmp/{{ shutit.myconfigname }}
+SEND ls /tmp/myconfigval 2> /dev/null | wc -l
+ASSERT_OUTPUT 0
+SEND touch /tmp/{{ shutit.myconfigname }}
+# Test the value got through ok.
+IF_NOT FILE_EXISTS {{ shutit.myconfigname }}
+	SEND ls /tmp/myconfigval 2> /dev/null | wc -l
+	ASSERT_OUTPUT 1
+ENDIF
+
+# test getting a config
+CONFIG anotherconfigname
+SEND ls /tmp/shutit_{{ shutit.anotherconfigname }} 2> /dev/null | wc -l
+ASSERT_OUTPUT 0
+SEND touch /tmp/shutit_{{ shutit.anotherconfigname }}
+SEND ls /tmp/shutit_{{ shutit.anotherconfigname }} 2> /dev/null | wc -l
+ASSERT_OUTPUT 1
+SEND rm -f /tmp/shutit_{{ shutit.anotherconfigname }}
+
+# Secret config
+CONFIG_SECRET anotherconfignamesecret
+
+
+STOP_BEGIN
+WORKDIR /tmp
+RUN touch stop_section
+STOP_END
+
+TEST_BEGIN
+RUN /bin/bash -c '[[ -a /tmp/start_section ]]'
+RUN /bin/bash -c '[[ -a /tmp/stop_section ]]'
+RUN /bin/bash -c '[[ -a /tmp/build_section ]]'
+TEST_END
+
+BUILD_BEGIN
+
+# Testing send and expect
+RUN echo "asd
+EXPECT >
+RUN "
+
+WORKDIR /tmp
+RUN touch build_section
+SEND sleep 15 && touch /tmp/asdfghjkl &
+SEND ls /tmp
+UNTIL ['.*asdfghjk.*']
+SCRIPT_BEGIN
+echo 1 > /tmp/one
+echo 2 > /tmp/two
+SCRIPT_END
+SEND ls
+EXPECT_MULTI ['neverseen=b','neverseen2=c']
+REPLACE_LINE ['filename=/tmp/one','pattern=1','line=100']
+BUILD_END
+
+MAINTAINER ian.miell@gmail.com
+DESCRIPTION Ian Miell writ this
+
+SEND ping -t 1 -c 1 bbc.co.uk
+EXPECT_REACT ['.*0 packets received.*=echo error > /tmp/bbc_pingres','.*Time to live exceeded.*=echo ttl_exceed > /tmp/bbc_pingres','.*1 packets received.*=echo ok > /tmp/bbc_pingres','.*Unknown host.*=echo unknown > /tmp/bbc_pingres']
+
+WORKDIR /
+
