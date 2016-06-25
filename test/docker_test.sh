@@ -95,10 +95,10 @@ do
 				echo "SHUTIT MODULE TEST $d: In directory: `pwd` BEGIN"
 				echo "================================================================================"
 				./test.sh --interactive 0 -l debug
-				if [[ $d = 'test/1' ]]
-				then
-					./test.sh --video 5 -l debug
-				fi
+				#if [[ $d = 'test/1' ]]
+				#then
+				#	./test.sh --video 5 -l debug
+				#fi
 				RES=$?
 				if [[ "x$RES" != "x0" ]]
 				then
