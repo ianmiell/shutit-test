@@ -57,7 +57,7 @@ if [[ $(which vagrant) != '' ]]
 then
 	DESC="Testing vagrant build basic bare"
 	echo $DESC
-	shutit skeleton --module_directory ${NEWDIR} --module_name testing \
+	shutit skeleton --name ${NEWDIR} \
 		--domain shutit.tk --depends shutit.tk.setup --base_image ubuntu:14.04 \
 		--delivery bash --template_branch vagrant 
 	pushd ${NEWDIR}
@@ -76,7 +76,7 @@ then
 	
 	DESC="Testing vagrant_multinode build basic bare"
 	echo $DESC
-	shutit skeleton --module_directory ${NEWDIR} --module_name testing \
+	shutit skeleton --name ${NEWDIR} \
 		--domain shutit.tk --depends shutit.tk.setup --base_image ubuntu:14.04 \
 		--delivery bash --template_branch vagrant_multinode
 	pushd ${NEWDIR}
@@ -95,7 +95,7 @@ then
 	
 	DESC="Testing docker_tutorial build basic bare"
 	echo $DESC
-	shutit skeleton --module_directory ${NEWDIR} --module_name testing \
+	shutit skeleton --name ${NEWDIR} \
 		--domain shutit.tk --depends shutit.tk.setup --base_image ubuntu:14.04 \
 		--delivery docker --template_branch docker_tutorial
 	pushd ${NEWDIR}
