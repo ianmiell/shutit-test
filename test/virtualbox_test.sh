@@ -27,6 +27,13 @@ pushd $(dirname ${BASH_SOURCE[0]})/.. > /dev/null 2>&1
 
 source test/shared_test_utils.sh
 
+# Is Virtualbox on here? If not, exit 0.
+if [[ ! 'command -v VBoxManage' ]]
+then
+	echo VBoxManage not available on this host, returning ok
+	exit 0
+fi
+
 # Variables
 NEWDIR=/tmp/shutit_testing_$$_$(hostname)_$(whoami)_$(date -I)_$(date +%N)
 SHUTIT_DIR="$(pwd)"
@@ -41,9 +48,9 @@ if ! $DOCKER info >/dev/null 2>&1; then
 fi
 
 # This is a fallback, any tests runnable on their own should include the below
-if [[ $0 != test.sh ]] && [[ $0 != ./test.sh ]]
+if [[ $0 != virtualbox_test.sh ]] && [[ $0 != ./virtualbox_test.sh ]]
 then
-	echo "Must be run from dir of test.sh"
+	echo "Must be run from dir of virtualbox_test.sh"
 	exit 1
 fi
 
