@@ -4,8 +4,7 @@ set -e
 rm -rf /tmp/asd
 shutit skeleton \
 	--shutitfiles ShutItFile ShutItFile2 \
-	--module_directory /tmp/asd \
-	--module_name testing \
+	--name /tmp/asd \
 	--domain shutit.tk \
 	--delivery bash \
 	--template_branch bash

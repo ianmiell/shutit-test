@@ -5,8 +5,7 @@ rm -rf /tmp/asd
 shutit skeleton \
 	--shutitfiles 4/shutitfile_docker_complex/Dockerfile1 \
 	              4/shutitfile_docker_complex/Dockerfile2 \
-	--module_directory /tmp/asd \
-	--module_name testing \
+	--name /tmp/asd \
 	--domain shutit.tk \
 	--delivery docker \
 	--template_branch docker

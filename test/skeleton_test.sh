@@ -55,8 +55,8 @@ cleanup hard
 
 DESC="Testing skeleton build with Shutitfile"
 echo $DESC
-shutit skeleton --shutitfiles test/shutitfiles/1/ShutItFile --module_directory \
-	${NEWDIR} --module_name testing --domain shutit.tk \
+shutit skeleton --shutitfiles test/shutitfiles/1/ShutItFile --name ${NEWDIR} \
+	--domain shutit.tk \
 	--depends shutit.tk.setup --base_image ubuntu:14.04 --delivery docker \
 	--template_branch docker
 pushd ${NEWDIR}/bin
@@ -75,7 +75,7 @@ DESC="Testing skeleton build with two ShutItFiles"
 echo $DESC
 shutit skeleton \
 	--shutitfiles test/shutitfiles/1/ShutItFile \
-	--module_directory ${NEWDIR} --module_name testing --domain shutit.tk \
+	--name ${NEWDIR} --domain shutit.tk \
 	--depends shutit.tk.setup --base_image ubuntu:14.04 --delivery docker \
 	--template_branch docker
 pushd ${NEWDIR}/bin
@@ -96,7 +96,7 @@ rm -rf ${NEWDIR}
 #shutit skeleton \
 #	--shutitfiles \
 #		test/shutitfile_complex/ShutItFile test/shutitfile_complex/ShutItFile2 \
-#	--module_directory ${NEWDIR} --module_name testing --domain shutit.tk \
+#	--name ${NEWDIR} --domain shutit.tk \
 #	--delivery bash --template_branch bash
 #pushd ${NEWDIR}
 #./run.sh
@@ -112,7 +112,7 @@ rm -rf ${NEWDIR}
 
 DESC="Testing skeleton build basic bare"
 echo $DESC
-shutit skeleton --module_directory ${NEWDIR} --module_name testing \
+shutit skeleton --name ${NEWDIR} \
 	--domain shutit.tk --depends shutit.tk.setup --base_image ubuntu:14.04 \
 	--delivery docker --template_branch docker
 pushd ${NEWDIR}/bin
@@ -130,7 +130,7 @@ rm -rf ${NEWDIR}
 
 DESC="Testing skeleton build basic with example script"
 echo $DESC
-shutit skeleton --module_directory ${NEWDIR} --module_name testing \
+shutit skeleton --name ${NEWDIR} \
 	--domain shutit.tk --depends shutit.tk.setup --base_image ubuntu:14.04 \
 	--script assets/example.sh --delivery docker \
 	--template_branch docker
