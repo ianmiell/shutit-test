@@ -23,7 +23,7 @@ TESTS=${1:-basic}
 
 pushd $(dirname ${BASH_SOURCE[0]})/.. > /dev/null 2>&1
 
-#set -x
+set -x
 
 source test/shared_test_utils.sh
 

@@ -32,11 +32,6 @@ WORKDIR /tmp
 RUN touch start_section
 START_END
 
-CONFIG_BEGIN
-WORKDIR /tmp
-RUN touch config_section
-CONFIG_END
-
 STOP_BEGIN
 WORKDIR /tmp
 RUN touch stop_section
