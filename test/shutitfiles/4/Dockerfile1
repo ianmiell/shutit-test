@@ -41,7 +41,6 @@ TEST_BEGIN
 RUN /bin/bash -c '[[ -a /tmp/start_section ]]'
 RUN /bin/bash -c '[[ -a /tmp/stop_section ]]'
 RUN /bin/bash -c '[[ -a /tmp/build_section ]]'
-RUN /bin/bash -c '[[ -a /tmp/config_section ]]'
 TEST_END
 
 BUILD_BEGIN
