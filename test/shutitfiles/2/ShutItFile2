@@ -2,6 +2,7 @@
 
 MODULE_ID tk.shutit.complex_shutitfile_test2
 RUN touch ianhere
-INSTALL wget
+# Requires interaction
+#INSTALL wget
 DEPENDS tk.shutit.complex_shutitfile_test
 
