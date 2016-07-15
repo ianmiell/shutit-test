@@ -39,8 +39,9 @@ RUN touch shutitfile
 #SEND whoami
 #ASSERT_OUTPUT root
 
-USER imiell
-GET_PASSWORD Input imiell's password
+# Requires interaction - take out if interaction should be tested
+#USER imiell
+#GET_PASSWORD Input imiell's password
 
 COMMENT building stuff
 
@@ -71,7 +72,7 @@ IF_NOT FILE_EXISTS {{ shutit.myconfigname }}
 ENDIF
 
 # test getting a config
-CONFIG anotherconfigname
+CONFIG anotherconfigname configname
 SEND ls /tmp/shutit_{{ shutit.anotherconfigname }} 2> /dev/null | wc -l
 ASSERT_OUTPUT 0
 SEND touch /tmp/shutit_{{ shutit.anotherconfigname }}
@@ -80,7 +81,7 @@ ASSERT_OUTPUT 1
 SEND rm -f /tmp/shutit_{{ shutit.anotherconfigname }}
 
 # Secret config
-CONFIG_SECRET anotherconfignamesecret
+CONFIG_SECRET anotherconfignamesecret secret
 
 
 STOP_BEGIN
