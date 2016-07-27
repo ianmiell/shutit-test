@@ -66,7 +66,7 @@ then
 	echo $DESC
 	shutit skeleton --name ${NEWDIR} \
 		--domain shutit.tk --depends shutit.tk.setup --base_image ubuntu:14.04 \
-		--delivery bash --template_branch vagrant 
+		--delivery bash --pattern vagrant 
 	pushd ${NEWDIR}
 	chmod +x destroy_vms.sh
 	./run.sh --interactive 0
@@ -85,7 +85,7 @@ then
 	echo $DESC
 	shutit skeleton --name ${NEWDIR} \
 		--domain shutit.tk --depends shutit.tk.setup --base_image ubuntu:14.04 \
-		--delivery bash --template_branch vagrant_multinode
+		--delivery bash --pattern vagrant_multinode
 	pushd ${NEWDIR}
 	chmod +x destroy_vms.sh
 	./run.sh --interactive 0
@@ -104,7 +104,7 @@ then
 	echo $DESC
 	shutit skeleton --name ${NEWDIR} \
 		--domain shutit.tk --depends shutit.tk.setup --base_image ubuntu:14.04 \
-		--delivery docker --template_branch docker_tutorial
+		--delivery docker --pattern docker_tutorial
 	pushd ${NEWDIR}
 	chmod +x destroy_vms.sh
 	./run.sh --interactive 0

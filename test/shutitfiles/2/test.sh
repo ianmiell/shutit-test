@@ -7,7 +7,7 @@ shutit skeleton \
 	--name /tmp/asd \
 	--domain shutit.tk \
 	--delivery bash \
-	--template_branch bash
+	--pattern bash
 pushd /tmp/asd
 #./run.sh -l debug
 ./run.sh "$@"

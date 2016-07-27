@@ -7,7 +7,7 @@ shutit skeleton \
 	--name /tmp/asd \
 	--domain shutit.tk \
 	--delivery docker \
-	--template_branch docker 
+	--pattern docker 
 pushd /tmp/asd/bin
 ./build.sh "$@"
 popd

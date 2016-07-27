@@ -58,7 +58,7 @@ echo $DESC
 shutit skeleton --shutitfiles test/shutitfiles/1/ShutItFile --name ${NEWDIR} \
 	--domain shutit.tk \
 	--depends shutit.tk.setup --base_image ubuntu:14.04 --delivery docker \
-	--template_branch docker
+	--pattern docker
 pushd ${NEWDIR}/bin
 ./test.sh --interactive 0 -l debug
 if [[ "x$?" != "x0" ]]
@@ -77,7 +77,7 @@ shutit skeleton \
 	--shutitfiles test/shutitfiles/1/ShutItFile \
 	--name ${NEWDIR} --domain shutit.tk \
 	--depends shutit.tk.setup --base_image ubuntu:14.04 --delivery docker \
-	--template_branch docker
+	--pattern docker
 pushd ${NEWDIR}/bin
 ./test.sh --interactive 0 -l debug
 if [[ "x$?" != "x0" ]]
@@ -97,7 +97,7 @@ rm -rf ${NEWDIR}
 #	--shutitfiles \
 #		test/shutitfile_complex/ShutItFile test/shutitfile_complex/ShutItFile2 \
 #	--name ${NEWDIR} --domain shutit.tk \
-#	--delivery bash --template_branch bash
+#	--delivery bash --pattern bash
 #pushd ${NEWDIR}
 #./run.sh
 #if [[ "x$?" != "x0" ]]
@@ -114,7 +114,7 @@ DESC="Testing skeleton build basic bare"
 echo $DESC
 shutit skeleton --name ${NEWDIR} \
 	--domain shutit.tk --depends shutit.tk.setup --base_image ubuntu:14.04 \
-	--delivery docker --template_branch docker
+	--delivery docker --pattern docker
 pushd ${NEWDIR}/bin
 ./test.sh --interactive 0 -l debug
 if [[ "x$?" != "x0" ]]
@@ -133,7 +133,7 @@ echo $DESC
 shutit skeleton --name ${NEWDIR} \
 	--domain shutit.tk --depends shutit.tk.setup --base_image ubuntu:14.04 \
 	--script assets/example.sh --delivery docker \
-	--template_branch docker
+	--pattern docker
 
 pushd ${NEWDIR}/bin
 ./test.sh --interactive 0 -l debug
