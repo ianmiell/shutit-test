@@ -3,6 +3,10 @@ from shutit_module import ShutItModule
 class test15(ShutItModule):
 
 	def build(self, shutit):
+		if not shutit.send_and_require('echo up simba',['.*p sim.*']):
+			return False
+		if shutit.send_and_require('echo up bimba',['.*p sim.*']):
+			return False
 		shutit.send('sleep 15 && touch /tmp/asdfghjkl &')
 		shutit.send_until('ls /tmp',['.*asdfghjk.*'])
 		shutit.send('sleep 15 && rm /tmp/asdfghjkl &')
