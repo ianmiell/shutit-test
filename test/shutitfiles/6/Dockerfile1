@@ -1,0 +1,4 @@
+RUN echo qwertyuiop
+ASSERT_OUTPUT .*
+RUN echo qwertyuiop
+ASSERT_OUTPUT qwerty
