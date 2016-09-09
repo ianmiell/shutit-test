@@ -1,2 +1,2 @@
 def thing():
-	print 'thung'
+	print('thung')
