@@ -13,8 +13,9 @@ class test11(ShutItModule):
 b
 c
 d''','/tmp/a','a',line_oriented=False)
-		if shutit.send_and_get_output('md5sum /tmp/a') != '47ece2e49e5c0333677fc34e044d8257  /tmp/a':
-			shutit.fail('test11.1 failed')
+		res = shutit.send_and_get_output('md5sum /tmp/a')
+		if res != '47ece2e49e5c0333677fc34e044d8257  /tmp/a':
+			shutit.fail('test11.1 failed: ' + res)
 
 		# simple insert with regexp
 		shutit.send('cat > /tmp/a <<< "abcde"')

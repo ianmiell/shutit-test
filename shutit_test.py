@@ -23,6 +23,7 @@ class shutit_test(ShutItModule):
 		shutit.send('cd shutit-test/test')
 		# TODO: divide up tests and make optional
 		shutit.send('./skeleton_test.sh')
+		shutit.send('docker pull ubuntu')
 		shutit.send('./docker_test.sh')
 		shutit.send('./shutitfiles_test.sh')
 
@@ -44,6 +45,7 @@ class shutit_test(ShutItModule):
 		shutit.send('git clone https://github.com/ianmiell/shutit-test')
 		shutit.send('cd shutit-test/test')
 		shutit.send('./skeleton_test.sh')
+		shutit.send('docker pull ubuntu')
 		shutit.send('./docker_test.sh')
 		shutit.send('./shutitfiles_test.sh')
 
