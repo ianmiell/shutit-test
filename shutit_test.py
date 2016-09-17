@@ -45,7 +45,7 @@ class shutit_test(ShutItModule):
 		shutit.send('cd ..')
 		shutit.send('git clone https://github.com/ianmiell/shutit-test')
 		shutit.send('cd shutit-test/test')
-		shutit.send('./skeleton_test.sh')
+		shutit.send('./skeleton_test.sh -l debug')
 		shutit.send('docker pull ubuntu')
 		shutit.send('docker pull ubuntu:14.04')
 		shutit.send('./docker_test.sh')
