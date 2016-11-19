@@ -52,7 +52,7 @@ fi
 find ${SHUTIT_DIR} -name '*.cnf' | grep '/configs/[^/]*.cnf' | xargs chmod 600
 cleanup hard
 
-pushd test/1
+pushd test/docker_tests/1
 #TODO: "list_deps"
 #TODO: there's a problem with list_configs...
 #for arg in "list_modules" "list_configs" "list_modules --long" "list_modules --sort id"
@@ -77,7 +77,7 @@ PIDS=()
 DISTROS=${SHUTITTEST_DISTROS:-ubuntu:14.04}
 for dist in $DISTROS
 do
-	for d in $(ls -d test/[0-9]* | sort -n)
+	for d in $(ls -d test/docker_tests/[0-9]* | sort -n)
 	do
 		[ -d ${SHUTIT_DIR}/$d ] || continue
 		pushd ${SHUTIT_DIR}/$d/bin
@@ -95,10 +95,6 @@ do
 				echo "SHUTIT MODULE TEST $d: In directory: `pwd` BEGIN"
 				echo "================================================================================"
 				./test.sh --interactive 0 -l debug
-				#if [[ $d = 'test/1' ]]
-				#then
-				#	./test.sh --video 5 -l debug
-				#fi
 				RES=$?
 				if [[ "x$RES" != "x0" ]]
 				then
