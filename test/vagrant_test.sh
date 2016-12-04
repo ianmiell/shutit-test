@@ -1,16 +1,16 @@
 #!/bin/bash
 # Copyright (C) 2014 OpenBet Limited
-# 
-# Permission is hereby granted, free of charge, to any person obtaining a copy 
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
 # in the Software without restriction, including without limitation the rights
 # to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 # copies of the Software, and to permit persons to whom the Software is
 # furnished to do so, subject to the following conditions:
-# 
+#
 # The above copyright notice and this permission notice shall be included in
 # all copies or substantial portions of the Software.
-# 
+#
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 # IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 # FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -27,22 +27,22 @@ pushd $(dirname ${BASH_SOURCE[0]})/.. > /dev/null 2>&1
 
 source test/shared_test_utils.sh
 
-#!/bin/bash                                                                                                                                                                       
-if [[ $(command -v VBoxManage) != '' ]]                                                                                                                                           
-then                                                                                                                                                                              
-    while true                                                                                                                                                                    
-    do                                                                                                                                                                            
-        VBoxManage list runningvms | grep shutit_testing_ | awk '{print $1}' | xargs -IXXX VBoxManage controlvm 'XXX' poweroff && VBoxManage list vms | grep shutit_testing_ | awk '{print $1}'  | xargs -IXXX VBoxManage unregistervm 'XXX' --delete                                                                        
-        # The xargs removes whitespace                                                                                                                                            
-        if [[ $(VBoxManage list vms | grep shutit_testing_ | wc -l | xargs) -eq '0' ]]                                                                                   
-        then                                                                                                                                                                      
-            break                                                                                                                                                                 
-        else                                                                                                                                                                      
-            ps -ef | grep virtualbox | grep shutit_testing_ | awk '{print $2}' | xargs kill                                                                              
-            sleep 10                                                                                                                                                              
-        fi                                                                                                                                                                        
-    done                                                                                                                                                                          
-fi           
+#!/bin/bash
+if [[ $(command -v VBoxManage) != '' ]]
+then
+    while true
+    do
+        VBoxManage list runningvms | grep shutit_testing_ | awk '{print $1}' | xargs -IXXX VBoxManage controlvm 'XXX' poweroff && VBoxManage list vms | grep shutit_testing_ | awk '{print $1}'  | xargs -IXXX VBoxManage unregistervm 'XXX' --delete
+        # The xargs removes whitespace
+        if [[ $(VBoxManage list vms | grep shutit_testing_ | wc -l | xargs) -eq '0' ]]
+        then
+            break
+        else
+            ps -ef | grep virtualbox | grep shutit_testing_ | awk '{print $2}' | xargs kill
+            sleep 10
+        fi
+    done
+fi
 
 # Is Virtualbox on here? If not, exit 0.
 if [[ ! 'command -v VBoxManage' ]]
@@ -65,7 +65,7 @@ then
 	exit 1
 fi
 
-#PYTHONPATH=$(pwd) python test/test.py 
+#PYTHONPATH=$(pwd) python test/test.py
 
 if [[ $(which vagrant) != '' ]]
 then
@@ -73,7 +73,7 @@ then
 	echo $DESC
 	shutit skeleton --name ${NEWDIR} \
 		--domain shutit.tk --depends shutit.tk.setup --base_image ubuntu:14.04 \
-		--delivery bash --pattern vagrant 
+		--delivery bash --pattern vagrant
 	pushd ${NEWDIR}
 	chmod +x ./destroy_vms.sh
 	./run.sh -l debug
@@ -131,7 +131,7 @@ then
 		if [[ -a STOPTEST ]]
 		then
 			echo "STOPTEST file found in $(pwd)"
-		else 
+		else
 			if [[ -a /tmp/SHUTITSTOPTEST ]]
 			then
 				echo "/tmp/SHUTITSTOPTEST file found in /tmp"
