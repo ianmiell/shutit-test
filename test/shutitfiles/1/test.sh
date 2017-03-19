@@ -8,6 +8,6 @@ shutit skeleton \
 	--domain shutit.tk \
 	--delivery docker \
 	--pattern docker
-pushd /tmp/asd/bin
+pushd /tmp/asd
 ./test.sh "$@"
 popd
