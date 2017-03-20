@@ -59,7 +59,7 @@ shutit skeleton --shutitfiles test/shutitfiles/1/ShutItFile --name ${NEWDIR} \
 	--domain shutit.tk \
 	--depends shutit.tk.setup --base_image ubuntu:14.04 --delivery docker \
 	--pattern docker
-pushd ${NEWDIR}/bin
+pushd ${NEWDIR}
 ./test.sh --interactive 0 -l debug
 if [[ "x$?" != "x0" ]]
 then
@@ -78,7 +78,7 @@ shutit skeleton \
 	--name ${NEWDIR} --domain shutit.tk \
 	--depends shutit.tk.setup --base_image ubuntu:14.04 --delivery docker \
 	--pattern docker
-pushd ${NEWDIR}/bin
+pushd ${NEWDIR}
 ./test.sh --interactive 0 -l debug
 if [[ "x$?" != "x0" ]]
 then
@@ -115,7 +115,7 @@ echo $DESC
 shutit skeleton --name ${NEWDIR} \
 	--domain shutit.tk --depends shutit.tk.setup --base_image ubuntu:14.04 \
 	--delivery docker --pattern docker
-pushd ${NEWDIR}/bin
+pushd ${NEWDIR}
 ./test.sh --interactive 0 -l debug
 if [[ "x$?" != "x0" ]]
 then
@@ -135,7 +135,7 @@ shutit skeleton --name ${NEWDIR} \
 	--script assets/example.sh --delivery docker \
 	--pattern docker
 
-pushd ${NEWDIR}/bin
+pushd ${NEWDIR}
 ./test.sh --interactive 0 -l debug
 if [[ "x$?" != "x0" ]]
 then
