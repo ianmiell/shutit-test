@@ -1,2 +1,2 @@
 pushd ..
-shutit -d bash "$@"
+shutit "$@"
