@@ -22,6 +22,6 @@ def module():
 		'tk.shutit.test20', 1845506479.0001239682,
 		description='',
 		maintainer='',
-		delivery_methods=['bash'],
+		delivery_methods=['docker'],
 		depends=['shutit.tk.setup']
 	)
