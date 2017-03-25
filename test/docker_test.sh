@@ -80,7 +80,7 @@ do
 	for d in $(ls -d test/docker_tests/[0-9]* | sort -n)
 	do
 		[ -d ${SHUTIT_DIR}/$d ] || continue
-		pushd ${SHUTIT_DIR}/$d/bin
+		pushd ${SHUTIT_DIR}/$d
 		if [[ -a STOPTEST ]]
 		then
 			echo "STOPTEST file found in $(pwd)"

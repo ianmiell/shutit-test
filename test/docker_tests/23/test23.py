@@ -5,6 +5,7 @@ class test23(ShutItModule):
 
 	def build(self, shutit):
 		shutit.send_host_dir('/configs','configs')
+		shutit.send('ls -R /configs')
 		return True
 
 def module():
