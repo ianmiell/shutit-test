@@ -6,7 +6,7 @@ then
     echo "Must have shutit on path, eg export PATH=$PATH:/path/to/shutit_dir"
     exit 1
 fi
-$SHUTIT build -d docker "$@"
+coverage run $SHUTIT build -d docker "$@"
 if [[ $? != 0 ]]
 then
     exit 1
