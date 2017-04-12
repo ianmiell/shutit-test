@@ -10,6 +10,7 @@ class test23(ShutItModule):
 			shutit.fail('wrong number of files')
 		shutit.send_host_dir('/contents',os.path.abspath(os.curdir + '/../..'))
 		shutit.send('ls -R /contents')
+		#shutit.pause_point('look around')
 		return True
 
 def module():
