@@ -12,9 +12,9 @@ class shutit_test(ShutItModule):
 		shutit.send('rm -rf /tmp/' + module_name + ' && mkdir -p /tmp/' + module_name + ' && cd /tmp/' + module_name)
 		shutit.send('vagrant init ' + vagrant_image)
 		shutit.send('vagrant up --provider virtualbox',timeout=99999)
+
 		shutit.login(command='vagrant ssh')
 		shutit.login(command='sudo su -',password='vagrant')
-
 		shutit.install('git docker.io python-pip')
 		shutit.send('git clone --depth=1 -b ' + shutit_branch + ' https://github.com/ianmiell/shutit && cd shutit')
 		shutit.send('pip install .')
@@ -26,21 +26,19 @@ class shutit_test(ShutItModule):
 		shutit.send('./skeleton_test.sh -l debug')
 		shutit.send('./docker_test.sh')
 		shutit.send('./shutitfiles_test.sh')
-
 		shutit.logout()
 		shutit.logout()
-
 
 		# python3
 		shutit.send('vagrant destroy -f')
 		shutit.send('vagrant up --provider virtualbox',timeout=99999)
 		shutit.login(command='vagrant ssh')
 		shutit.login(command='sudo su -',password='vagrant')
-
 		shutit.remove('python')
 		shutit.install('python3 git docker.io python3-pip')
 		shutit.send('git clone --depth=1 -b ' + shutit_branch + ' https://github.com/ianmiell/shutit && cd shutit')
 		shutit.send('pip3 install .')
+		shutit.send('pip3 install coverage')
 		shutit.send('cd ..')
 		shutit.send('git clone https://github.com/ianmiell/shutit-test')
 		shutit.send('cd shutit-test/test')
@@ -48,7 +46,6 @@ class shutit_test(ShutItModule):
 		shutit.send('./docker_test.sh')
 		# Problems with shutitfiles_test within VM??
 		#shutit.send('./shutitfiles_test.sh')
-
 		shutit.logout()
 		shutit.logout()
 		return True
