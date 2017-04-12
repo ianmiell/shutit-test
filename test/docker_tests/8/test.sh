@@ -1,4 +1,4 @@
 #!/bin/bash
 
 pushd ..
-shutit build "$@"
+coverage shutit build "$@"

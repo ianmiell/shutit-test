@@ -2,7 +2,7 @@
 set -e
 set -x
 rm -rf /tmp/asd
-shutit skeleton \
+coverage run shutit skeleton \
 	--shutitfiles Dockerfile \
 	--name /tmp/asd \
 	--domain shutit.tk \

@@ -1,2 +1,3 @@
+#!/bin/bash
 pushd ..
-shutit -d bash "$@"
+coverage run shutit -d bash "$@"
