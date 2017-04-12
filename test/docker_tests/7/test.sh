@@ -1,4 +1,4 @@
 #!/bin/bash
 
 pushd ..
-coverage run shutit build "$@"
+coverage run $(which shutit) build "$@"
