@@ -33,7 +33,7 @@ class shutit_test(ShutItModule):
 		#shutit.send('./shutitfiles_test.sh')
 		shutit.send('find . | grep coverage | xargs coverage combine')
 		output = shutit.send('coverage report -m')
-		self.log(output,add_final_message=True)
+		shutit.log(output,add_final_message=True)
 		shutit.logout()
 		shutit.logout()
 
@@ -58,7 +58,7 @@ class shutit_test(ShutItModule):
 		shutit.send('find . | grep coverage | xargs coverage combine')
 		shutit.send('coverage report -m')
 		output = shutit.send('coverage report -m')
-		self.log(output,add_final_message=True)
+		shutit.log(output,add_final_message=True)
 		shutit.logout()
 		shutit.logout()
 		return True
