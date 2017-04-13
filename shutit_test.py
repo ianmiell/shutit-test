@@ -31,6 +31,9 @@ class shutit_test(ShutItModule):
 		shutit.send('./docker_test.sh')
 		# Problems with shutitfiles_test within VM??
 		#shutit.send('./shutitfiles_test.sh')
+		shutit.send('find . | grep coverage | xargs coverage combine')
+		output = shutit.send('coverage report -m')
+		self.log(output,add_final_message=True)
 		shutit.logout()
 		shutit.logout()
 
@@ -52,7 +55,10 @@ class shutit_test(ShutItModule):
 		shutit.send('./skeleton_test.sh -l debug')
 		shutit.send('./docker_test.sh')
 		shutit.send('./shutitfiles_test.sh')
-		shutit.pause_point('coverage')
+		shutit.send('find . | grep coverage | xargs coverage combine')
+		shutit.send('coverage report -m')
+		output = shutit.send('coverage report -m')
+		self.log(output,add_final_message=True)
 		shutit.logout()
 		shutit.logout()
 		return True
