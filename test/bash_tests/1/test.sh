@@ -1,3 +1,3 @@
 #!/bin/bash
 pushd ..
-coverage run $(which shutit) -d bash "$@"
+coverage run -a $(which shutit) -d bash "$@"
