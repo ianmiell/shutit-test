@@ -36,9 +36,9 @@ class shutit_test(ShutItModule):
 
 		# Then python 2
 		shutit.send('vagrant destroy -f')
+		shutit.send('vagrant up --provider virtualbox',timeout=99999)
 		shutit.login(command='vagrant ssh')
 		shutit.login(command='sudo su -',password='vagrant')
-		shutit.send('vagrant up --provider virtualbox',timeout=99999)
 		shutit.install('git docker.io python-pip')
 		shutit.send('git config --global user.email ian.miell@gmail.com')
 		shutit.send('git config --global user.name "Ian Miell"')
