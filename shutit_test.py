@@ -46,6 +46,7 @@ class shutit_test(ShutItModule):
 		shutit.send('./docker_test.sh')
 		# Problems with shutitfiles_test within VM??
 		#shutit.send('./shutitfiles_test.sh')
+		shutit.pause_point('coverage')
 		shutit.logout()
 		shutit.logout()
 		return True
