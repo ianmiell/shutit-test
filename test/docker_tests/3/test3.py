@@ -15,6 +15,7 @@ class test3(ShutItModule):
 
 	def build(self, shutit):
 		shutit.install('wget')
+		shutit.install('httpd') # exercise package mapping
 		return True
 
 def module():
