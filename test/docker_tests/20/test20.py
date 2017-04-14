@@ -5,6 +5,7 @@ class test20(ShutItModule):
 
 	def build(self, shutit):
 		d = '/tmp/git-rebase-tutorial-test'
+		shutit.install('git')
 		shutit.send('rm -rf ' + d)
 		shutit.send('mkdir -p ' + d)
 		shutit.send('cd ' + d)
