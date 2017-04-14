@@ -25,10 +25,11 @@ from shutit_module import ShutItModule
 class test7(ShutItModule):
 
 	def is_installed(self,shutit):
+		# Returns true, so build is not needed...
 		return True
 
 	def build(self,shutit):
-		return True
+		return True # pragma: no cover
 
 	def get_config(self,shutit):
 		shutit.get_config('shutit.tk.test7.test7','isset','y')
