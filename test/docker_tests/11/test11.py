@@ -15,7 +15,7 @@ c
 d''','/tmp/a','a',line_oriented=False)
 		res = shutit.send_and_get_output('md5sum /tmp/a')
 		if res != '47ece2e49e5c0333677fc34e044d8257  /tmp/a':
-			shutit.fail('test11.1 failed: ' + res)
+			shutit.fail('test11.1 failed: ' + res) # pragma: no cover
 
 		# simple insert with regexp
 		shutit.send('cat > /tmp/a <<< "abcde"')
@@ -24,7 +24,7 @@ b
 c
 d''','/tmp/a','b.d',line_oriented=False)
 		if shutit.send_and_get_output('md5sum /tmp/a') != 'f013d5d638b770d166be6a9d1f582b73  /tmp/a':
-			shutit.fail('test11.2 failed')
+			shutit.fail('test11.2 failed') # pragma: no cover
 
 
 		# Insert to non-existent line.
@@ -34,7 +34,7 @@ b
 c
 d
 e''','/tmp/a','^asfasfa$',line_oriented=False) != None:
-			shutit.fail('test11.3 failed')
+			shutit.fail('test11.3 failed') # pragma: no cover
 
 
 		# Insert text before
@@ -44,7 +44,7 @@ d""")
 c
 ''','/tmp/a','d',before=True,line_oriented=False)
 		if shutit.send_and_get_output('md5sum /tmp/a') != 'aedeb9f7ddf76f45747fe5f7f6d211dd  /tmp/a':
-			shutit.fail('test11.4 failed')
+			shutit.fail('test11.4 failed') # pragma: no cover
 
 		# simple insert to end
 		shutit.send('cat > /tmp/a <<< "a"')
@@ -53,7 +53,7 @@ c
 d
 ''','/tmp/a',line_oriented=False)
 		if shutit.send_and_get_output('md5sum /tmp/a') != '47ece2e49e5c0333677fc34e044d8257  /tmp/a':
-			shutit.fail('test11.5 failed')
+			shutit.fail('test11.5 failed') # pragma: no cover
 
 		# simple replace
 		shutit.send('cat > /tmp/11.6 <<< "a"')
@@ -62,7 +62,7 @@ c
 d
 ''','/tmp/11.6','^a$',line_oriented=False)
 		if shutit.send_and_get_output('md5sum /tmp/11.6') != '4e392c10508f911b8110b5ee5f3e5c76  /tmp/11.6':
-			shutit.fail('test11.6 failed')
+			shutit.fail('test11.6 failed') # pragma: no cover
 
 		# simple replace with non-matching pattern
 		shutit.send('cat > /tmp/11.7 <<< "a"')
@@ -71,7 +71,7 @@ c
 d
 ''','/tmp/11.7','willnotmatch',line_oriented=False)
 		if shutit.send_and_get_output('md5sum /tmp/11.7') != '47ece2e49e5c0333677fc34e044d8257  /tmp/11.7':
-			shutit.fail('test11.7 failed')
+			shutit.fail('test11.7 failed') # pragma: no cover
 
 		################################################################################
 		# LINE ORIENTED TESTS
@@ -82,7 +82,7 @@ d
 c
 d''','/tmp/a','a')
 		if shutit.send_and_get_output('md5sum /tmp/a') != '47ece2e49e5c0333677fc34e044d8257  /tmp/a':
-			shutit.fail('test11.1.1 failed')
+			shutit.fail('test11.1.1 failed') # pragma: no cover
 
 		# simple insert with regexp
 		shutit.send('cat > /tmp/a <<< "abcde"')
@@ -90,7 +90,7 @@ d''','/tmp/a','a')
 c
 d''','/tmp/a','b.d')
 		if shutit.send_and_get_output('md5sum /tmp/a') != 'fd5505764070ee318d08b5ca03b46075  /tmp/a':
-			shutit.fail('test11.1.2 failed')
+			shutit.fail('test11.1.2 failed') # pragma: no cover
 
 
 		# Insert to non-existent line.
@@ -99,7 +99,7 @@ d''','/tmp/a','b.d')
 c
 d
 e''','/tmp/a','^asfasfa$') != None:
-			shutit.fail('test11.4.2 failed')
+			shutit.fail('test11.4.2 failed') # pragma: no cover
 
 
 		# Insert text before
@@ -108,7 +108,7 @@ d""")
 		shutit.insert_text('''b
 c''','/tmp/a','^d$',before=True)
 		if shutit.send_and_get_output('md5sum /tmp/a') != 'aedeb9f7ddf76f45747fe5f7f6d211dd  /tmp/a':
-			shutit.fail('test11.5.2 failed')
+			shutit.fail('test11.5.2 failed') # pragma: no cover
 
 		# simple insert to end
 		shutit.send('cat > /tmp/a <<< "a"')
@@ -116,7 +116,7 @@ c''','/tmp/a','^d$',before=True)
 c
 d''','/tmp/a')
 		if shutit.send_and_get_output('md5sum /tmp/a') != '47ece2e49e5c0333677fc34e044d8257  /tmp/a':
-			shutit.fail('test11.6.2 failed')
+			shutit.fail('test11.6.2 failed') # pragma: no cover
 
 		# simple replace
 		shutit.send('cat > /tmp/11.7 <<< "a"')
@@ -124,7 +124,7 @@ d''','/tmp/a')
 c
 d''','/tmp/11.7','^a$')
 		if shutit.send_and_get_output('md5sum /tmp/a') != '47ece2e49e5c0333677fc34e044d8257  /tmp/a':
-			shutit.fail('test11.7.2 failed')
+			shutit.fail('test11.7.2 failed') # pragma: no cover
 
 		# simple replace with non-matching pattern
 		shutit.send('cat > /tmp/11.8 <<< "a"')
@@ -132,7 +132,7 @@ d''','/tmp/11.7','^a$')
 c
 d''','/tmp/11.8','willnotmatch')
 		if shutit.send_and_get_output('md5sum /tmp/11.8') != '47ece2e49e5c0333677fc34e044d8257  /tmp/11.8':
-			shutit.fail('test11.8.2 failed')
+			shutit.fail('test11.8.2 failed') # pragma: no cover
 
 
 		# double send
@@ -143,7 +143,7 @@ END''')
 		shutit.replace_text('a new line','/tmp/11.9','new')
 		shutit.replace_text('a new line','/tmp/11.9','new')
 		if shutit.send_and_get_output('md5sum /tmp/11.9') != 'a9caca3131db43f6edb241c898d1ba69  /tmp/11.9':
-			shutit.fail('test11.9.2 failed')
+			shutit.fail('test11.9.2 failed') # pragma: no cover
 
 		# replace (append), replace, insert, replace, delete
 		shutit.send('''cat > /tmp/11.10 << END
@@ -156,7 +156,7 @@ END''')
 		shutit.replace_text('a new line','/tmp/11.10','new')
 		shutit.delete_text('yet another line','/tmp/11.10')
 		if shutit.send_and_get_output('md5sum /tmp/11.10') != 'a9caca3131db43f6edb241c898d1ba69  /tmp/11.10':
-			shutit.fail('test11.10.2 failed')
+			shutit.fail('test11.10.2 failed') # pragma: no cover
 
 		# everything we can think of
 		shutit.send('''cat > /tmp/11.11 << END
@@ -168,13 +168,13 @@ END''')
 		shutit.insert_text('third line','/tmp/11.11','second line')
 		shutit.insert_text('fifth line','/tmp/11.11','fourth line')
 		if shutit.send_and_get_output('md5sum /tmp/11.11') != '3538d04b11225ee34267767861c7e60c  /tmp/11.11':
-			shutit.fail('test11.11.2.1 failed')
+			shutit.fail('test11.11.2.1 failed') # pragma: no cover
 		shutit.replace_text('fifth line','/tmp/11.11','^fif')
 		if shutit.send_and_get_output('md5sum /tmp/11.11') != '3538d04b11225ee34267767861c7e60c  /tmp/11.11':
-			shutit.fail('test11.11.2.2 failed')
+			shutit.fail('test11.11.2.2 failed') # pragma: no cover
 		shutit.replace_text('third line','/tmp/11.11','^thi')
 		if shutit.send_and_get_output('md5sum /tmp/11.11') != '3538d04b11225ee34267767861c7e60c  /tmp/11.11':
-			shutit.fail('test11.11.2.3 failed')
+			shutit.fail('test11.11.2.3 failed') # pragma: no cover
 
 
 		shutit.send('''cat > /tmp/11.12 << END
@@ -182,7 +182,7 @@ $num_instances=1
 END''')
 		shutit.replace_text('$num_instances=3','/tmp/11.12','num_instances')
 		if shutit.send_and_get_output('md5sum /tmp/11.12') != 'dc86deb5d312f33bf3cdb2a1c95c2c82  /tmp/11.12':
-			shutit.fail('test 11.12 failed')
+			shutit.fail('test 11.12 failed') # pragma: no cover
 
 
 		################################################################################
