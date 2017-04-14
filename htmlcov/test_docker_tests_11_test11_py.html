@@ -326,7 +326,7 @@
 <p id="t12" class="stm run hide_run">                <span class="nam">shutit</span><span class="op">.</span><span class="nam">insert_text</span><span class="op">(</span><span class="str">'''</span><span class="strut">&nbsp;</span></p>
 <p id="t13" class="pln"><span class="str">b</span><span class="strut">&nbsp;</span></p>
 <p id="t14" class="pln"><span class="str">c</span><span class="strut">&nbsp;</span></p>
-<p id="t15" class="pln"><span class="str">d'''</span><span class="op">,</span><span class="str">'/tmp/a'</span><span class="op">,</span><span class="str">'a'</span><span class="op">,</span><span class="nam">line_oriented</span><span class="op">=</span><span class="key">False</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t15" class="pln"><span class="str">d'''</span><span class="op">,</span><span class="str">'/tmp/a'</span><span class="op">,</span><span class="str">'a'</span><span class="op">,</span><span class="nam">line_oriented</span><span class="op">=</span><span class="nam">False</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t16" class="stm run hide_run">                <span class="nam">res</span> <span class="op">=</span> <span class="nam">shutit</span><span class="op">.</span><span class="nam">send_and_get_output</span><span class="op">(</span><span class="str">'md5sum /tmp/a'</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t17" class="stm run hide_run">                <span class="key">if</span> <span class="nam">res</span> <span class="op">!=</span> <span class="str">'47ece2e49e5c0333677fc34e044d8257  /tmp/a'</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t18" class="exc">                        <span class="nam">shutit</span><span class="op">.</span><span class="nam">fail</span><span class="op">(</span><span class="str">'test11.1 failed: '</span> <span class="op">+</span> <span class="nam">res</span><span class="op">)</span> <span class="com"># pragma: no cover</span><span class="strut">&nbsp;</span></p>
@@ -336,7 +336,7 @@
 <p id="t22" class="stm run hide_run">                <span class="nam">shutit</span><span class="op">.</span><span class="nam">insert_text</span><span class="op">(</span><span class="str">'''</span><span class="strut">&nbsp;</span></p>
 <p id="t23" class="pln"><span class="str">b</span><span class="strut">&nbsp;</span></p>
 <p id="t24" class="pln"><span class="str">c</span><span class="strut">&nbsp;</span></p>
-<p id="t25" class="pln"><span class="str">d'''</span><span class="op">,</span><span class="str">'/tmp/a'</span><span class="op">,</span><span class="str">'b.d'</span><span class="op">,</span><span class="nam">line_oriented</span><span class="op">=</span><span class="key">False</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t25" class="pln"><span class="str">d'''</span><span class="op">,</span><span class="str">'/tmp/a'</span><span class="op">,</span><span class="str">'b.d'</span><span class="op">,</span><span class="nam">line_oriented</span><span class="op">=</span><span class="nam">False</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t26" class="stm run hide_run">                <span class="key">if</span> <span class="nam">shutit</span><span class="op">.</span><span class="nam">send_and_get_output</span><span class="op">(</span><span class="str">'md5sum /tmp/a'</span><span class="op">)</span> <span class="op">!=</span> <span class="str">'f013d5d638b770d166be6a9d1f582b73  /tmp/a'</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t27" class="exc">                        <span class="nam">shutit</span><span class="op">.</span><span class="nam">fail</span><span class="op">(</span><span class="str">'test11.2 failed'</span><span class="op">)</span> <span class="com"># pragma: no cover</span><span class="strut">&nbsp;</span></p>
 <p id="t28" class="pln"><span class="strut">&nbsp;</span></p>
@@ -347,7 +347,7 @@
 <p id="t33" class="pln"><span class="str">b</span><span class="strut">&nbsp;</span></p>
 <p id="t34" class="pln"><span class="str">c</span><span class="strut">&nbsp;</span></p>
 <p id="t35" class="pln"><span class="str">d</span><span class="strut">&nbsp;</span></p>
-<p id="t36" class="pln"><span class="str">e'''</span><span class="op">,</span><span class="str">'/tmp/a'</span><span class="op">,</span><span class="str">'^asfasfa$'</span><span class="op">,</span><span class="nam">line_oriented</span><span class="op">=</span><span class="key">False</span><span class="op">)</span> <span class="op">!=</span> <span class="key">None</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
+<p id="t36" class="pln"><span class="str">e'''</span><span class="op">,</span><span class="str">'/tmp/a'</span><span class="op">,</span><span class="str">'^asfasfa$'</span><span class="op">,</span><span class="nam">line_oriented</span><span class="op">=</span><span class="nam">False</span><span class="op">)</span> <span class="op">!=</span> <span class="nam">None</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t37" class="exc">                        <span class="nam">shutit</span><span class="op">.</span><span class="nam">fail</span><span class="op">(</span><span class="str">'test11.3 failed'</span><span class="op">)</span> <span class="com"># pragma: no cover</span><span class="strut">&nbsp;</span></p>
 <p id="t38" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t39" class="pln"><span class="strut">&nbsp;</span></p>
@@ -356,7 +356,7 @@
 <p id="t42" class="pln"><span class="str">d"""</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t43" class="stm run hide_run">                <span class="nam">shutit</span><span class="op">.</span><span class="nam">insert_text</span><span class="op">(</span><span class="str">'''b</span><span class="strut">&nbsp;</span></p>
 <p id="t44" class="pln"><span class="str">c</span><span class="strut">&nbsp;</span></p>
-<p id="t45" class="pln"><span class="str">'''</span><span class="op">,</span><span class="str">'/tmp/a'</span><span class="op">,</span><span class="str">'d'</span><span class="op">,</span><span class="nam">before</span><span class="op">=</span><span class="key">True</span><span class="op">,</span><span class="nam">line_oriented</span><span class="op">=</span><span class="key">False</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t45" class="pln"><span class="str">'''</span><span class="op">,</span><span class="str">'/tmp/a'</span><span class="op">,</span><span class="str">'d'</span><span class="op">,</span><span class="nam">before</span><span class="op">=</span><span class="nam">True</span><span class="op">,</span><span class="nam">line_oriented</span><span class="op">=</span><span class="nam">False</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t46" class="stm run hide_run">                <span class="key">if</span> <span class="nam">shutit</span><span class="op">.</span><span class="nam">send_and_get_output</span><span class="op">(</span><span class="str">'md5sum /tmp/a'</span><span class="op">)</span> <span class="op">!=</span> <span class="str">'aedeb9f7ddf76f45747fe5f7f6d211dd  /tmp/a'</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t47" class="exc">                        <span class="nam">shutit</span><span class="op">.</span><span class="nam">fail</span><span class="op">(</span><span class="str">'test11.4 failed'</span><span class="op">)</span> <span class="com"># pragma: no cover</span><span class="strut">&nbsp;</span></p>
 <p id="t48" class="pln"><span class="strut">&nbsp;</span></p>
@@ -365,7 +365,7 @@
 <p id="t51" class="stm run hide_run">                <span class="nam">shutit</span><span class="op">.</span><span class="nam">insert_text</span><span class="op">(</span><span class="str">'''b</span><span class="strut">&nbsp;</span></p>
 <p id="t52" class="pln"><span class="str">c</span><span class="strut">&nbsp;</span></p>
 <p id="t53" class="pln"><span class="str">d</span><span class="strut">&nbsp;</span></p>
-<p id="t54" class="pln"><span class="str">'''</span><span class="op">,</span><span class="str">'/tmp/a'</span><span class="op">,</span><span class="nam">line_oriented</span><span class="op">=</span><span class="key">False</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t54" class="pln"><span class="str">'''</span><span class="op">,</span><span class="str">'/tmp/a'</span><span class="op">,</span><span class="nam">line_oriented</span><span class="op">=</span><span class="nam">False</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t55" class="stm run hide_run">                <span class="key">if</span> <span class="nam">shutit</span><span class="op">.</span><span class="nam">send_and_get_output</span><span class="op">(</span><span class="str">'md5sum /tmp/a'</span><span class="op">)</span> <span class="op">!=</span> <span class="str">'47ece2e49e5c0333677fc34e044d8257  /tmp/a'</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t56" class="exc">                        <span class="nam">shutit</span><span class="op">.</span><span class="nam">fail</span><span class="op">(</span><span class="str">'test11.5 failed'</span><span class="op">)</span> <span class="com"># pragma: no cover</span><span class="strut">&nbsp;</span></p>
 <p id="t57" class="pln"><span class="strut">&nbsp;</span></p>
@@ -374,7 +374,7 @@
 <p id="t60" class="stm run hide_run">                <span class="nam">shutit</span><span class="op">.</span><span class="nam">replace_text</span><span class="op">(</span><span class="str">'''b</span><span class="strut">&nbsp;</span></p>
 <p id="t61" class="pln"><span class="str">c</span><span class="strut">&nbsp;</span></p>
 <p id="t62" class="pln"><span class="str">d</span><span class="strut">&nbsp;</span></p>
-<p id="t63" class="pln"><span class="str">'''</span><span class="op">,</span><span class="str">'/tmp/11.6'</span><span class="op">,</span><span class="str">'^a$'</span><span class="op">,</span><span class="nam">line_oriented</span><span class="op">=</span><span class="key">False</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t63" class="pln"><span class="str">'''</span><span class="op">,</span><span class="str">'/tmp/11.6'</span><span class="op">,</span><span class="str">'^a$'</span><span class="op">,</span><span class="nam">line_oriented</span><span class="op">=</span><span class="nam">False</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t64" class="stm run hide_run">                <span class="key">if</span> <span class="nam">shutit</span><span class="op">.</span><span class="nam">send_and_get_output</span><span class="op">(</span><span class="str">'md5sum /tmp/11.6'</span><span class="op">)</span> <span class="op">!=</span> <span class="str">'4e392c10508f911b8110b5ee5f3e5c76  /tmp/11.6'</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t65" class="exc">                        <span class="nam">shutit</span><span class="op">.</span><span class="nam">fail</span><span class="op">(</span><span class="str">'test11.6 failed'</span><span class="op">)</span> <span class="com"># pragma: no cover</span><span class="strut">&nbsp;</span></p>
 <p id="t66" class="pln"><span class="strut">&nbsp;</span></p>
@@ -383,7 +383,7 @@
 <p id="t69" class="stm run hide_run">                <span class="nam">shutit</span><span class="op">.</span><span class="nam">replace_text</span><span class="op">(</span><span class="str">'''b</span><span class="strut">&nbsp;</span></p>
 <p id="t70" class="pln"><span class="str">c</span><span class="strut">&nbsp;</span></p>
 <p id="t71" class="pln"><span class="str">d</span><span class="strut">&nbsp;</span></p>
-<p id="t72" class="pln"><span class="str">'''</span><span class="op">,</span><span class="str">'/tmp/11.7'</span><span class="op">,</span><span class="str">'willnotmatch'</span><span class="op">,</span><span class="nam">line_oriented</span><span class="op">=</span><span class="key">False</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t72" class="pln"><span class="str">'''</span><span class="op">,</span><span class="str">'/tmp/11.7'</span><span class="op">,</span><span class="str">'willnotmatch'</span><span class="op">,</span><span class="nam">line_oriented</span><span class="op">=</span><span class="nam">False</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t73" class="stm run hide_run">                <span class="key">if</span> <span class="nam">shutit</span><span class="op">.</span><span class="nam">send_and_get_output</span><span class="op">(</span><span class="str">'md5sum /tmp/11.7'</span><span class="op">)</span> <span class="op">!=</span> <span class="str">'47ece2e49e5c0333677fc34e044d8257  /tmp/11.7'</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t74" class="exc">                        <span class="nam">shutit</span><span class="op">.</span><span class="nam">fail</span><span class="op">(</span><span class="str">'test11.7 failed'</span><span class="op">)</span> <span class="com"># pragma: no cover</span><span class="strut">&nbsp;</span></p>
 <p id="t75" class="pln"><span class="strut">&nbsp;</span></p>
@@ -412,7 +412,7 @@
 <p id="t98" class="stm run hide_run">                <span class="key">if</span> <span class="nam">shutit</span><span class="op">.</span><span class="nam">insert_text</span><span class="op">(</span><span class="str">'''b</span><span class="strut">&nbsp;</span></p>
 <p id="t99" class="pln"><span class="str">c</span><span class="strut">&nbsp;</span></p>
 <p id="t100" class="pln"><span class="str">d</span><span class="strut">&nbsp;</span></p>
-<p id="t101" class="pln"><span class="str">e'''</span><span class="op">,</span><span class="str">'/tmp/a'</span><span class="op">,</span><span class="str">'^asfasfa$'</span><span class="op">)</span> <span class="op">!=</span> <span class="key">None</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
+<p id="t101" class="pln"><span class="str">e'''</span><span class="op">,</span><span class="str">'/tmp/a'</span><span class="op">,</span><span class="str">'^asfasfa$'</span><span class="op">)</span> <span class="op">!=</span> <span class="nam">None</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t102" class="exc">                        <span class="nam">shutit</span><span class="op">.</span><span class="nam">fail</span><span class="op">(</span><span class="str">'test11.4.2 failed'</span><span class="op">)</span> <span class="com"># pragma: no cover</span><span class="strut">&nbsp;</span></p>
 <p id="t103" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t104" class="pln"><span class="strut">&nbsp;</span></p>
@@ -420,7 +420,7 @@
 <p id="t106" class="stm run hide_run">                <span class="nam">shutit</span><span class="op">.</span><span class="nam">send_file</span><span class="op">(</span><span class="str">'/tmp/a'</span><span class="op">,</span><span class="str">"""a</span><span class="strut">&nbsp;</span></p>
 <p id="t107" class="pln"><span class="str">d"""</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t108" class="stm run hide_run">                <span class="nam">shutit</span><span class="op">.</span><span class="nam">insert_text</span><span class="op">(</span><span class="str">'''b</span><span class="strut">&nbsp;</span></p>
-<p id="t109" class="pln"><span class="str">c'''</span><span class="op">,</span><span class="str">'/tmp/a'</span><span class="op">,</span><span class="str">'^d$'</span><span class="op">,</span><span class="nam">before</span><span class="op">=</span><span class="key">True</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t109" class="pln"><span class="str">c'''</span><span class="op">,</span><span class="str">'/tmp/a'</span><span class="op">,</span><span class="str">'^d$'</span><span class="op">,</span><span class="nam">before</span><span class="op">=</span><span class="nam">True</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t110" class="stm run hide_run">                <span class="key">if</span> <span class="nam">shutit</span><span class="op">.</span><span class="nam">send_and_get_output</span><span class="op">(</span><span class="str">'md5sum /tmp/a'</span><span class="op">)</span> <span class="op">!=</span> <span class="str">'aedeb9f7ddf76f45747fe5f7f6d211dd  /tmp/a'</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t111" class="exc">                        <span class="nam">shutit</span><span class="op">.</span><span class="nam">fail</span><span class="op">(</span><span class="str">'test11.5.2 failed'</span><span class="op">)</span> <span class="com"># pragma: no cover</span><span class="strut">&nbsp;</span></p>
 <p id="t112" class="pln"><span class="strut">&nbsp;</span></p>
@@ -544,7 +544,7 @@
 <p id="t230" class="pln">                <span class="com">#shutit.replace_text('''just spaces, and just tabs''',fname,'''and just tablets''')</span><span class="strut">&nbsp;</span></p>
 <p id="t231" class="pln">                <span class="com">#if shutit.send_and_get_output('md5sum ' + fname) != '14b694054d4f5908ab7a96789d2c9451  '  + fname:</span><span class="strut">&nbsp;</span></p>
 <p id="t232" class="pln">                <span class="com">#       shutit.fail('test ' + fname + '.5 failed')</span><span class="strut">&nbsp;</span></p>
-<p id="t233" class="stm run hide_run">                <span class="key">return</span> <span class="key">True</span><span class="strut">&nbsp;</span></p>
+<p id="t233" class="stm run hide_run">                <span class="key">return</span> <span class="nam">True</span><span class="strut">&nbsp;</span></p>
 <p id="t234" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t235" class="stm run hide_run"><span class="key">def</span> <span class="nam">module</span><span class="op">(</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t236" class="stm run hide_run">        <span class="key">return</span> <span class="nam">test11</span><span class="op">(</span><span class="strut">&nbsp;</span></p>
@@ -564,7 +564,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.3.4</a>,
-            created at 2017-04-14 18:21
+            created at 2017-04-14 18:38
         </p>
     </div>
 </div>

@@ -148,19 +148,19 @@
 <p id="t26" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t27" class="stm run hide_run">                <span class="nam">res1</span> <span class="op">=</span> <span class="nam">shutit</span><span class="op">.</span><span class="nam">send_and_get_output</span><span class="op">(</span><span class="str">'md5sum /tmp/a'</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t28" class="stm run hide_run">                <span class="nam">shutit</span><span class="op">.</span><span class="nam">insert_text</span><span class="op">(</span><span class="str">r'''b</span><span class="strut">&nbsp;</span></p>
-<p id="t29" class="pln"><span class="str">c'''</span><span class="op">,</span><span class="str">'/tmp/a'</span><span class="op">,</span><span class="str">'a'</span><span class="op">,</span><span class="nam">line_oriented</span><span class="op">=</span><span class="key">False</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t29" class="pln"><span class="str">c'''</span><span class="op">,</span><span class="str">'/tmp/a'</span><span class="op">,</span><span class="str">'a'</span><span class="op">,</span><span class="nam">line_oriented</span><span class="op">=</span><span class="nam">False</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t30" class="stm run hide_run">                <span class="nam">res2</span> <span class="op">=</span> <span class="nam">shutit</span><span class="op">.</span><span class="nam">send_and_get_output</span><span class="op">(</span><span class="str">'md5sum /tmp/a'</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t31" class="stm run hide_run">                <span class="key">if</span> <span class="nam">res1</span> <span class="op">!=</span> <span class="nam">res2</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t32" class="stm mis">                        <span class="nam">shutit</span><span class="op">.</span><span class="nam">fail</span><span class="op">(</span><span class="str">'file was altered'</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t33" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t34" class="stm run hide_run">                <span class="nam">res1</span> <span class="op">=</span> <span class="nam">shutit</span><span class="op">.</span><span class="nam">send_and_get_output</span><span class="op">(</span><span class="str">'md5sum /tmp/a'</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t35" class="stm run hide_run">                <span class="nam">shutit</span><span class="op">.</span><span class="nam">insert_text</span><span class="op">(</span><span class="str">'''c</span><span class="strut">&nbsp;</span></p>
-<p id="t36" class="pln"><span class="str">c'''</span><span class="op">,</span><span class="str">'/tmp/a'</span><span class="op">,</span><span class="str">'a'</span><span class="op">,</span><span class="nam">line_oriented</span><span class="op">=</span><span class="key">False</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t36" class="pln"><span class="str">c'''</span><span class="op">,</span><span class="str">'/tmp/a'</span><span class="op">,</span><span class="str">'a'</span><span class="op">,</span><span class="nam">line_oriented</span><span class="op">=</span><span class="nam">False</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t37" class="stm run hide_run">                <span class="nam">res2</span> <span class="op">=</span> <span class="nam">shutit</span><span class="op">.</span><span class="nam">send_and_get_output</span><span class="op">(</span><span class="str">'md5sum /tmp/a'</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t38" class="stm run hide_run">                <span class="key">if</span> <span class="nam">res1</span> <span class="op">==</span> <span class="nam">res2</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t39" class="stm mis">                        <span class="nam">shutit</span><span class="op">.</span><span class="nam">fail</span><span class="op">(</span><span class="str">'file not altered'</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t40" class="pln"><span class="strut">&nbsp;</span></p>
-<p id="t41" class="stm run hide_run">                <span class="key">return</span> <span class="key">True</span><span class="strut">&nbsp;</span></p>
+<p id="t41" class="stm run hide_run">                <span class="key">return</span> <span class="nam">True</span><span class="strut">&nbsp;</span></p>
 <p id="t42" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t43" class="stm run hide_run"><span class="key">def</span> <span class="nam">module</span><span class="op">(</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t44" class="stm run hide_run">        <span class="key">return</span> <span class="nam">test13</span><span class="op">(</span><span class="strut">&nbsp;</span></p>
@@ -180,7 +180,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.3.4</a>,
-            created at 2017-04-14 18:21
+            created at 2017-04-14 18:38
         </p>
     </div>
 </div>
