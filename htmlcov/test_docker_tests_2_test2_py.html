@@ -111,7 +111,7 @@
 <p id="t11" class="stm run hide_run"><span class="key">class</span> <span class="nam">test2</span><span class="op">(</span><span class="nam">ShutItModule</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t12" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t13" class="stm run hide_run">        <span class="key">def</span> <span class="nam">is_installed</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">shutit</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
-<p id="t14" class="stm run hide_run">                <span class="key">return</span> <span class="key">False</span><span class="strut">&nbsp;</span></p>
+<p id="t14" class="stm run hide_run">                <span class="key">return</span> <span class="nam">False</span><span class="strut">&nbsp;</span></p>
 <p id="t15" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t16" class="stm run hide_run">        <span class="key">def</span> <span class="nam">build</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">shutit</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t17" class="stm run hide_run">                <span class="nam">shutit</span><span class="op">.</span><span class="nam">send_and_expect</span><span class="op">(</span><span class="str">'touch /tmp/container_touched'</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
@@ -119,9 +119,9 @@
 <p id="t19" class="stm run hide_run">                <span class="nam">shutit</span><span class="op">.</span><span class="nam">add_line_to_file</span><span class="op">(</span><span class="str">'#test line'</span><span class="op">,</span> <span class="str">'/tmp/newfile'</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t20" class="stm run hide_run">                <span class="nam">shutit</span><span class="op">.</span><span class="nam">ls</span><span class="op">(</span><span class="str">'/tmp'</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t21" class="stm run hide_run">                <span class="nam">shutit</span><span class="op">.</span><span class="nam">send_and_expect</span><span class="op">(</span><span class="str">'useradd testuser'</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
-<p id="t22" class="stm run hide_run">                <span class="nam">shutit</span><span class="op">.</span><span class="nam">send_and_expect</span><span class="op">(</span><span class="str">'su - testuser'</span><span class="op">,</span> <span class="str">'\\$ '</span><span class="op">,</span> <span class="nam">check_exit</span><span class="op">=</span><span class="key">False</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
-<p id="t23" class="stm run hide_run">                <span class="nam">shutit</span><span class="op">.</span><span class="nam">send_and_expect</span><span class="op">(</span><span class="str">'exit'</span><span class="op">,</span> <span class="nam">check_exit</span><span class="op">=</span><span class="key">False</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
-<p id="t24" class="stm run hide_run">                <span class="key">return</span> <span class="key">True</span><span class="strut">&nbsp;</span></p>
+<p id="t22" class="stm run hide_run">                <span class="nam">shutit</span><span class="op">.</span><span class="nam">send_and_expect</span><span class="op">(</span><span class="str">'su - testuser'</span><span class="op">,</span> <span class="str">'\\$ '</span><span class="op">,</span> <span class="nam">check_exit</span><span class="op">=</span><span class="nam">False</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t23" class="stm run hide_run">                <span class="nam">shutit</span><span class="op">.</span><span class="nam">send_and_expect</span><span class="op">(</span><span class="str">'exit'</span><span class="op">,</span> <span class="nam">check_exit</span><span class="op">=</span><span class="nam">False</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t24" class="stm run hide_run">                <span class="key">return</span> <span class="nam">True</span><span class="strut">&nbsp;</span></p>
 <p id="t25" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t26" class="stm run hide_run"><span class="key">def</span> <span class="nam">module</span><span class="op">(</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t27" class="stm run hide_run">        <span class="key">return</span> <span class="nam">test2</span><span class="op">(</span><span class="str">'shutit.tk.test.test2'</span><span class="op">,</span><span class="num">2</span><span class="op">,</span> <span class="nam">depends</span><span class="op">=</span><span class="op">[</span><span class="str">'shutit.tk.setup'</span><span class="op">]</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
@@ -136,7 +136,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.3.4</a>,
-            created at 2017-04-14 17:03
+            created at 2017-04-14 17:21
         </p>
     </div>
 </div>
