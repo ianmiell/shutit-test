@@ -59,7 +59,7 @@ pushd test/docker_tests/1
 for arg in "list_modules" "list_modules --long" "list_modules --sort id"
 do
 	echo $arg
-	eval coverage run --parallel-mode -a $(which shutit) $arg -l debug
+	eval coverage run --parallel-mode $(which shutit) $arg -l debug
 	RES=$?
 	if [[ "x$RES" != "x0" ]]
 	then

@@ -55,7 +55,7 @@ cleanup hard
 
 DESC="Testing skeleton build with Shutitfile"
 echo $DESC
-coverage run --parallel-mode -a $(which shutit) skeleton --shutitfiles test/shutitfiles/1/ShutItFile --name ${NEWDIR} \
+coverage run --parallel-mode $(which shutit) skeleton --shutitfiles test/shutitfiles/1/ShutItFile --name ${NEWDIR} \
 	--domain shutit.tk \
 	--depends shutit.tk.setup --base_image ubuntu:14.04 --delivery docker \
 	--pattern docker
@@ -73,7 +73,7 @@ rm -rf ${NEWDIR}
 
 DESC="Testing skeleton build with two ShutItFiles"
 echo $DESC
-coverage run --parallel-mode -a $(which shutit) skeleton \
+coverage run --parallel-mode $(which shutit) skeleton \
 	--shutitfiles test/shutitfiles/1/ShutItFile \
 	--name ${NEWDIR} --domain shutit.tk \
 	--depends shutit.tk.setup --base_image ubuntu:14.04 --delivery docker \
@@ -112,7 +112,7 @@ rm -rf ${NEWDIR}
 
 DESC="Testing skeleton build basic bare"
 echo $DESC
-coverage run --parallel-mode -a $(which shutit) skeleton --name ${NEWDIR} \
+coverage run --parallel-mode $(which shutit) skeleton --name ${NEWDIR} \
 	--domain shutit.tk --depends shutit.tk.setup --base_image ubuntu:14.04 \
 	--delivery docker --pattern docker
 pushd ${NEWDIR}
@@ -130,7 +130,7 @@ rm -rf ${NEWDIR}
 
 DESC="Testing skeleton build basic with example script"
 echo $DESC
-coverage run --parallel-mode -a $(which shutit) skeleton --name ${NEWDIR} \
+coverage run --parallel-mode $(which shutit) skeleton --name ${NEWDIR} \
 	--domain shutit.tk --depends shutit.tk.setup --base_image ubuntu:14.04 \
 	--script assets/example.sh --delivery docker \
 	--pattern docker

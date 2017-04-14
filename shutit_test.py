@@ -27,13 +27,13 @@ class shutit_test(ShutItModule):
 		shutit.send('git clone https://github.com/ianmiell/shutit-test')
 		shutit.send('cd shutit-test/test')
 		shutit.send('./skeleton_test.sh -l debug')
-		#shutit.pause_point('23')
 		shutit.send('./docker_test.sh')
 		# Problems with shutitfiles_test within VM??
 		#shutit.send('./shutitfiles_test.sh')
-		shutit.send('find . | grep coverage | xargs coverage combine')
-		output = shutit.send_and_get_output('coverage report -m')
-		shutit.log(output,add_final_message=True)
+		shutit.pause_point('coverage')
+		#shutit.send('find . | grep coverage | xargs coverage combine')
+		#output = shutit.send_and_get_output('coverage report -m')
+		#shutit.log(output,add_final_message=True)
 		shutit.logout()
 		shutit.logout()
 

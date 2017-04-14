@@ -2,7 +2,7 @@
 set -e
 set -x
 rm -rf /tmp/asd
-coverage run --parallel-mode -a $(which shutit) skeleton \
+coverage run --parallel-mode $(which shutit) skeleton \
 	--shutitfiles Dockerfile1 Dockerfile2 \
 	--name /tmp/asd \
 	--domain shutit.tk \
