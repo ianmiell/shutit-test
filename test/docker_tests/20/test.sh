@@ -1,2 +1,2 @@
 #!/bin/bash
-coverage run --parallel-mode $(which shutit) "$@"
+coverage run --parallel-mode --include="*shutit*" $(which shutit) "$@"
