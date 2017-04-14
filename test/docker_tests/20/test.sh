@@ -1,3 +1,3 @@
 #!/bin/bash
 pushd ..
-coverage run -a $(which shutit) "$@"
+coverage run --parallel-mode -a $(which shutit) "$@"

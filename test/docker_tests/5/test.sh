@@ -1,4 +1,4 @@
 #!/bin/bash
 
 pushd ..
-coverage run -a $(which shutit) build "$@"
+coverage run --parallel-mode -a $(which shutit) build "$@"

@@ -2,7 +2,7 @@
 set -e
 #set -x
 rm -rf /tmp/asd
-coverage run -a $(which shutit) skeleton \
+coverage run --parallel-mode -a $(which shutit) skeleton \
 	--shutitfiles ShutItFile ShutItFile2 \
 	--name /tmp/asd \
 	--domain shutit.tk \
