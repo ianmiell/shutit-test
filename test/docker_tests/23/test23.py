@@ -7,7 +7,7 @@ class test23(ShutItModule):
 		shutit.send_host_dir('/','configs')
 		shutit.send('ls -R /configs')
 		if shutit.send_and_get_output('ls /configs | grep build.cnf | wc -l') != '1':
-			shutit.fail('wrong number of files')
+			shutit.fail('wrong number of files') # pragma: no cover
 		shutit.send_host_dir('/contents',os.path.abspath(os.curdir + '/../..'))
 		shutit.send('ls -R /contents')
 		#shutit.pause_point('look around')

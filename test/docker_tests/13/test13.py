@@ -29,14 +29,14 @@ END
 c''','/tmp/a','a',line_oriented=False)
 		res2 = shutit.send_and_get_output('md5sum /tmp/a')
 		if res1 != res2:
-			shutit.fail('file was altered')
+			shutit.fail('file was altered') # pragma: no cover
 
 		res1 = shutit.send_and_get_output('md5sum /tmp/a')
 		shutit.insert_text('''c
 c''','/tmp/a','a',line_oriented=False)
 		res2 = shutit.send_and_get_output('md5sum /tmp/a')
 		if res1 == res2:
-			shutit.fail('file not altered')
+			shutit.fail('file not altered') # pragma: no cover
 
 		return True
 

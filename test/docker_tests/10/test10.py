@@ -13,7 +13,7 @@ class test10(ShutItModule):
 A STRING
 TWO LINES"
 END''','A STRING'):
-			shutit.fail('test10.4 failed')
+			shutit.fail('test10.4 failed') # pragma: no cover
 		if shutit.send_and_match_output(r'''cat > /dev/stdout << END
 A STRING
 TWO LINES

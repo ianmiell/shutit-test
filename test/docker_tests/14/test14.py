@@ -19,35 +19,35 @@ e
 		shutit.add_line_to_file('e','/tmp/a')
 		md5sum2 = shutit.send_and_get_output('md5sum /tmp/a')
 		if md5sum1 != md5sum2:
-			shutit.fail('file was changed 1')
+			shutit.fail('file was changed 1') # pragma: no cover
 
 		md5sum1 = shutit.send_and_get_output('md5sum /tmp/a')
 		shutit.add_line_to_file("abc'def",'/tmp/a')
 		md5sum2 = shutit.send_and_get_output('md5sum /tmp/a')
 		if md5sum1 == md5sum2:
-			shutit.fail('file was not changed 2')
+			shutit.fail('file was not changed 2') # pragma: no cover
 
 		md5sum1 = shutit.send_and_get_output('md5sum /tmp/a')
 		shutit.add_line_to_file("abc'def",'/tmp/a')
 		md5sum2 = shutit.send_and_get_output('md5sum /tmp/a')
 		if md5sum1 != md5sum2:
-			shutit.fail('file was changed 3')
+			shutit.fail('file was changed 3') # pragma: no cover
 
 		md5sum1 = shutit.send_and_get_output('md5sum /tmp/a')
 		shutit.delete_text("""a
 """,'/tmp/a')
 		md5sum2 = shutit.send_and_get_output('md5sum /tmp/a')
 		if md5sum1 == md5sum2:
-			shutit.fail('file was not changed 4')
+			shutit.fail('file was not changed 4') # pragma: no cover
 
 		md5sum1 = shutit.send_and_get_output('md5sum /tmp/a')
 		shutit.delete_text("""d
 e""",'/tmp/a')
 		md5sum2 = shutit.send_and_get_output('md5sum /tmp/a')
 		if md5sum2 != 'd4ebec8d1b263504b76f0b5e88e27ce1  /tmp/a':
-			shutit.fail('md5sum wrong 5')
+			shutit.fail('md5sum wrong 5') # pragma: no cover
 		if md5sum1 == md5sum2:
-			shutit.fail('file was not changed 5')
+			shutit.fail('file was not changed 5') # pragma: no cover
 		return True
 
 	def get_config(self, shutit):
