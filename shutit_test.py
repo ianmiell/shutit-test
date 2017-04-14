@@ -28,7 +28,7 @@ class shutit_test(ShutItModule):
 		shutit.send('pip3 install .')
 		shutit.send('pip3 install coverage')
 		shutit.send('cd ..')
-		shutit.send('git clone https://github.com/ianmiell/shutit-test')
+		shutit.send('git clone git@github.com:ianmiell/shutit-test')
 		shutit.send('cd shutit-test/test')
 		shutit.send('./skeleton_test.sh -l debug')
 		shutit.send('./docker_test.sh')
@@ -60,7 +60,7 @@ class shutit_test(ShutItModule):
 		shutit.send('pip install .')
 		shutit.send('pip install coverage')
 		shutit.send('cd ..')
-		shutit.send('git clone https://github.com/ianmiell/shutit-test')
+		shutit.send('git clone git@github.com:ianmiell/shutit-test')
 		shutit.send('cd shutit-test/test')
 		# TODO: divide up tests and make optional
 		shutit.send('./skeleton_test.sh -l debug')
