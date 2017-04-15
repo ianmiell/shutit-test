@@ -40,12 +40,9 @@ e''','/tmp/a','^asfasfa$',line_oriented=False) != None:
 		# Insert text before
 		shutit.send_file('/tmp/a',"""a
 d""")
-		print 'H' + shutit.send_and_get_output('cat /tmp/a')
 		shutit.insert_text('''b
 c
 ''','/tmp/a','d',before=True,line_oriented=False)
-		print 'H' + shutit.send_and_get_output('md5sum /tmp/a')
-		print 'H' + shutit.send_and_get_output('cat /tmp/a') + 'H'
 		if shutit.send_and_get_output('md5sum /tmp/a') != 'aedeb9f7ddf76f45747fe5f7f6d211dd  /tmp/a':
 			shutit.fail('test11.4 failed') # pragma: no cover
 
