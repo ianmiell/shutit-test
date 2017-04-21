@@ -5,7 +5,8 @@ class test2(ShutItModule):
 
 	def build(self, shutit):
 		shutit.send('cd /space/git/git-101-tutorial')
-		shutit.send('./run.sh -l CRITICAL',{'/tmp/x':'ls'})
+		shutit.set_default_shutit_pexpect_session_expect('QUESTION')
+		shutit.send('./run.sh -l CRITICAL')
 		return True
 
 def module():
