@@ -6,7 +6,7 @@ class test18(ShutItModule):
 
 	def build(self, shutit):
 		cfg = shutit.cfg
-		shutit.send_file(shutit.build['build_db_dir'] + '/' + shutit.build['build_id'] + '/' + shutit.build['build_id'] + '.cfg', shutit_util.print_config(cfg))
+		shutit.send_file(shutit.build['build_db_dir'] + '/' + shutit.build['build_id'] + '/' + shutit.build['build_id'] + '.cfg', shutit_util.print_config(shutit, cfg))
 		return True
 
 def module():
