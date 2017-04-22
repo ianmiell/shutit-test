@@ -4,6 +4,7 @@ class test2(ShutItModule):
 
 
 	def build(self, shutit):
+		shutit.send('rm -rf git-101-tutorial')
 		shutit.send('git clone https://github.com/ianmiell/git-101-tutorial')
 		shutit.send('pushd git-101-tutorial')
 		orig_expect = shutit.get_default_shutit_pexpect_session_expect()
@@ -18,7 +19,6 @@ class test2(ShutItModule):
 		shutit.send('\x1D',nonewline=True,check_exit=False)
 		shutit.send('\x1D',nonewline=True,check_exit=False)
 		shutit.send('\x1D',nonewline=True,check_exit=False,expect='test2.test2')
-		shutit.send('rm -rf git-101-tutorial')
 		return True
 
 def module():
