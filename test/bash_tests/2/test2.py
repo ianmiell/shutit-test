@@ -18,7 +18,6 @@ class test2(ShutItModule):
 		shutit.send('\x1D',nonewline=True,check_exit=False)
 		shutit.send('\x1D',nonewline=True,check_exit=False)
 		shutit.send('\x1D',nonewline=True,check_exit=False,expect='test2.test2')
-		shutit.send('popd')
 		shutit.send('rm -rf git-101-tutorial')
 		return True
 
