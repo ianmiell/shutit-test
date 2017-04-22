@@ -30,7 +30,7 @@ class shutit_test(ShutItModule):
 		shutit.send('cd ..')
 		shutit.send('git clone git@github.com:ianmiell/shutit-test')
 		shutit.send('cd shutit-test/test')
-		shutit.send('./bash_test.sh -l debug')
+		#shutit.send('./bash_test.sh -l debug')
 		shutit.send('./skeleton_test.sh -l debug')
 		shutit.send('./docker_test.sh -l debug')
 		shutit.send('./shutitfiles_test.sh')
