@@ -2014,7 +2014,7 @@
 <p id="t57" class="exc">        <span class="key">import</span> <span class="nam">configparser</span> <span class="key">as</span> <span class="nam">ConfigParser</span><span class="strut">&nbsp;</span></p>
 <p id="t58" class="stm run hide_run"><span class="key">import</span> <span class="nam">texttable</span><span class="strut">&nbsp;</span></p>
 <p id="t59" class="stm run hide_run"><span class="key">import</span> <span class="nam">pexpect</span><span class="strut">&nbsp;</span></p>
-<p id="t60" class="stm run hide_run"><span class="key">import</span> <span class="nam">shutit_main</span><span class="strut">&nbsp;</span></p>
+<p id="t60" class="stm run hide_run"><span class="key">import</span> <span class="nam">shutit</span><span class="strut">&nbsp;</span></p>
 <p id="t61" class="stm run hide_run"><span class="key">import</span> <span class="nam">shutit_assets</span><span class="strut">&nbsp;</span></p>
 <p id="t62" class="stm run hide_run"><span class="key">import</span> <span class="nam">shutit_skeleton</span><span class="strut">&nbsp;</span></p>
 <p id="t63" class="stm run hide_run"><span class="key">import</span> <span class="nam">shutit_exam</span><span class="strut">&nbsp;</span></p>
@@ -2360,7 +2360,7 @@
 <p id="t403" class="stm run hide_run">        <span class="nam">actions</span> <span class="op">=</span> <span class="op">[</span><span class="str">'build'</span><span class="op">,</span> <span class="str">'run'</span><span class="op">,</span> <span class="str">'list_configs'</span><span class="op">,</span> <span class="str">'list_modules'</span><span class="op">,</span> <span class="str">'list_deps'</span><span class="op">,</span> <span class="str">'skeleton'</span><span class="op">,</span> <span class="str">'version'</span><span class="op">]</span><span class="strut">&nbsp;</span></p>
 <p id="t404" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t405" class="pln">        <span class="com"># COMPAT 2014-05-15 - build is the default if there is no action specified</span><span class="strut">&nbsp;</span></p>
-<p id="t406" class="pln">        <span class="com"># and we've not asked for help and we've called via 'shutit_main.py'</span><span class="strut">&nbsp;</span></p>
+<p id="t406" class="pln">        <span class="com"># and we've not asked for help and we've called via 'shutit.py'</span><span class="strut">&nbsp;</span></p>
 <p id="t407" class="stm run hide_run">        <span class="key">if</span> <span class="nam">len</span><span class="op">(</span><span class="nam">sys</span><span class="op">.</span><span class="nam">argv</span><span class="op">)</span> <span class="op">==</span> <span class="num">1</span> <span class="key">or</span> <span class="op">(</span><span class="nam">len</span><span class="op">(</span><span class="nam">sys</span><span class="op">.</span><span class="nam">argv</span><span class="op">)</span> <span class="op">></span> <span class="num">1</span> <span class="key">and</span> <span class="nam">sys</span><span class="op">.</span><span class="nam">argv</span><span class="op">[</span><span class="num">1</span><span class="op">]</span> <span class="key">not</span> <span class="key">in</span> <span class="nam">actions</span><span class="strut">&nbsp;</span></p>
 <p id="t408" class="pln">                        <span class="key">and</span> <span class="str">'-h'</span> <span class="key">not</span> <span class="key">in</span> <span class="nam">sys</span><span class="op">.</span><span class="nam">argv</span> <span class="key">and</span> <span class="str">'--help'</span> <span class="key">not</span> <span class="key">in</span> <span class="nam">sys</span><span class="op">.</span><span class="nam">argv</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t409" class="stm run hide_run">                <span class="nam">sys</span><span class="op">.</span><span class="nam">argv</span><span class="op">.</span><span class="nam">insert</span><span class="op">(</span><span class="num">1</span><span class="op">,</span> <span class="str">'build'</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
@@ -2462,7 +2462,7 @@
 <p id="t505" class="pln">        <span class="str">"""Process the args we have.</span><span class="strut">&nbsp;</span></p>
 <p id="t506" class="pln"><span class="str">        """</span><span class="strut">&nbsp;</span></p>
 <p id="t507" class="stm run hide_run">        <span class="key">if</span> <span class="nam">args</span><span class="op">.</span><span class="nam">action</span> <span class="op">==</span> <span class="str">'version'</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
-<p id="t508" class="stm mis">                <span class="key">print</span><span class="op">(</span><span class="str">'ShutIt version: '</span> <span class="op">+</span> <span class="nam">shutit_main</span><span class="op">.</span><span class="nam">shutit_version</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t508" class="stm mis">                <span class="key">print</span><span class="op">(</span><span class="str">'ShutIt version: '</span> <span class="op">+</span> <span class="nam">shutit</span><span class="op">.</span><span class="nam">shutit_version</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t509" class="stm mis">                <span class="nam">handle_exit</span><span class="op">(</span><span class="nam">shutit</span><span class="op">=</span><span class="nam">shutit</span><span class="op">,</span> <span class="nam">exit_code</span><span class="op">=</span><span class="num">0</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t510" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t511" class="pln">        <span class="com"># What are we asking shutit to do?</span><span class="strut">&nbsp;</span></p>
@@ -3235,7 +3235,7 @@
 <p id="t1278" class="stm mis">        <span class="key">print</span><span class="op">(</span><span class="str">r'CRTL-\ caught, hard-exiting ShutIt'</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t1279" class="stm mis">        <span class="nam">shutit_frame</span> <span class="op">=</span> <span class="nam">get_shutit_frame</span><span class="op">(</span><span class="nam">frame</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t1280" class="stm mis">        <span class="key">if</span> <span class="nam">shutit_frame</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
-<p id="t1281" class="stm mis">                <span class="nam">shutit_main</span><span class="op">.</span><span class="nam">do_finalize</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t1281" class="stm mis">                <span class="nam">shutit</span><span class="op">.</span><span class="nam">do_finalize</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t1282" class="stm mis">        <span class="nam">handle_exit</span><span class="op">(</span><span class="nam">exit_code</span><span class="op">=</span><span class="num">1</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t1283" class="pln"><span class="com"># CTRL-\ HANDLING CODE ENDS</span><span class="strut">&nbsp;</span></p>
 <p id="t1284" class="pln"><span class="strut">&nbsp;</span></p>
@@ -3850,7 +3850,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.3.4</a>,
-            created at 2017-04-23 07:11
+            created at 2017-04-23 10:43
         </p>
     </div>
 </div>
