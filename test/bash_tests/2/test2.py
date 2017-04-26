@@ -23,7 +23,7 @@ class test2(ShutItModule):
 
 def module():
 		return test2(
-			'bash_tests.test2.test2', 2010087968.000112535246,
+			'bash_tests.test2.test2', 2010087968.0125012500112535246,
 			description='',
 			maintainer='',
 			delivery_methods=['bash'],
