@@ -8,7 +8,7 @@
     
     
     <meta http-equiv="X-UA-Compatible" content="IE=emulateIE7" />
-    <title>Coverage for /usr/local/lib/python2.7/dist-packages/shutit_patterns/docker.py: 94%</title>
+    <title>Coverage for /usr/local/lib/python2.7/dist-packages/shutit_patterns/docker.py: 91%</title>
     <link rel="stylesheet" href="style.css" type="text/css">
     
     <script type="text/javascript" src="jquery.min.js"></script>
@@ -24,15 +24,15 @@
 <div id="header">
     <div class="content">
         <h1>Coverage for <b>/usr/local/lib/python2.7/dist-packages/shutit_patterns/docker.py</b> :
-            <span class="pc_cov">94%</span>
+            <span class="pc_cov">91%</span>
         </h1>
 
         <img id="keyboard_icon" src="keybd_closed.png" alt="Show keyboard shortcuts" />
 
         <h2 class="stats">
             102 statements &nbsp;
-            <span class="run hide_run shortkey_r button_toggle_run">96 run</span>
-            <span class="mis shortkey_m button_toggle_mis">6 missing</span>
+            <span class="run hide_run shortkey_r button_toggle_run">93 run</span>
+            <span class="mis shortkey_m button_toggle_mis">9 missing</span>
             <span class="exc shortkey_x button_toggle_exc">0 excluded</span>
 
             
@@ -306,11 +306,11 @@
 <p id="n237" class="pln"><a href="#n237">237</a></p>
 <p id="n238" class="stm run hide_run"><a href="#n238">238</a></p>
 <p id="n239" class="pln"><a href="#n239">239</a></p>
-<p id="n240" class="stm run hide_run"><a href="#n240">240</a></p>
-<p id="n241" class="stm run hide_run"><a href="#n241">241</a></p>
+<p id="n240" class="stm mis"><a href="#n240">240</a></p>
+<p id="n241" class="stm mis"><a href="#n241">241</a></p>
 <p id="n242" class="pln"><a href="#n242">242</a></p>
 <p id="n243" class="pln"><a href="#n243">243</a></p>
-<p id="n244" class="stm run hide_run"><a href="#n244">244</a></p>
+<p id="n244" class="stm mis"><a href="#n244">244</a></p>
 <p id="n245" class="stm run hide_run"><a href="#n245">245</a></p>
 <p id="n246" class="pln"><a href="#n246">246</a></p>
 <p id="n247" class="stm run hide_run"><a href="#n247">247</a></p>
@@ -635,11 +635,11 @@
 <p id="t237" class="pln"><span class="str">name:'''</span> <span class="op">+</span> <span class="nam">skel_module_name</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t238" class="stm run hide_run">                                <span class="nam">build_cnf_file</span><span class="op">.</span><span class="nam">close</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t239" class="pln">                        <span class="key">else</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
-<p id="t240" class="stm run hide_run">                                <span class="nam">build_cnf_file</span> <span class="op">=</span> <span class="nam">open</span><span class="op">(</span><span class="nam">build_cnf_filename</span><span class="op">,</span><span class="str">'a'</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
-<p id="t241" class="stm run hide_run">                                <span class="nam">build_cnf_file</span><span class="op">.</span><span class="nam">write</span><span class="op">(</span><span class="str">'''</span><span class="strut">&nbsp;</span></p>
+<p id="t240" class="stm mis">                                <span class="nam">build_cnf_file</span> <span class="op">=</span> <span class="nam">open</span><span class="op">(</span><span class="nam">build_cnf_filename</span><span class="op">,</span><span class="str">'a'</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t241" class="stm mis">                                <span class="nam">build_cnf_file</span><span class="op">.</span><span class="nam">write</span><span class="op">(</span><span class="str">'''</span><span class="strut">&nbsp;</span></p>
 <p id="t242" class="pln"><span class="str">['''</span> <span class="op">+</span> <span class="nam">skel_domain</span> <span class="op">+</span> <span class="str">'''.'''</span> <span class="op">+</span>  <span class="nam">skel_module_name</span> <span class="op">+</span> <span class="nam">module_modifier</span> <span class="op">+</span> <span class="str">''']</span><span class="strut">&nbsp;</span></p>
 <p id="t243" class="pln"><span class="str">shutit.core.module.build:yes'''</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
-<p id="t244" class="stm run hide_run">                                <span class="nam">build_cnf_file</span><span class="op">.</span><span class="nam">close</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t244" class="stm mis">                                <span class="nam">build_cnf_file</span><span class="op">.</span><span class="nam">close</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t245" class="stm run hide_run">                <span class="nam">os</span><span class="op">.</span><span class="nam">chmod</span><span class="op">(</span><span class="nam">build_cnf_filename</span><span class="op">,</span><span class="num">0o400</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t246" class="pln">        <span class="key">else</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t247" class="stm run hide_run">                <span class="nam">shutit</span><span class="op">.</span><span class="nam">cfg</span><span class="op">[</span><span class="str">'skeleton'</span><span class="op">]</span><span class="op">[</span><span class="str">'header_section'</span><span class="op">]</span>      <span class="op">=</span> <span class="str">'from shutit_module import ShutItModule\n\nclass '</span> <span class="op">+</span> <span class="nam">skel_module_name</span> <span class="op">+</span> <span class="str">'(ShutItModule):\n'</span><span class="strut">&nbsp;</span></p>
@@ -732,7 +732,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.4.1</a>,
-            created at 2017-06-13 10:47
+            created at 2017-06-13 16:25
         </p>
     </div>
 </div>
