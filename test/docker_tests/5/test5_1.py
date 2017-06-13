@@ -14,7 +14,7 @@ class test5_1(ShutItModule):
 		return False
 
 	def build(self, shutit):
-		shutit.send_and_expect('touch /tmp/test5_1')
+		shutit.send('touch /tmp/test5_1')
 		return True
 
 def module():

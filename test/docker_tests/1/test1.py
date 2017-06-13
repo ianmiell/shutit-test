@@ -18,7 +18,7 @@ class test1(ShutItModule):
 		output=shutit.send_and_get_output('ls')
 		shutit.log(output,add_final_message=True)
 		thing.thing()
-		shutit.send_and_expect('touch /tmp/container_touched')
+		shutit.send('touch /tmp/container_touched')
 		# to test email if desired
 		#e = shutit.get_emailer(self.module_id)
 		#for line in ['your message line 1', 'your message line 2']:
