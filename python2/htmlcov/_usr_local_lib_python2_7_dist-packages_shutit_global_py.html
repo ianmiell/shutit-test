@@ -394,7 +394,7 @@
 <p id="t63" class="pln">                <span class="com"># It's important that this has '.*' at the start, so the matched data is reliably 'after' in the</span><span class="strut">&nbsp;</span></p>
 <p id="t64" class="pln">                <span class="com"># child object. Use these where possible to make things more consistent.</span><span class="strut">&nbsp;</span></p>
 <p id="t65" class="pln">                <span class="com"># Attempt to capture any starting prompt (when starting) with this regexp.</span><span class="strut">&nbsp;</span></p>
-<p id="t66" class="stm run hide_run">                <span class="nam">self</span><span class="op">.</span><span class="nam">base_prompt</span>      <span class="op">=</span> <span class="str">'\r\n.*[@#$] '</span><span class="strut">&nbsp;</span></p>
+<p id="t66" class="stm run hide_run">                <span class="nam">self</span><span class="op">.</span><span class="nam">base_prompt</span>      <span class="op">=</span> <span class="str">'\n.*[@#$] '</span><span class="strut">&nbsp;</span></p>
 <p id="t67" class="pln">                <span class="com"># Environments are kept globally, as different sessions may re-connect to them.</span><span class="strut">&nbsp;</span></p>
 <p id="t68" class="stm run hide_run">                <span class="nam">self</span><span class="op">.</span><span class="nam">shutit_pexpect_session_environments</span> <span class="op">=</span> <span class="nam">set</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t69" class="stm run hide_run">                <span class="key">if</span> <span class="nam">self</span><span class="op">.</span><span class="nam">username</span> <span class="op">==</span> <span class="str">''</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
@@ -598,7 +598,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.4.1</a>,
-            created at 2017-06-13 10:47
+            created at 2017-06-15 19:39
         </p>
     </div>
 </div>
