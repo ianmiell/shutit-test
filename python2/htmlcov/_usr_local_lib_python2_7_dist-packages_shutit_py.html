@@ -162,10 +162,10 @@
 <p id="t30" class="stm run hide_run"><span class="key">import</span> <span class="nam">shutit_global</span><span class="strut">&nbsp;</span></p>
 <p id="t31" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t32" class="pln"><span class="strut">&nbsp;</span></p>
-<p id="t33" class="stm run hide_run"><span class="key">def</span> <span class="nam">create_session</span><span class="op">(</span><span class="nam">session_type</span><span class="op">=</span><span class="str">'bash'</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
+<p id="t33" class="stm run hide_run"><span class="key">def</span> <span class="nam">create_session</span><span class="op">(</span><span class="nam">session_type</span><span class="op">=</span><span class="str">'bash'</span><span class="op">,</span><span class="nam">loglevel</span><span class="op">=</span><span class="str">'WARNING'</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t34" class="stm mis">        <span class="key">assert</span> <span class="nam">session_type</span> <span class="key">in</span> <span class="op">(</span><span class="str">'bash'</span><span class="op">,</span><span class="str">'docker'</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t35" class="stm mis">        <span class="nam">shutit_global_object</span> <span class="op">=</span> <span class="nam">shutit_global</span><span class="op">.</span><span class="nam">shutit_global_object</span><span class="strut">&nbsp;</span></p>
-<p id="t36" class="stm mis">        <span class="key">return</span> <span class="nam">shutit_global_object</span><span class="op">.</span><span class="nam">create_session</span><span class="op">(</span><span class="nam">session_type</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t36" class="stm mis">        <span class="key">return</span> <span class="nam">shutit_global_object</span><span class="op">.</span><span class="nam">create_session</span><span class="op">(</span><span class="nam">session_type</span><span class="op">,</span><span class="nam">loglevel</span><span class="op">=</span><span class="nam">loglevel</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t37" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t38" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t39" class="stm run hide_run"><span class="key">def</span> <span class="nam">main</span><span class="op">(</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
@@ -200,7 +200,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.4.1</a>,
-            created at 2017-07-11 20:04
+            created at 2017-07-16 11:04
         </p>
     </div>
 </div>
