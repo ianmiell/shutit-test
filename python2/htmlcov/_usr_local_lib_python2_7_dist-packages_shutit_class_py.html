@@ -6938,7 +6938,7 @@
 <p id="t2349" class="pln">        <span class="com"># eg sys.stdout or None</span><span class="strut">&nbsp;</span></p>
 <p id="t2350" class="stm run hide_run">        <span class="key">def</span> <span class="nam">divert_output</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">output</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t2351" class="stm run hide_run">                <span class="key">for</span> <span class="nam">key</span> <span class="key">in</span> <span class="nam">self</span><span class="op">.</span><span class="nam">shutit_pexpect_sessions</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
-<p id="t2352" class="stm run hide_run">                        <span class="nam">self</span><span class="op">.</span><span class="nam">shutit_pexpect_sessions</span><span class="op">[</span><span class="nam">key</span><span class="op">]</span><span class="op">.</span><span class="nam">pexpect_child</span><span class="op">.</span><span class="nam">logfile_send</span> <span class="op">=</span> <span class="nam">output</span><span class="strut">&nbsp;</span></p>
+<p id="t2352" class="stm run hide_run">                        <span class="nam">self</span><span class="op">.</span><span class="nam">shutit_pexpect_sessions</span><span class="op">[</span><span class="nam">key</span><span class="op">]</span><span class="op">.</span><span class="nam">pexpect_child</span><span class="op">.</span><span class="nam">logfile</span> <span class="op">=</span> <span class="nam">output</span><span class="strut">&nbsp;</span></p>
 <p id="t2353" class="stm run hide_run">                <span class="key">return</span> <span class="nam">True</span><span class="strut">&nbsp;</span></p>
 <p id="t2354" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t2355" class="pln"><span class="strut">&nbsp;</span></p>
@@ -9114,7 +9114,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.4.1</a>,
-            created at 2017-07-11 20:04
+            created at 2017-09-14 08:25
         </p>
     </div>
 </div>
