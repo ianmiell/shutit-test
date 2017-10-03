@@ -82,7 +82,7 @@ class shutit_test(ShutItModule):
 		return True
 
 	def get_config(self, shutit):
-		shutit.get_config(self.module_id,'vagrant_image',default='ubuntu/trusty64')
+		shutit.get_config(self.module_id,'vagrant_image',default='ubuntu/xenial64')
 		shutit.get_config(self.module_id,'vagrant_provider',default='virtualbox')
 		shutit.get_config(self.module_id,'shutit_branch')
 		return True
