@@ -7228,11 +7228,11 @@
 <p id="t2630" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t2631" class="stm run hide_run">        <span class="key">def</span> <span class="nam">get_command</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">command</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t2632" class="pln">                <span class="str">"""Helper function for osx - return gnu utils rather than default for</span><span class="strut">&nbsp;</span></p>
-<p id="t2633" class="pln"><span class="str">                   eg head and md5sum where possible.</span><span class="strut">&nbsp;</span></p>
+<p id="t2633" class="pln"><span class="str">                   eg head and md5sum where possible and needed.</span><span class="strut">&nbsp;</span></p>
 <p id="t2634" class="pln"><span class="str">                """</span><span class="strut">&nbsp;</span></p>
-<p id="t2635" class="stm run hide_run">                <span class="key">if</span> <span class="nam">command</span> <span class="key">in</span> <span class="op">(</span><span class="str">'head'</span><span class="op">,</span><span class="str">'md5sum'</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
+<p id="t2635" class="stm run hide_run">                <span class="key">if</span> <span class="nam">command</span> <span class="key">in</span> <span class="op">(</span><span class="str">'md5sum'</span><span class="op">,</span><span class="str">'sed'</span><span class="op">,</span><span class="str">'head'</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t2636" class="stm run hide_run">                        <span class="key">if</span> <span class="nam">self</span><span class="op">.</span><span class="nam">get_current_shutit_pexpect_session_environment</span><span class="op">(</span><span class="op">)</span><span class="op">.</span><span class="nam">distro</span> <span class="op">==</span> <span class="str">'osx'</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
-<p id="t2637" class="stm mis">                                <span class="key">return</span> <span class="str">'''PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH" '''</span> <span class="op">+</span> <span class="nam">command</span> <span class="op">+</span> <span class="str">' '</span><span class="strut">&nbsp;</span></p>
+<p id="t2637" class="stm mis">                                <span class="key">return</span> <span class="str">'g'</span> <span class="op">+</span> <span class="nam">command</span> <span class="op">+</span> <span class="str">' '</span><span class="strut">&nbsp;</span></p>
 <p id="t2638" class="pln">                        <span class="key">else</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t2639" class="stm run hide_run">                                <span class="key">return</span> <span class="nam">command</span> <span class="op">+</span> <span class="str">' '</span><span class="strut">&nbsp;</span></p>
 <p id="t2640" class="stm mis">                <span class="key">return</span> <span class="nam">command</span><span class="strut">&nbsp;</span></p>
@@ -9132,7 +9132,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.4.1</a>,
-            created at 2017-10-26 16:03
+            created at 2017-11-02 07:31
         </p>
     </div>
 </div>
