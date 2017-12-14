@@ -4039,7 +4039,7 @@
 <p id="t470" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t471" class="pln">                <span class="com"># Get the hostname</span><span class="strut">&nbsp;</span></p>
 <p id="t472" class="pln">                <span class="com"># Lack of space after > is deliberate to avoid issues with prompt matching.</span><span class="strut">&nbsp;</span></p>
-<p id="t473" class="stm run hide_run">                <span class="nam">hostname</span> <span class="op">=</span> <span class="nam">shutit</span><span class="op">.</span><span class="nam">send_and_get_output</span><span class="op">(</span><span class="str">""" if [ $(echo $SHELL) == '/bin/bash' ]; then echo $HOSTNAME; elif [ $(command hostname 2>/dev/null) != '' ]; then hostname -s; fi"""</span><span class="op">,</span> <span class="nam">echo</span><span class="op">=</span><span class="key">False</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t473" class="stm run hide_run">                <span class="nam">hostname</span> <span class="op">=</span> <span class="nam">shutit</span><span class="op">.</span><span class="nam">send_and_get_output</span><span class="op">(</span><span class="str">""" if [ $(echo $SHELL) == '/bin/bash' ]; then echo $HOSTNAME; elif [ $(command hostname 2>/dev/null) != '' ]; then hostname -s; fi"""</span><span class="op">,</span> <span class="nam">echo</span><span class="op">=</span><span class="key">False</span><span class="op">,</span><span class="nam">loglevel</span><span class="op">=</span><span class="nam">logging</span><span class="op">.</span><span class="nam">DEBUG</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t474" class="stm run hide_run">                <span class="nam">local_prompt_with_hostname</span> <span class="op">=</span> <span class="nam">hostname</span> <span class="op">+</span> <span class="str">':'</span> <span class="op">+</span> <span class="nam">local_prompt</span><span class="strut">&nbsp;</span></p>
 <p id="t475" class="stm run hide_run">                <span class="nam">shutit</span><span class="op">.</span><span class="nam">expect_prompts</span><span class="op">[</span><span class="nam">prompt_name</span><span class="op">]</span> <span class="op">=</span> <span class="nam">local_prompt_with_hostname</span><span class="strut">&nbsp;</span></p>
 <p id="t476" class="stm run hide_run">                <span class="nam">self</span><span class="op">.</span><span class="nam">default_expect</span> <span class="op">=</span> <span class="nam">shutit</span><span class="op">.</span><span class="nam">expect_prompts</span><span class="op">[</span><span class="nam">prompt_name</span><span class="op">]</span><span class="strut">&nbsp;</span></p>
@@ -7074,7 +7074,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.4.2</a>,
-            created at 2017-12-05 12:36
+            created at 2017-12-14 07:32
         </p>
     </div>
 </div>
