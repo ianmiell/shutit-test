@@ -6064,7 +6064,7 @@
 <p id="t2495" class="stm run hide_run">                <span class="nam">cfg</span> <span class="op">=</span> <span class="nam">shutit</span><span class="op">.</span><span class="nam">cfg</span><span class="strut">&nbsp;</span></p>
 <p id="t2496" class="pln">                <span class="com"># Set up what we expect.</span><span class="strut">&nbsp;</span></p>
 <p id="t2497" class="stm run hide_run">                <span class="nam">sendspec</span><span class="op">.</span><span class="nam">expect</span> <span class="op">=</span> <span class="nam">sendspec</span><span class="op">.</span><span class="nam">expect</span> <span class="key">or</span> <span class="nam">self</span><span class="op">.</span><span class="nam">default_expect</span><span class="strut">&nbsp;</span></p>
-<p id="t2498" class="stm run hide_run">                <span class="key">assert</span> <span class="nam">sendspec</span><span class="op">.</span><span class="nam">send</span><span class="strut">&nbsp;</span></p>
+<p id="t2498" class="stm run hide_run">                <span class="key">assert</span> <span class="nam">sendspec</span><span class="op">.</span><span class="nam">send</span> <span class="key">is</span> <span class="key">not</span> <span class="key">None</span><span class="strut">&nbsp;</span></p>
 <p id="t2499" class="stm run hide_run">                <span class="key">if</span> <span class="nam">sendspec</span><span class="op">.</span><span class="nam">send</span><span class="op">.</span><span class="nam">strip</span><span class="op">(</span><span class="op">)</span> <span class="op">==</span> <span class="str">''</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t2500" class="stm mis">                        <span class="nam">sendspec</span><span class="op">.</span><span class="nam">fail_on_empty_before</span><span class="op">=</span><span class="key">False</span><span class="strut">&nbsp;</span></p>
 <p id="t2501" class="stm mis">                        <span class="nam">sendspec</span><span class="op">.</span><span class="nam">check_exit</span><span class="op">=</span><span class="key">False</span><span class="strut">&nbsp;</span></p>
@@ -7074,7 +7074,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.4.2</a>,
-            created at 2017-12-18 19:09
+            created at 2017-12-21 07:31
         </p>
     </div>
 </div>
