@@ -7042,7 +7042,7 @@
 <p id="t2426" class="pln">        <span class="com"># value for the given context.</span><span class="strut">&nbsp;</span></p>
 <p id="t2427" class="stm run hide_run">        <span class="key">def</span> <span class="nam">get_echo_override</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">echo</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t2428" class="pln">                <span class="com"># Should we echo the output?</span><span class="strut">&nbsp;</span></p>
-<p id="t2429" class="stm run hide_run">                <span class="key">if</span> <span class="nam">self</span><span class="op">.</span><span class="nam">build</span><span class="op">[</span><span class="str">'always_echo'</span><span class="op">]</span> <span class="key">is</span> <span class="key">True</span> <span class="key">or</span> <span class="nam">shutit_global</span><span class="op">.</span><span class="nam">shutit_global_object</span><span class="op">.</span><span class="nam">loglevel</span> <span class="op">>=</span> <span class="nam">logging</span><span class="op">.</span><span class="nam">DEBUG</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
+<p id="t2429" class="stm run hide_run">                <span class="key">if</span> <span class="nam">self</span><span class="op">.</span><span class="nam">build</span><span class="op">[</span><span class="str">'always_echo'</span><span class="op">]</span> <span class="key">is</span> <span class="key">True</span> <span class="key">or</span> <span class="nam">shutit_global</span><span class="op">.</span><span class="nam">shutit_global_object</span><span class="op">.</span><span class="nam">loglevel</span> <span class="op">&lt;=</span> <span class="nam">logging</span><span class="op">.</span><span class="nam">DEBUG</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t2430" class="pln">                        <span class="com"># Yes if it's set to always echo or is in debug</span><span class="strut">&nbsp;</span></p>
 <p id="t2431" class="stm run hide_run">                        <span class="nam">echo</span> <span class="op">=</span> <span class="key">True</span><span class="strut">&nbsp;</span></p>
 <p id="t2432" class="stm run hide_run">                <span class="key">if</span> <span class="nam">echo</span> <span class="key">is</span> <span class="key">None</span> <span class="key">and</span> <span class="nam">self</span><span class="op">.</span><span class="nam">build</span><span class="op">[</span><span class="str">'walkthrough'</span><span class="op">]</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
@@ -9168,7 +9168,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.5.1</a>,
-            created at 2018-03-04 07:31
+            created at 2018-03-09 07:32
         </p>
     </div>
 </div>
