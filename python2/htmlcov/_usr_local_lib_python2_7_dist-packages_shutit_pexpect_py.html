@@ -4416,7 +4416,7 @@
 <p id="t847" class="stm run hide_run">                <span class="nam">shutit_global</span><span class="op">.</span><span class="nam">shutit_global_object</span><span class="op">.</span><span class="nam">log</span><span class="op">(</span><span class="str">'Changing directory to path: "'</span> <span class="op">+</span> <span class="nam">path</span> <span class="op">+</span> <span class="str">'"'</span><span class="op">,</span> <span class="nam">level</span><span class="op">=</span><span class="nam">logging</span><span class="op">.</span><span class="nam">DEBUG</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t848" class="stm run hide_run">                <span class="key">if</span> <span class="nam">shutit</span><span class="op">.</span><span class="nam">build</span><span class="op">[</span><span class="str">'delivery'</span><span class="op">]</span> <span class="key">in</span> <span class="op">(</span><span class="str">'bash'</span><span class="op">,</span><span class="str">'dockerfile'</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t849" class="stm run hide_run">                        <span class="nam">self</span><span class="op">.</span><span class="nam">send</span><span class="op">(</span><span class="nam">ShutItSendSpec</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
-<p id="t850" class="pln">                                                 <span class="nam">send</span><span class="op">=</span><span class="str">' command cd '</span> <span class="op">+</span> <span class="nam">path</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
+<p id="t850" class="pln">                                                 <span class="nam">send</span><span class="op">=</span><span class="str">' command cd "'</span> <span class="op">+</span> <span class="nam">path</span> <span class="op">+</span> <span class="str">'"'</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
 <p id="t851" class="pln">                                                 <span class="nam">timeout</span><span class="op">=</span><span class="nam">timeout</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
 <p id="t852" class="pln">                                                 <span class="nam">echo</span><span class="op">=</span><span class="nam">False</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
 <p id="t853" class="pln">                                                 <span class="nam">loglevel</span><span class="op">=</span><span class="nam">loglevel</span><span class="op">)</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
@@ -7074,7 +7074,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.5.1</a>,
-            created at 2018-02-16 07:45
+            created at 2018-03-12 08:15
         </p>
     </div>
 </div>
