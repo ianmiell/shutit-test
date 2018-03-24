@@ -6,8 +6,8 @@ class test15(ShutItModule):
 		if not shutit.send_and_require('echo up simba',['.*p sim.*']):
 			return False # pragma: no cover
 		# This should result in a pause point if in interactive mode...
-		if shutit.send_and_require('echo up bimba',['.*p sim.*']):
-			return False # pragma: no cover
+#		if shutit.send_and_require('echo up bimba',['.*p sim.*']):
+#			return False # pragma: no cover
 		shutit.send('sleep 15 && touch /tmp/asdfghjkl &')
 		shutit.send_until('ls /tmp',['.*asdfghjk.*'])
 		shutit.send('sleep 15 && rm /tmp/asdfghjkl &')
