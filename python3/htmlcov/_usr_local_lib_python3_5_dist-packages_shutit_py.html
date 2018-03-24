@@ -211,13 +211,13 @@
 <p id="t63" class="pln"><span class="str">        """</span><span class="strut">&nbsp;</span></p>
 <p id="t64" class="pln">        <span class="com"># Create base shutit object.</span><span class="strut">&nbsp;</span></p>
 <p id="t65" class="stm run hide_run">        <span class="nam">shutit</span> <span class="op">=</span> <span class="nam">shutit_global</span><span class="op">.</span><span class="nam">shutit_global_object</span><span class="op">.</span><span class="nam">shutit_objects</span><span class="op">[</span><span class="num">0</span><span class="op">]</span><span class="strut">&nbsp;</span></p>
-<p id="t66" class="stm run hide_run">        <span class="key">if</span> <span class="nam">sys</span><span class="op">.</span><span class="nam">version_info</span><span class="op">.</span><span class="nam">major</span> <span class="op">==</span> <span class="num">2</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
-<p id="t67" class="stm mis">                <span class="key">if</span> <span class="nam">sys</span><span class="op">.</span><span class="nam">version_info</span><span class="op">.</span><span class="nam">minor</span> <span class="op">&lt;</span> <span class="num">7</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
+<p id="t66" class="stm run hide_run">        <span class="key">if</span> <span class="nam">sys</span><span class="op">.</span><span class="nam">version_info</span><span class="op">[</span><span class="num">0</span><span class="op">]</span> <span class="op">==</span> <span class="num">2</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
+<p id="t67" class="stm mis">                <span class="key">if</span> <span class="nam">sys</span><span class="op">.</span><span class="nam">version_info</span><span class="op">[</span><span class="num">1</span><span class="op">]</span> <span class="op">&lt;</span> <span class="num">7</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t68" class="exc">                        <span class="nam">shutit</span><span class="op">.</span><span class="nam">fail</span><span class="op">(</span><span class="str">'Python version must be 2.7+'</span><span class="op">)</span> <span class="com"># pragma: no cover</span><span class="strut">&nbsp;</span></p>
 <p id="t69" class="stm run hide_run">        <span class="nam">shutit</span><span class="op">.</span><span class="nam">setup_shutit_obj</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t70" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t71" class="pln"><span class="strut">&nbsp;</span></p>
-<p id="t72" class="stm run hide_run"><span class="nam">shutit_version</span><span class="op">=</span><span class="str">'1.0.64'</span><span class="strut">&nbsp;</span></p>
+<p id="t72" class="stm run hide_run"><span class="nam">shutit_version</span><span class="op">=</span><span class="str">'1.0.67'</span><span class="strut">&nbsp;</span></p>
 <p id="t73" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t74" class="stm run hide_run"><span class="key">if</span> <span class="nam">__name__</span> <span class="op">==</span> <span class="str">'__main__'</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t75" class="stm mis">        <span class="nam">shutit_global</span><span class="op">.</span><span class="nam">setup_signals</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
@@ -232,7 +232,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.5.1</a>,
-            created at 2018-03-19 10:14
+            created at 2018-03-24 11:01
         </p>
     </div>
 </div>
