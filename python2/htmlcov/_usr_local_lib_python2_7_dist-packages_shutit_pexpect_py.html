@@ -4984,7 +4984,7 @@
 <p id="t1404" class="pln">                        <span class="com"># Not handled</span><span class="strut">&nbsp;</span></p>
 <p id="t1405" class="stm mis">                        <span class="key">return</span> <span class="nam">False</span><span class="strut">&nbsp;</span></p>
 <p id="t1406" class="pln">                <span class="com"># Get mapped packages.</span><span class="strut">&nbsp;</span></p>
-<p id="t1407" class="stm run hide_run">                <span class="nam">package</span> <span class="op">=</span> <span class="nam">package_map</span><span class="op">.</span><span class="nam">map_packages</span><span class="op">(</span><span class="nam">package</span><span class="op">,</span> <span class="nam">self</span><span class="op">.</span><span class="nam">current_environment</span><span class="op">.</span><span class="nam">install_type</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t1407" class="stm run hide_run">                <span class="nam">package</span> <span class="op">=</span> <span class="nam">package_map</span><span class="op">.</span><span class="nam">map_packages</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">package</span><span class="op">,</span> <span class="nam">self</span><span class="op">.</span><span class="nam">current_environment</span><span class="op">.</span><span class="nam">install_type</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t1408" class="pln">                <span class="com"># Let's be tolerant of failure eg due to network.</span><span class="strut">&nbsp;</span></p>
 <p id="t1409" class="pln">                <span class="com"># This is especially helpful with automated exam.</span><span class="strut">&nbsp;</span></p>
 <p id="t1410" class="stm run hide_run">                <span class="key">if</span> <span class="nam">package</span><span class="op">.</span><span class="nam">strip</span><span class="op">(</span><span class="op">)</span> <span class="op">!=</span> <span class="str">''</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
@@ -5142,7 +5142,7 @@
 <p id="t1562" class="pln">                        <span class="com"># Not handled</span><span class="strut">&nbsp;</span></p>
 <p id="t1563" class="stm mis">                        <span class="key">return</span> <span class="nam">False</span><span class="strut">&nbsp;</span></p>
 <p id="t1564" class="pln">                <span class="com"># Get mapped package.</span><span class="strut">&nbsp;</span></p>
-<p id="t1565" class="stm mis">                <span class="nam">package</span> <span class="op">=</span> <span class="nam">package_map</span><span class="op">.</span><span class="nam">map_package</span><span class="op">(</span><span class="nam">package</span><span class="op">,</span> <span class="nam">self</span><span class="op">.</span><span class="nam">current_environment</span><span class="op">.</span><span class="nam">install_type</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t1565" class="stm mis">                <span class="nam">package</span> <span class="op">=</span> <span class="nam">package_map</span><span class="op">.</span><span class="nam">map_packages</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">package</span><span class="op">,</span> <span class="nam">self</span><span class="op">.</span><span class="nam">current_environment</span><span class="op">.</span><span class="nam">install_type</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t1566" class="stm mis">                <span class="nam">pw</span> <span class="op">=</span> <span class="nam">self</span><span class="op">.</span><span class="nam">get_sudo_pass_if_needed</span><span class="op">(</span><span class="nam">shutit</span><span class="op">,</span> <span class="nam">ignore_brew</span><span class="op">=</span><span class="nam">True</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t1567" class="stm mis">                <span class="key">if</span> <span class="nam">pw</span> <span class="op">!=</span> <span class="str">''</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t1568" class="stm mis">                        <span class="nam">cmd</span> <span class="op">=</span> <span class="str">'sudo '</span> <span class="op">+</span> <span class="nam">cmd</span><span class="strut">&nbsp;</span></p>
@@ -7096,7 +7096,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.5.1</a>,
-            created at 2018-03-24 11:14
+            created at 2018-03-25 10:26
         </p>
     </div>
 </div>
