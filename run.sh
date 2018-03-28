@@ -7,8 +7,7 @@ then
 	echo "Must have shutit on path, eg export PATH=$PATH:/path/to/shutit_dir"
 	exit 1
 fi
-export SHUTIT="../shutit"
-$SHUTIT -d bash -m shutit-library/vagrant:shutit-library/virtualbox "$@"
+$SHUTIT -d bash -m shutit-library/vagrant:shutit-library/virtualbox -s tk.shutit.shutit_test shutit_branch master "$@"
 if [[ $? != 0 ]]
 then
 	exit 1
