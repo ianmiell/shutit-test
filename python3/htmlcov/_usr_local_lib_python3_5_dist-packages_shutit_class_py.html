@@ -5108,12 +5108,12 @@
 <p id="t464" class="pln">                <span class="com"># Note: we must not default to a child here</span><span class="strut">&nbsp;</span></p>
 <p id="t465" class="stm mis">                <span class="key">if</span> <span class="nam">shutit_pexpect_child</span> <span class="key">is</span> <span class="key">not</span> <span class="key">None</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t466" class="stm mis">                        <span class="nam">shutit_pexpect_session</span> <span class="op">=</span> <span class="nam">self</span><span class="op">.</span><span class="nam">get_shutit_pexpect_session_from_child</span><span class="op">(</span><span class="nam">shutit_pexpect_child</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
-<p id="t467" class="stm mis">                        <span class="nam">shutit_util</span><span class="op">.</span><span class="nam">print_debug</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t467" class="stm mis">                        <span class="nam">shutit_util</span><span class="op">.</span><span class="nam">print_debug</span><span class="op">(</span><span class="nam">sys</span><span class="op">.</span><span class="nam">exc_info</span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t468" class="stm mis">                        <span class="nam">shutit_pexpect_session</span><span class="op">.</span><span class="nam">pause_point</span><span class="op">(</span><span class="str">'Pause point on fail: '</span> <span class="op">+</span> <span class="nam">msg</span><span class="op">,</span> <span class="nam">color</span><span class="op">=</span><span class="str">'31'</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t469" class="stm mis">                <span class="key">if</span> <span class="nam">throw_exception</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t470" class="stm mis">                        <span class="nam">sys</span><span class="op">.</span><span class="nam">stderr</span><span class="op">.</span><span class="nam">write</span><span class="op">(</span><span class="str">'Error caught: '</span> <span class="op">+</span> <span class="nam">msg</span> <span class="op">+</span> <span class="str">'\n'</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t471" class="stm mis">                        <span class="nam">sys</span><span class="op">.</span><span class="nam">stderr</span><span class="op">.</span><span class="nam">write</span><span class="op">(</span><span class="str">'\n'</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
-<p id="t472" class="stm mis">                        <span class="nam">shutit_util</span><span class="op">.</span><span class="nam">print_debug</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t472" class="stm mis">                        <span class="nam">shutit_util</span><span class="op">.</span><span class="nam">print_debug</span><span class="op">(</span><span class="nam">sys</span><span class="op">.</span><span class="nam">exc_info</span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t473" class="stm mis">                        <span class="key">raise</span> <span class="nam">ShutItFailException</span><span class="op">(</span><span class="nam">msg</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t474" class="pln">                <span class="key">else</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t475" class="pln">                        <span class="com"># This is an "OK" failure, ie we don't need to throw an exception.</span><span class="strut">&nbsp;</span></p>
@@ -9224,7 +9224,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.5.1</a>,
-            created at 2018-03-28 19:49
+            created at 2018-03-29 13:45
         </p>
     </div>
 </div>
