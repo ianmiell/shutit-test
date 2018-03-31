@@ -643,7 +643,7 @@
 <p id="t274" class="stm run hide_run">                <span class="nam">self</span><span class="op">.</span><span class="nam">loglevel</span> <span class="op">=</span> <span class="nam">logging</span><span class="op">.</span><span class="nam">getLogger</span><span class="op">(</span><span class="op">)</span><span class="op">.</span><span class="nam">getEffectiveLevel</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t275" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t276" class="pln"><span class="strut">&nbsp;</span></p>
-<p id="t277" class="stm run hide_run">        <span class="key">def</span> <span class="nam">handle_exit</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span><span class="nam">exit_code</span><span class="op">=</span><span class="num">0</span><span class="op">,</span><span class="nam">loglevel</span><span class="op">=</span><span class="nam">logging</span><span class="op">.</span><span class="nam">DEBUG</span><span class="op">,</span><span class="nam">msg</span><span class="op">=</span><span class="key">None</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
+<p id="t277" class="stm run hide_run">        <span class="key">def</span> <span class="nam">handle_exit</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span><span class="nam">exit_code</span><span class="op">=</span><span class="num">0</span><span class="op">,</span><span class="nam">loglevel</span><span class="op">=</span><span class="nam">logging</span><span class="op">.</span><span class="nam">CRITICAL</span><span class="op">,</span><span class="nam">msg</span><span class="op">=</span><span class="key">None</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t278" class="stm run hide_run">                <span class="key">if</span> <span class="key">not</span> <span class="nam">msg</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t279" class="stm run hide_run">                        <span class="nam">msg</span> <span class="op">=</span> <span class="str">'\nExiting with error code: '</span> <span class="op">+</span> <span class="nam">str</span><span class="op">(</span><span class="nam">exit_code</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t280" class="stm run hide_run">                        <span class="nam">msg</span> <span class="op">+=</span> <span class="str">'\nInvoking command was: '</span> <span class="op">+</span> <span class="nam">sys</span><span class="op">.</span><span class="nam">executable</span><span class="strut">&nbsp;</span></p>
@@ -674,7 +674,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.5.1</a>,
-            created at 2018-03-24 11:01
+            created at 2018-03-31 07:56
         </p>
     </div>
 </div>
