@@ -63,6 +63,8 @@ class shutit_test(ShutItModule):
 		shutit.send('cd ..')
 		shutit.send('git clone git@github.com:ianmiell/shutit-test')
 		shutit.send('cd shutit-test/test')
+		# Test that shutit version does not fail!
+		shutit.send('shutit version')
 		shutit.send('./bash_test.sh -l debug')
 		shutit.send('./skeleton_test.sh -l debug')
 		shutit.send('./docker_test.sh -l debug')
