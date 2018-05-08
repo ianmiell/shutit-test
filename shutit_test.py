@@ -1,8 +1,8 @@
-from shutit import shutit_module
+from shutit_module import ShutItModule
 import random
 import string
 
-class shutit_test(shutit_module.ShutItModule):
+class shutit_test(ShutItModule):
 
 	def build(self, shutit):
 		vagrant_image    = shutit.cfg[self.module_id]['vagrant_image']

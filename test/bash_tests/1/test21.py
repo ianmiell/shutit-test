@@ -1,7 +1,7 @@
-from shutit import shutit_module
+from shutit_module import ShutItModule
 import time
 
-class test21(shutit_module.ShutItModule):
+class test21(ShutItModule):
 
 	def build(self, shutit):
 		shutit.send('ping -c 1 -t 1 shutit.tk',follow_on_commands={'.*0 packets received.*':'echo error > /tmp/shutittk_pingres','.*1 packets received.*':'echo ok > /tmp/shutittk_pingres','.*Unknown host.*':'echo unknown > /tmp/shutittk_pingres'},check_exit=False)

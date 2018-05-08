@@ -1,7 +1,7 @@
-from shutit import shutit_module
+from shutit_module import ShutItModule
 import time
 
-class test20(shutit_module.ShutItModule):
+class test20(ShutItModule):
 
 	def build(self, shutit):
 		d = '/tmp/git-rebase-tutorial-test'

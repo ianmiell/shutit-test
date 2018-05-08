@@ -1,7 +1,7 @@
-from shutit import shutit_module
+from shutit_module import ShutItModule
 import os
 
-class test23(shutit_module.ShutItModule):
+class test23(ShutItModule):
 
 	def build(self, shutit):
 		shutit.send_host_dir('/','configs')
