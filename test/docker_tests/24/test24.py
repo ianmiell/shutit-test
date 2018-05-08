@@ -1,6 +1,6 @@
-from shutit_module import ShutItModule
+from shutit import shutit_module
 
-class test24(ShutItModule):
+class test24(shutit_module.ShutItModule):
 
 
 	def build(self, shutit):

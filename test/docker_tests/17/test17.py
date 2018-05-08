@@ -1,6 +1,6 @@
-from shutit_module import ShutItModule
+from shutit import shutit_module
 
-class test17(ShutItModule):
+class test17(shutit_module.ShutItModule):
 
 	def build(self, shutit):
 		return True

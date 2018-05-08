@@ -1,6 +1,6 @@
-from shutit_module import ShutItModule
+from shutit import shutit_module
 
-class test3(ShutItModule):
+class test3(shutit_module.ShutItModule):
 
 	def build(self, shutit):
 		s1=shutit.create_session()

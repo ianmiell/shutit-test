@@ -1,6 +1,6 @@
-from shutit_module import ShutItModule
+from shutit import shutit_module
 
-class test8(ShutItModule):
+class test8(shutit_module.ShutItModule):
 
 	def build(self, shutit):
 		shutit.add_line_to_file(['asd'],'/tmp/asd')

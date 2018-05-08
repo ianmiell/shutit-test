@@ -1,6 +1,6 @@
-from shutit_module import ShutItModule
+from shutit import shutit_module
 
-class test10(ShutItModule):
+class test10(shutit_module.ShutItModule):
 
 	def build(self, shutit):
 		if not shutit.send_and_match_output('echo "A STRING"','A STR'):

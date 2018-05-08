@@ -1,6 +1,6 @@
-from shutit_module import ShutItModule
+from shutit import shutit_module
 
-class test15(ShutItModule):
+class test15(shutit_module.ShutItModule):
 
 	def build(self, shutit):
 		if not shutit.send_and_require('echo up simba',['.*p sim.*']):
