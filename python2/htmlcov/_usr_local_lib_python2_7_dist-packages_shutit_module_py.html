@@ -451,7 +451,7 @@
 <p id="t133" class="stm run hide_run">                <span class="nam">self</span><span class="op">.</span><span class="nam">module_id</span> <span class="op">=</span> <span class="nam">module_id</span><span class="strut">&nbsp;</span></p>
 <p id="t134" class="exc">                <span class="key">if</span> <span class="key">not</span> <span class="nam">isinstance</span><span class="op">(</span><span class="nam">module_id</span><span class="op">,</span> <span class="nam">str</span><span class="op">)</span><span class="op">:</span> <span class="com"># pragma: no cover</span><span class="strut">&nbsp;</span></p>
 <p id="t135" class="exc">                        <span class="nam">err</span> <span class="op">=</span> <span class="nam">str</span><span class="op">(</span><span class="nam">module_id</span><span class="op">)</span> <span class="op">+</span> <span class="str">'\'s module_id is not a string'</span><span class="strut">&nbsp;</span></p>
-<p id="t136" class="exc">                        <span class="key">print</span><span class="op">(</span><span class="nam">err</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t136" class="exc">                        <span class="nam">shutit_util</span><span class="op">.</span><span class="nam">shutit_print</span><span class="op">(</span><span class="nam">err</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t137" class="exc">                        <span class="key">raise</span> <span class="nam">ShutItModuleError</span><span class="op">(</span><span class="nam">err</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t138" class="pln">                <span class="com"># run_order for the module (a float).</span><span class="strut">&nbsp;</span></p>
 <p id="t139" class="pln">                <span class="com"># It should be a float and not duplicated within the shutit_module path.</span><span class="strut">&nbsp;</span></p>
@@ -465,7 +465,7 @@
 <p id="t147" class="pln">                <span class="com"># side effect if float doesn't work.</span><span class="strut">&nbsp;</span></p>
 <p id="t148" class="exc">                <span class="key">if</span> <span class="key">not</span> <span class="nam">isinstance</span><span class="op">(</span><span class="nam">run_order</span><span class="op">,</span> <span class="nam">decimal</span><span class="op">.</span><span class="nam">Decimal</span><span class="op">)</span><span class="op">:</span> <span class="com"># pragma: no cover</span><span class="strut">&nbsp;</span></p>
 <p id="t149" class="exc">                        <span class="nam">err</span> <span class="op">=</span> <span class="nam">module_id</span> <span class="op">+</span> <span class="str">'\'s run order is not a decimal'</span><span class="strut">&nbsp;</span></p>
-<p id="t150" class="exc">                        <span class="key">print</span><span class="op">(</span><span class="nam">err</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t150" class="exc">                        <span class="nam">shutit_util</span><span class="op">.</span><span class="nam">shutit_print</span><span class="op">(</span><span class="nam">err</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t151" class="exc">                        <span class="key">raise</span> <span class="nam">ShutItModuleError</span><span class="op">(</span><span class="nam">err</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t152" class="stm run hide_run">                <span class="nam">self</span><span class="op">.</span><span class="nam">run_order</span> <span class="op">=</span> <span class="nam">run_order</span><span class="strut">&nbsp;</span></p>
 <p id="t153" class="pln">                <span class="com"># module ids depended on</span><span class="strut">&nbsp;</span></p>
@@ -572,7 +572,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.5.1</a>,
-            created at 2018-04-08 12:09
+            created at 2018-06-01 10:28
         </p>
     </div>
 </div>
