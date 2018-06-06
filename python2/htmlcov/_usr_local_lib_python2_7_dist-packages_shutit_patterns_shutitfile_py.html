@@ -1119,7 +1119,7 @@
 <p id="t166" class="pln">                                <span class="key">else</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t167" class="stm mis">                                        <span class="nam">full_line_split</span> <span class="op">=</span> <span class="str">''</span><span class="op">.</span><span class="nam">join</span><span class="op">(</span><span class="op">(</span><span class="nam">full_line</span><span class="op">[</span><span class="op">:</span><span class="num">10000</span><span class="op">]</span><span class="op">.</span><span class="nam">split</span><span class="op">(</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t168" class="stm mis">                                        <span class="nam">full_line_strings</span> <span class="op">=</span> <span class="nam">re</span><span class="op">.</span><span class="nam">findall</span><span class="op">(</span><span class="str">"[^\x00-\x1F\x7F-\xFF]"</span><span class="op">,</span> <span class="nam">full_line_split</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
-<p id="t169" class="stm mis">                                        <span class="key">print</span><span class="op">(</span><span class="str">'FAILED TO PARSE: '</span> <span class="op">+</span> <span class="nam">full_line_strings</span><span class="op">[</span><span class="op">:</span><span class="num">30</span><span class="op">]</span> <span class="op">+</span> <span class="str">'[...]'</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t169" class="stm mis">                                        <span class="nam">shutit_global</span><span class="op">.</span><span class="nam">shutit_global_object</span><span class="op">.</span><span class="nam">shutit_print</span><span class="op">(</span><span class="str">'FAILED TO PARSE: '</span> <span class="op">+</span> <span class="nam">full_line_strings</span><span class="op">[</span><span class="op">:</span><span class="num">30</span><span class="op">]</span> <span class="op">+</span> <span class="str">'[...]'</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t170" class="stm mis">                                        <span class="key">return</span> <span class="op">[</span><span class="op">]</span><span class="op">,</span> <span class="nam">False</span><span class="strut">&nbsp;</span></p>
 <p id="t171" class="stm run hide_run">                                <span class="nam">full_line</span> <span class="op">=</span> <span class="str">''</span><span class="strut">&nbsp;</span></p>
 <p id="t172" class="stm run hide_run">        <span class="key">return</span> <span class="nam">ret</span><span class="op">,</span> <span class="nam">True</span><span class="strut">&nbsp;</span></p>
@@ -1842,7 +1842,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.5.1</a>,
-            created at 2018-03-24 11:14
+            created at 2018-06-06 07:21
         </p>
     </div>
 </div>
