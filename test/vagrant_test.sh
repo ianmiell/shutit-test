@@ -76,7 +76,7 @@ then
 		--delivery bash --pattern vagrant
 	pushd ${NEWDIR}
 	chmod +x ./destroy_vms.sh
-	./run.sh -l debug
+	./run.sh -l debug --echo
 	if [[ "x$?" != "x0" ]]
 	then
 		echo "FAILED ON $DESC"

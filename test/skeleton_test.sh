@@ -60,7 +60,7 @@ coverage run --parallel-mode --include="*shutit*" $(which shutit) skeleton --shu
 	--depends shutit.tk.setup --base_image ubuntu:14.04 --delivery docker \
 	--pattern docker
 pushd ${NEWDIR}
-./test.sh --interactive 0 -l debug
+./test.sh --interactive 0 -l debug --echo
 if [[ "x$?" != "x0" ]]
 then
 	echo "FAILED ON $DESC: $?"
@@ -79,7 +79,7 @@ coverage run --parallel-mode --include="*shutit*" $(which shutit) skeleton \
 	--depends shutit.tk.setup --base_image ubuntu:14.04 --delivery docker \
 	--pattern docker
 pushd ${NEWDIR}
-./test.sh --interactive 0 -l debug
+./test.sh --interactive 0 -l debug --echo
 if [[ "x$?" != "x0" ]]
 then
 	echo "FAILED ON $DESC: $?"
@@ -116,7 +116,7 @@ coverage run --parallel-mode --include="*shutit*" $(which shutit) skeleton --nam
 	--domain shutit.tk --depends shutit.tk.setup --base_image ubuntu:14.04 \
 	--delivery docker --pattern docker
 pushd ${NEWDIR}
-./test.sh --interactive 0 -l debug
+./test.sh --interactive 0 -l debug --echo
 if [[ "x$?" != "x0" ]]
 then
 	echo "FAILED ON $DESC"
@@ -136,7 +136,7 @@ coverage run --parallel-mode --include="*shutit*" $(which shutit) skeleton --nam
 	--pattern docker
 
 pushd ${NEWDIR}
-./test.sh --interactive 0 -l debug
+./test.sh --interactive 0 -l debug --echo
 if [[ "x$?" != "x0" ]]
 then
 	echo "FAILED ON $DESC"

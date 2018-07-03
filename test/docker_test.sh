@@ -94,7 +94,7 @@ do
 				echo "================================================================================"
 				echo "SHUTIT MODULE TEST $d: In directory: `pwd` BEGIN"
 				echo "================================================================================"
-				./test.sh --interactive 0 -l debug
+				./test.sh --interactive 0 -l debug --echo
 				RES=$?
 				if [[ "x$RES" != "x0" ]]
 				then

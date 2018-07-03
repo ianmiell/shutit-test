@@ -51,7 +51,7 @@ pushd test/shutitfiles
 for d in $(ls -d *)
 do
 	pushd $d
-	./test.sh -l debug
+	./test.sh -l debug --echo
 	if [[ $? != 0 ]]
 	then
 		popd
