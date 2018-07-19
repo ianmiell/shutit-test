@@ -3837,7 +3837,7 @@
 <p id="t106" class="stm run hide_run">                <span class="nam">self</span><span class="op">.</span><span class="nam">in_shell</span>                  <span class="op">=</span> <span class="key">True</span><span class="strut">&nbsp;</span></p>
 <p id="t107" class="stm run hide_run">                <span class="nam">self</span><span class="op">.</span><span class="nam">pexpect_session_id</span>        <span class="op">=</span> <span class="nam">pexpect_session_id</span><span class="strut">&nbsp;</span></p>
 <p id="t108" class="stm run hide_run">                <span class="nam">self</span><span class="op">.</span><span class="nam">pexpect_session_number</span>    <span class="op">=</span> <span class="nam">len</span><span class="op">(</span><span class="nam">shutit_global</span><span class="op">.</span><span class="nam">get_shutit_pexpect_sessions</span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="num">1</span><span class="strut">&nbsp;</span></p>
-<p id="t109" class="stm run hide_run">                <span class="nam">self</span><span class="op">.</span><span class="nam">login_stack</span>               <span class="op">=</span> <span class="nam">ShutItLoginStack</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t109" class="stm run hide_run">                <span class="nam">self</span><span class="op">.</span><span class="nam">login_stack</span>               <span class="op">=</span> <span class="nam">ShutItLoginStack</span><span class="op">(</span><span class="nam">shutit_obj</span><span class="op">=</span><span class="nam">shutit</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t110" class="stm run hide_run">                <span class="nam">self</span><span class="op">.</span><span class="nam">current_environment</span>       <span class="op">=</span> <span class="key">None</span><span class="strut">&nbsp;</span></p>
 <p id="t111" class="stm run hide_run">                <span class="nam">args</span> <span class="op">=</span> <span class="nam">args</span> <span class="key">or</span> <span class="op">[</span><span class="op">]</span><span class="strut">&nbsp;</span></p>
 <p id="t112" class="stm run hide_run">                <span class="key">if</span> <span class="key">not</span> <span class="nam">delaybeforesend</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
@@ -7398,7 +7398,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.5.1</a>,
-            created at 2018-07-16 17:17
+            created at 2018-07-19 09:55
         </p>
     </div>
 </div>
