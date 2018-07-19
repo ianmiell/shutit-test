@@ -16,7 +16,7 @@ class test1(ShutItModule):
 
 	def build(self, shutit):
 		output=shutit.send_and_get_output('ls')
-		shutit.log(output,add_final_message=True)
+		shutit.log(output)
 		thing.thing()
 		shutit.send('touch /tmp/container_touched')
 		# to test email if desired
