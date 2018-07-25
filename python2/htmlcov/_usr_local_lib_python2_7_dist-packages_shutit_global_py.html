@@ -858,7 +858,7 @@
 <p id="t183" class="pln">                           <span class="nam">nocolor</span><span class="op">=</span><span class="nam">False</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
 <p id="t184" class="pln">                           <span class="nam">loglevel</span><span class="op">=</span><span class="str">'WARNING'</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t185" class="stm run hide_run">                <span class="key">assert</span> <span class="nam">isinstance</span><span class="op">(</span><span class="nam">session_type</span><span class="op">,</span> <span class="nam">str</span><span class="op">)</span><span class="op">,</span> <span class="nam">shutit_util</span><span class="op">.</span><span class="nam">print_debug</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
-<p id="t186" class="stm run hide_run">                <span class="nam">new_shutit</span> <span class="op">=</span> <span class="nam">ShutIt</span><span class="op">(</span><span class="nam">standalone</span><span class="op">=</span><span class="nam">True</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t186" class="stm run hide_run">                <span class="nam">new_shutit</span> <span class="op">=</span> <span class="nam">ShutIt</span><span class="op">(</span><span class="nam">standalone</span><span class="op">=</span><span class="nam">True</span><span class="op">,</span> <span class="nam">session_type</span><span class="op">=</span><span class="nam">session_type</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t187" class="stm run hide_run">                <span class="nam">self</span><span class="op">.</span><span class="nam">shutit_objects</span><span class="op">.</span><span class="nam">append</span><span class="op">(</span><span class="nam">new_shutit</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t188" class="stm run hide_run">                <span class="key">if</span> <span class="nam">session_type</span> <span class="op">==</span> <span class="str">'bash'</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t189" class="stm run hide_run">                        <span class="nam">new_shutit</span><span class="op">.</span><span class="nam">process_args</span><span class="op">(</span><span class="nam">ShutItInit</span><span class="op">(</span><span class="str">'build'</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
@@ -903,7 +903,7 @@
 <p id="t228" class="pln">                                   <span class="nam">virt_method</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
 <p id="t229" class="pln">                                   <span class="nam">root_folder</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
 <p id="t230" class="pln">                                   <span class="nam">loglevel</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
-<p id="t231" class="stm mis">                <span class="nam">new_shutit</span> <span class="op">=</span> <span class="nam">ShutIt</span><span class="op">(</span><span class="nam">standalone</span><span class="op">=</span><span class="nam">True</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t231" class="stm mis">                <span class="nam">new_shutit</span> <span class="op">=</span> <span class="nam">ShutIt</span><span class="op">(</span><span class="nam">standalone</span><span class="op">=</span><span class="nam">True</span><span class="op">,</span> <span class="nam">session_type</span><span class="op">=</span><span class="str">'vagrant'</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t232" class="stm mis">                <span class="nam">self</span><span class="op">.</span><span class="nam">shutit_objects</span><span class="op">.</span><span class="nam">append</span><span class="op">(</span><span class="nam">new_shutit</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t233" class="pln">                <span class="com"># Vagrant is: delivery over bash, but running the vagrant scripts first.</span><span class="strut">&nbsp;</span></p>
 <p id="t234" class="stm mis">                <span class="nam">new_shutit</span><span class="op">.</span><span class="nam">process_args</span><span class="op">(</span><span class="nam">ShutItInit</span><span class="op">(</span><span class="str">'build'</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
@@ -1275,7 +1275,7 @@
 <p id="t600" class="stm run hide_run"><span class="key">import</span> <span class="nam">shutit_util</span><span class="strut">&nbsp;</span></p>
 <p id="t601" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t602" class="pln"><span class="com"># Create default shutit object. TODO: do we need this?</span><span class="strut">&nbsp;</span></p>
-<p id="t603" class="stm run hide_run"><span class="nam">shutit_global_object</span><span class="op">.</span><span class="nam">shutit_objects</span><span class="op">.</span><span class="nam">append</span><span class="op">(</span><span class="nam">ShutIt</span><span class="op">(</span><span class="nam">standalone</span><span class="op">=</span><span class="nam">False</span><span class="op">)</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t603" class="stm run hide_run"><span class="nam">shutit_global_object</span><span class="op">.</span><span class="nam">shutit_objects</span><span class="op">.</span><span class="nam">append</span><span class="op">(</span><span class="nam">ShutIt</span><span class="op">(</span><span class="nam">standalone</span><span class="op">=</span><span class="nam">False</span><span class="op">,</span> <span class="nam">session_type</span><span class="op">=</span><span class="str">'bash'</span><span class="op">)</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 
             </td>
         </tr>
@@ -1286,7 +1286,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.5.1</a>,
-            created at 2018-07-25 12:06
+            created at 2018-07-25 13:52
         </p>
     </div>
 </div>
