@@ -5064,7 +5064,7 @@
 <p id="t30" class="stm run hide_run"><span class="key">import</span> <span class="nam">uuid</span><span class="strut">&nbsp;</span></p>
 <p id="t31" class="stm run hide_run"><span class="key">import</span> <span class="nam">texttable</span><span class="strut">&nbsp;</span></p>
 <p id="t32" class="stm run hide_run"><span class="key">import</span> <span class="nam">pexpect</span><span class="strut">&nbsp;</span></p>
-<p id="t33" class="stm run hide_run"><span class="key">import</span> <span class="nam">shutit_main</span><span class="strut">&nbsp;</span></p>
+<p id="t33" class="stm run hide_run"><span class="key">from</span> <span class="nam">shutit</span> <span class="key">import</span> <span class="nam">shutit_main</span><span class="strut">&nbsp;</span></p>
 <p id="t34" class="stm run hide_run"><span class="key">import</span> <span class="nam">shutit_util</span><span class="strut">&nbsp;</span></p>
 <p id="t35" class="stm run hide_run"><span class="key">import</span> <span class="nam">shutit_global</span><span class="strut">&nbsp;</span></p>
 <p id="t36" class="stm run hide_run"><span class="key">import</span> <span class="nam">shutit_skeleton</span><span class="strut">&nbsp;</span></p>
@@ -8399,7 +8399,7 @@
 <p id="t3365" class="stm run hide_run">                <span class="key">assert</span> <span class="nam">isinstance</span><span class="op">(</span><span class="nam">args</span><span class="op">,</span><span class="nam">ShutItInit</span><span class="op">)</span><span class="op">,</span> <span class="nam">shutit_util</span><span class="op">.</span><span class="nam">print_debug</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t3366" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t3367" class="stm run hide_run">                <span class="key">if</span> <span class="nam">args</span><span class="op">.</span><span class="nam">action</span> <span class="op">==</span> <span class="str">'version'</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
-<p id="t3368" class="stm mis">                        <span class="nam">shutit_global</span><span class="op">.</span><span class="nam">shutit_global_object</span><span class="op">.</span><span class="nam">shutit_print</span><span class="op">(</span><span class="str">'ShutIt version: '</span> <span class="op">+</span> <span class="nam">shutit</span><span class="op">.</span><span class="nam">shutit_version</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t3368" class="stm mis">                        <span class="nam">shutit_global</span><span class="op">.</span><span class="nam">shutit_global_object</span><span class="op">.</span><span class="nam">shutit_print</span><span class="op">(</span><span class="str">'ShutIt version: '</span> <span class="op">+</span> <span class="nam">shutit_main</span><span class="op">.</span><span class="nam">shutit_version</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t3369" class="stm mis">                        <span class="nam">shutit_global</span><span class="op">.</span><span class="nam">shutit_global_object</span><span class="op">.</span><span class="nam">handle_exit</span><span class="op">(</span><span class="nam">exit_code</span><span class="op">=</span><span class="num">0</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t3370" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t3371" class="pln">                <span class="com"># What are we asking shutit to do?</span><span class="strut">&nbsp;</span></p>
@@ -10004,7 +10004,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.5.1</a>,
-            created at 2018-08-10 11:41
+            created at 2018-08-11 17:05
         </p>
     </div>
 </div>
