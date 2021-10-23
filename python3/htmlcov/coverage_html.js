@@ -29,8 +29,8 @@ coverage.wire_up_help_panel = function () {
         var koff = $("#keyboard_icon").offset();
         var poff = $("#panel_icon").position();
         $(".help_panel").offset({
-            top: koff.top-poff.top-1,
-            left: koff.left-poff.left-1
+            top: koff.top-poff.top,
+            left: koff.left-poff.left
         });
     });
     $("#panel_icon").click(function () {
@@ -311,6 +311,11 @@ coverage.line_elt = function (n) {
     return $("#t" + n);
 };
 
+// Return the nth line number div.
+coverage.num_elt = function (n) {
+    return $("#n" + n);
+};
+
 // Set the selection.  b and e are line numbers.
 coverage.set_sel = function (b, e) {
     // The first line selected.
@@ -509,9 +514,9 @@ coverage.show_selection = function () {
     var c = coverage;
 
     // Highlight the lines in the chunk
-    $("#source .highlight").removeClass("highlight");
+    $(".linenos .highlight").removeClass("highlight");
     for (var probe = c.sel_begin; probe > 0 && probe < c.sel_end; probe++) {
-        c.line_elt(probe).addClass("highlight");
+        c.num_elt(probe).addClass("highlight");
     }
 
     c.scroll_to_selection();

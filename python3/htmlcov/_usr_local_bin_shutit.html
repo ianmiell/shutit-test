@@ -1,16 +1,11 @@
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    
-    
     <meta http-equiv="X-UA-Compatible" content="IE=emulateIE7" />
     <title>Coverage for /usr/local/bin/shutit: 100%</title>
+    <link rel="icon" sizes="32x32" href="favicon_32.png">
     <link rel="stylesheet" href="style.css" type="text/css">
-    
     <script type="text/javascript" src="jquery.min.js"></script>
     <script type="text/javascript" src="jquery.hotkeys.js"></script>
     <script type="text/javascript" src="jquery.isonscreen.js"></script>
@@ -20,26 +15,20 @@
     </script>
 </head>
 <body class="pyfile">
-
 <div id="header">
     <div class="content">
         <h1>Coverage for <b>/usr/local/bin/shutit</b> :
             <span class="pc_cov">100%</span>
         </h1>
-
         <img id="keyboard_icon" src="keybd_closed.png" alt="Show keyboard shortcuts" />
-
         <h2 class="stats">
-            5 statements &nbsp;
-            <span class="run hide_run shortkey_r button_toggle_run">5 run</span>
-            <span class="mis shortkey_m button_toggle_mis">0 missing</span>
-            <span class="exc shortkey_x button_toggle_exc">0 excluded</span>
-
-            
+            6 statements &nbsp;
+            <button type="button" class="run shortkey_r button_toggle_run" title="Toggle lines run">6 run</button>
+            <button type="button" class="mis show_mis shortkey_m button_toggle_mis" title="Toggle lines missing">0 missing</button>
+            <button type="button" class="exc show_exc shortkey_x button_toggle_exc" title="Toggle lines excluded">0 excluded</button>
         </h2>
     </div>
 </div>
-
 <div class="help_panel">
     <img id="panel_icon" src="keybd_open.png" alt="Hide keyboard shortcuts" />
     <p class="legend">Hot-keys on this page</p>
@@ -62,48 +51,23 @@
     </p>
     </div>
 </div>
-
 <div id="source">
-    <table>
-        <tr>
-            <td class="linenos">
-<p id="n1" class="pln"><a href="#n1">1</a></p>
-<p id="n2" class="pln"><a href="#n2">2</a></p>
-<p id="n3" class="stm run hide_run"><a href="#n3">3</a></p>
-<p id="n4" class="stm run hide_run"><a href="#n4">4</a></p>
-<p id="n5" class="stm run hide_run"><a href="#n5">5</a></p>
-<p id="n6" class="pln"><a href="#n6">6</a></p>
-<p id="n7" class="stm run hide_run"><a href="#n7">7</a></p>
-<p id="n8" class="stm run hide_run"><a href="#n8">8</a></p>
-<p id="n9" class="pln"><a href="#n9">9</a></p>
-<p id="n10" class="pln"><a href="#n10">10</a></p>
-
-            </td>
-            <td class="text">
-<p id="t1" class="pln"><span class="com">#!/usr/bin/python3</span><span class="strut">&nbsp;</span></p>
-<p id="t2" class="pln"><span class="com"># EASY-INSTALL-ENTRY-SCRIPT: 'shutit==1.0.158','console_scripts','shutit'</span><span class="strut">&nbsp;</span></p>
-<p id="t3" class="stm run hide_run"><span class="nam">__requires__</span> <span class="op">=</span> <span class="str">'shutit==1.0.158'</span><span class="strut">&nbsp;</span></p>
-<p id="t4" class="stm run hide_run"><span class="key">import</span> <span class="nam">sys</span><span class="strut">&nbsp;</span></p>
-<p id="t5" class="stm run hide_run"><span class="key">from</span> <span class="nam">pkg_resources</span> <span class="key">import</span> <span class="nam">load_entry_point</span><span class="strut">&nbsp;</span></p>
-<p id="t6" class="pln"><span class="strut">&nbsp;</span></p>
-<p id="t7" class="stm run hide_run"><span class="key">if</span> <span class="nam">__name__</span> <span class="op">==</span> <span class="str">'__main__'</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
-<p id="t8" class="stm run hide_run">    <span class="nam">sys</span><span class="op">.</span><span class="nam">exit</span><span class="op">(</span><span class="strut">&nbsp;</span></p>
-<p id="t9" class="pln">        <span class="nam">load_entry_point</span><span class="op">(</span><span class="str">'shutit==1.0.158'</span><span class="op">,</span> <span class="str">'console_scripts'</span><span class="op">,</span> <span class="str">'shutit'</span><span class="op">)</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
-<p id="t10" class="pln">    <span class="op">)</span><span class="strut">&nbsp;</span></p>
-
-            </td>
-        </tr>
-    </table>
+    <p id="t1" class="pln"><span class="n"><a href="#t1">1</a></span><span class="t"><span class="com">#!/usr/bin/python3</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t2" class="pln"><span class="n"><a href="#t2">2</a></span><span class="t"><span class="com"># -*- coding: utf-8 -*-</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t3" class="run"><span class="n"><a href="#t3">3</a></span><span class="t"><span class="key">import</span> <span class="nam">re</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t4" class="run"><span class="n"><a href="#t4">4</a></span><span class="t"><span class="key">import</span> <span class="nam">sys</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t5" class="run"><span class="n"><a href="#t5">5</a></span><span class="t"><span class="key">from</span> <span class="nam">shutit</span> <span class="key">import</span> <span class="nam">main</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t6" class="run"><span class="n"><a href="#t6">6</a></span><span class="t"><span class="key">if</span> <span class="nam">__name__</span> <span class="op">==</span> <span class="str">'__main__'</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t7" class="run"><span class="n"><a href="#t7">7</a></span><span class="t">    <span class="nam">sys</span><span class="op">.</span><span class="nam">argv</span><span class="op">[</span><span class="num">0</span><span class="op">]</span> <span class="op">=</span> <span class="nam">re</span><span class="op">.</span><span class="nam">sub</span><span class="op">(</span><span class="str">r'(-script\.pyw|\.exe)?$'</span><span class="op">,</span> <span class="str">''</span><span class="op">,</span> <span class="nam">sys</span><span class="op">.</span><span class="nam">argv</span><span class="op">[</span><span class="num">0</span><span class="op">]</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p id="t8" class="run"><span class="n"><a href="#t8">8</a></span><span class="t">    <span class="nam">sys</span><span class="op">.</span><span class="nam">exit</span><span class="op">(</span><span class="nam">main</span><span class="op">(</span><span class="op">)</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
 </div>
-
 <div id="footer">
     <div class="content">
         <p>
-            <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.5.2</a>,
-            created at 2018-12-19 17:49
+            <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v5.5</a>,
+            created at 2021-10-23 09:26
         </p>
     </div>
 </div>
-
 </body>
 </html>
